@@ -124,9 +124,6 @@
                         <a data-nav-link data-nav-parent="about" href="profil.html" class="nav-link-mobile flex items-center gap-3 rounded-xl px-4 py-3 transition-all duration-200 hover:bg-gradient-to-r hover:from-[#BE1A1A]/5 hover:to-transparent hover:text-[#BE1A1A] hover:shadow-sm hover:scale-[1.02]">
                             <span>🏢</span> Profil Kampus
                         </a>
-                        <a data-nav-link data-nav-parent="about" href="prestasi.html" class="nav-link-mobile flex items-center gap-3 rounded-xl px-4 py-3 transition-all duration-200 hover:bg-gradient-to-r hover:from-[#BE1A1A]/5 hover:to-transparent hover:text-[#BE1A1A] hover:shadow-sm hover:scale-[1.02]">
-                            <span>🏆</span> Prestasi
-                        </a>
                         <a data-nav-link data-nav-parent="about" href="visimisi.html" class="nav-link-mobile flex items-center gap-3 rounded-xl px-4 py-3 transition-all duration-200 hover:bg-gradient-to-r hover:from-[#BE1A1A]/5 hover:to-transparent hover:text-[#BE1A1A] hover:shadow-sm hover:scale-[1.02]">
                             <span>🎯</span> Visi &amp; Misi
                         </a>
