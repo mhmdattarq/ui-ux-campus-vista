@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-slate-900">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jelajah Kampus - Virtual Tour</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Efek dragging/panorama container */
+        .panorama-container {
+            cursor: grab;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .panorama-container:active {
+            cursor: grabbing;
+        }
+
+        /* Animasi berdenyut untuk Icon Interaktif (Pulse Ring) */
+        .dot-pulse::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: inherit;
+            animation: pulse 2s infinite;
+            opacity: 0.6;
+            z-index: -1;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.6;
+            }
+
+            100% {
+                transform: scale(2.5);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body class="h-full flex flex-col text-slate-100 overflow-hidden select-none">
+
+    <div id="navbar"></div>
+    <script src="assets/js/navbar.js"></script>
+
+    <!-- Main Content Area -->
+    <main class="flex-1 relative flex">
+
+        <!-- Sidebar: Location Indicator & Controls -->
+        <div
+            class="absolute left-6 top-6 z-40 bg-slate-950/80 backdrop-blur-md border border-slate-800 p-4 rounded-xl w-64 shadow-2xl">
+            <p class="text-xs text-slate-400 font-semibold tracking-wider uppercase">Lokasi Saat Ini</p>
+            <h2 class="text-lg font-bold text-white mt-1">Laboratorium Komputer 01</h2>
+
+            <div class="mt-4 pt-3 border-t border-slate-800 space-y-2">
+                <p class="text-xs text-slate-400">💡 <span class="italic">Klik & geser layar untuk melihat sekeliling.
+                        Klik pin merah untuk info detail.</span></p>
+            </div>
+
+            <!-- Quick Navigation Shortcuts -->
+            <div class="mt-4">
+                <span class="text-xs font-semibold text-slate-500 block mb-2">Pindah Ruangan:</span>
+                <div class="grid grid-cols-2 gap-2">
+                    <button
+                        class="px-2 py-1.5 text-xs bg-slate-800 hover:bg-blue-600 rounded text-left transition font-medium text-slate-300 hover:text-white">📚
+                        Perpustakaan</button>
+                    <button
+                        class="px-2 py-1.5 text-xs bg-slate-800 hover:bg-blue-600 rounded text-left transition font-medium text-slate-300 hover:text-white">☕
+                        Kantin</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- VIRTUAL TOUR PANORAMA VIEWER -->
+        <div id="panorama" class="panorama-container w-full h-full relative flex items-center">
+
+            <!-- Elemen Gambar Canvas Virtual (Ukurannya sengaja dibuat lebih lebar dari screen agar bisa digeser) -->
+            <div id="canvas360"
+                class="relative inline-block min-w-[200vw] h-full transition-transform duration-75 ease-out"
+                style="transform: translateX(-30vw);">
+
+                <!-- Background Image (Gunakan gambar Lab/Mockup resolusi lebar) -->
+                <img src="https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=2000" alt="Lab Background"
+                    class="w-full h-full object-cover opacity-70 pointer-events-none">
+
+                <!-- INTERACTIVE ICON 1: KOMPUTER -->
+                <button onclick="showInfo('komputer')"
+                    class="absolute top-[55%] left-[42%] w-6 h-6 bg-rose-500 rounded-full flex items-center justify-between justify-content-center shadow-lg dot-pulse border-2 border-white group transition-transform hover:scale-110">
+                    <span
+                        class="absolute -top-8 left-1/2 -translate-x-1/2 bg-slate-950 text-[10px] px-2 py-0.5 rounded shadow border border-slate-800 hidden group-hover:block text-white">Komputer</span>
+                </button>
+
+                <!-- INTERACTIVE ICON 2: PROYEKTOR -->
+                <button onclick="showInfo('proyektor')"
+                    class="absolute top-[25%] left-[55%] w-6 h-6 bg-rose-500 rounded-full flex items-center justify-between justify-content-center shadow-lg dot-pulse border-2 border-white group transition-transform hover:scale-110">
+                    <span
+                        class="absolute -top-8 left-1/2 -translate-x-1/2 bg-slate-950 text-[10px] px-2 py-0.5 rounded shadow border border-slate-800 hidden group-hover:block text-white">Proyektor</span>
+                </button>
+
+                <!-- INTERACTIVE ICON 3: INFO LAB -->
+                <button onclick="showInfo('infolab')"
+                    class="absolute top-[40%] left-[68%] w-6 h-6 bg-rose-500 rounded-full flex items-center justify-between justify-content-center shadow-lg dot-pulse border-2 border-white group transition-transform hover:scale-110">
+                    <span
+                        class="absolute -top-8 left-1/2 -translate-x-1/2 bg-slate-950 text-[10px] px-2 py-0.5 rounded shadow border border-slate-800 hidden group-hover:block text-white">Informasi_Lab</span>
+                </button>
+
+            </div>
+        </div>
+
+        <!-- SIDE DRAWER MODAL (Contextual Information Panel) -->
+        <div id="infoDrawer"
+            class="fixed right-0 top-0 h-full w-96 bg-slate-950/95 backdrop-blur-lg border-l border-slate-800 p-6 shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col justify-between">
+            <div>
+                <!-- Drawer Header -->
+                <div class="flex items-center justify-between border-b border-slate-800 pb-4 mb-4">
+                    <div class="flex items-center gap-2">
+                        <div class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></div>
+                        <h3 id="drawerTitle" class="font-bold text-lg text-white">Detail Fasilitas</h3>
+                    </div>
+                    <button onclick="closeDrawer()"
+                        class="text-slate-400 hover:text-white p-1 rounded-lg hover:bg-slate-800 transition">
+                        ✕
+                    </button>
+                </div>
+
+                <!-- Drawer Dynamic Content -->
+                <div id="drawerContent" class="space-y-4">
+                    <!-- Data akan di-inject lewat JavaScript -->
+                </div>
+            </div>
+
+            <!-- Drawer Footer -->
+            <div class="pt-4 border-t border-slate-800">
+                <button onclick="closeDrawer()"
+                    class="w-full py-2 bg-slate-800 hover:bg-slate-700 text-sm font-medium rounded-lg transition">
+                    Kembali Eksplorasi
+                </button>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- INTERACTIVE JAVASCRIPT LOGIC -->
+    <script>
+        // Data Mockup Sesuai Dengan Draft Dokumen Konsep Kamu
+        const dataFasilitas = {
+            komputer: {
+                title: "Spesifikasi PC Lab 01",
+                html: `
+                    <div class="bg-slate-900 p-3 rounded-lg border border-slate-800 space-y-2">
+                        <div class="flex justify-between text-sm"><span class="text-slate-400">Merk:</span> <span class="font-semibold text-white">Lenovo ThinkCentre</span></div>
+                        <div class="flex justify-between text-sm"><span class="text-slate-400">Processor:</span> <span class="font-semibold text-white">Intel Core i7 Gen 12</span></div>
+                        <div class="flex justify-between text-sm"><span class="text-slate-400">RAM:</span> <span class="font-semibold text-white">16 GB</span></div>
+                        <div class="flex justify-between text-sm"><span class="text-slate-400">Storage:</span> <span class="font-semibold text-white">SSD 512 GB</span></div>
+                        <div class="flex justify-between text-sm"><span class="text-slate-400">VGA:</span> <span class="font-semibold text-white">NVIDIA RTX 3060</span></div>
+                        <div class="flex justify-between text-sm"><span class="text-slate-400">OS:</span> <span class="font-semibold text-white">Windows 11</span></div>
+                    </div>
+                    <div>
+                        <h4 class="text-xs uppercase font-semibold text-slate-500 mb-2">Software yang Terpasang:</h4>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="text-xs bg-blue-500/10 border border-blue-500/20 px-2 py-0.5 rounded text-blue-400">VS Code</span>
+                            <span class="text-xs bg-indigo-500/10 border border-indigo-500/20 px-2 py-0.5 rounded text-indigo-400">Android Studio</span>
+                            <span class="text-xs bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded text-emerald-400">MS Office</span>
+                        </div>
+                    </div>
+                `
+            },
+            proyektor: {
+                title: "Detail Proyektor Ruangan",
+                html: `
+                    <div class="bg-slate-900 p-3 rounded-lg border border-slate-800 space-y-2">
+                        <div class="flex justify-between text-sm"><span class="text-slate-400">Merk:</span> <span class="font-semibold text-white">Epson EB-X400</span></div>
+                        <div class="flex justify-between text-sm"><span class="text-slate-400">Resolusi:</span> <span class="font-semibold text-white">1024 x 768 (XGA)</span></div>
+                        <div class="flex justify-between text-sm"><span class="text-slate-400">Kecerahan:</span> <span class="font-semibold text-white">3300 Lumens</span></div>
+                        <div class="flex justify-between text-sm"><span class="text-slate-400">Koneksi:</span> <span class="font-semibold text-white">HDMI, VGA, LAN</span></div>
+                        <div class="flex justify-between text-sm"><span class="text-slate-400">Wireless:</span> <span class="font-semibold text-emerald-400">Mendukung Miracast</span></div>
+                    </div>
+                `
+            },
+            infolab: {
+                title: "Informasi Laboratorium",
+                html: `
+                    <div class="bg-slate-900 p-3 rounded-lg border border-slate-800 space-y-2">
+                        <div class="flex justify-between text-sm"><span class="text-slate-400">Kapasitas:</span> <span class="font-semibold text-white">40 Mahasiswa</span></div>
+                        <div class="flex justify-between text-sm"><span class="text-slate-400">Penanggung Jawab:</span> <span class="font-semibold text-white">Ir. Budi Raharjo, M.T.</span></div>
+                        <div class="flex justify-between text-sm"><span class="text-slate-400">Jam Operasional:</span> <span class="font-semibold text-white">08:00 - 17:00 WIB</span></div>
+                    </div>
+                    <div>
+                        <h4 class="text-xs uppercase font-semibold text-slate-500 mb-2">Mata Kuliah Praktikum:</h4>
+                        <ul class="text-sm space-y-1 list-disc list-inside text-slate-300">
+                            <li>Pemrograman Web (Laravel)</li>
+                            <li>Pengembangan Aplikasi Mobile</li>
+                            <li>Kecerdasan Buatan (AI)</li>
+                        </ul>
+                    </div>
+                `
+            }
+        };
+
+        // Fungsi untuk Membuka Drawer Informasi Kontekstual
+        function showInfo(key) {
+            const item = dataFasilitas[key];
+            if (!item) return;
+
+            document.getElementById('drawerTitle').innerText = item.title;
+            document.getElementById('drawerContent').innerHTML = item.html;
+            document.getElementById('infoDrawer').classList.remove('translate-x-full');
+        }
+
+        // Fungsi untuk Menutup Drawer
+        function closeDrawer() {
+            document.getElementById('infoDrawer').classList.add('translate-x-full');
+        }
+
+        // FITUR LOGIC: Efek Geser/Drag Panorama 360° Menggunakan Mouse
+        const panorama = document.getElementById('panorama');
+        const canvas = document.getElementById('canvas360');
+
+        let isDragging = false;
+        let startX;
+        let currentTranslateX = -30; // Posisi awal persen
+
+        panorama.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            startX = e.pageX - canvas.offsetLeft;
+        });
+
+        window.addEventListener('mouseup', () => {
+            isDragging = false;
+        });
+
+        panorama.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+
+            // Hitung delta pergerakan mouse
+            const x = e.pageX - canvas.offsetLeft;
+            const walk = (e.clientX - startX) * 0.05; // Mengubah speed dragging
+
+            // Update posisi translate agar efek bergerak seolah melihat 360°
+            let targetTranslate = currentTranslateX + walk;
+
+            // Batasi agar tidak bergeser keluar dari gambar background
+            if (targetTranslate > 0) targetTranslate = 0;
+            if (targetTranslate < -100) targetTranslate = -100;
+
+            canvas.style.transform = `translateX(${targetTranslate}vw)`;
+        });
+    </script>
+</body>
+
+</html>

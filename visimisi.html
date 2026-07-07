@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-slate-50 text-slate-900 scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jelajah Kampus - Visi & Misi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .glow-card {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(248, 250, 252, 0.95) 100%);
+            box-shadow: 0 24px 90px rgba(15, 23, 42, 0.08);
+            border: 1px solid rgba(148, 163, 184, 0.14);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 650ms ease, transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="min-h-full font-sans bg-slate-50 antialiased">
+    <div id="navbar"></div>
+    <script src="assets/js/navbar.js"></script>
+
+   <main class="relative overflow-hidden">
+        <section class="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+            <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+                <div class="space-y-6">
+                    <div
+                        class="inline-flex items-center gap-2 rounded-full border border-blue-100 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-[#1B4EF5] shadow-sm">
+                        <span class="h-2.5 w-2.5 rounded-full bg-[#1B4EF5]"></span>
+                        Visi & Misi
+                    </div>
+                    <h1 class="max-w-2xl text-4xl font-black tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
+                        Fokus kuat, arah jelas, dan pengalaman yang terasa hidup.
+                    </h1>
+                    <p class="max-w-xl text-base leading-8 text-slate-600 sm:text-lg">
+                        Halaman ini menyajikan arah institusi secara ringkas, menarik, dan interaktif agar setiap
+                        pengunjung mudah memahami jati diri kampus.
+                    </p>
+
+                    <div class="flex flex-wrap gap-3">
+                        <a href="#statements"
+                            class="rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition hover:opacity-90">Jelajahi
+                            Inti Kampus</a>
+                        <a href="#missions"
+                            class="rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-[#1B4EF5] hover:text-[#1B4EF5]">Lihat
+                            Misi Utama</a>
+                    </div>
+
+                    <div class="grid gap-3 sm:grid-cols-3">
+                        <div class="glow-card rounded-3xl p-4">
+                            <p class="text-2xl font-black text-slate-950"><span class="counter"
+                                    data-target="6">0</span>
+                            </p>
+                            <p class="mt-1 text-sm text-slate-500">Misi utama</p>
+                        </div>
+                        <div class="glow-card rounded-3xl p-4">
+                            <p class="text-2xl font-black text-slate-950"><span class="counter"
+                                    data-target="4">0</span>
+                            </p>
+                            <p class="mt-1 text-sm text-slate-500">Pilar arah</p>
+                        </div>
+                        <div class="glow-card rounded-3xl p-4">
+                            <p class="text-2xl font-black text-slate-950"><span class="counter"
+                                    data-target="100">0</span>%</p>
+                            <p class="mt-1 text-sm text-slate-500">Fokus pada dampak</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="reveal rounded-[2.25rem] border border-slate-200/80 bg-white/85 p-4 shadow-[0_24px_100px_rgba(15,23,42,0.10)]">
+                    <div class="overflow-hidden rounded-[1.75rem] bg-slate-100">
+                        <img src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?q=80&w=1200"
+                            alt="Kampus modern"
+                            class="h-[420px] w-full object-cover transition duration-500 hover:scale-[1.03]" />
+                    </div>
+                    <div
+                        class="mt-4 flex items-center justify-between rounded-2xl border border-slate-200/80 bg-slate-50 px-4 py-3 text-sm text-slate-600">
+                        <div>
+                            <p class="font-semibold text-slate-900">Kampus yang adaptif</p>
+                            <p class="text-slate-500">Berorientasi pada inovasi, kolaborasi, dan keberlanjutan.</p>
+                        </div>
+                        <span
+                            class="rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700">Live</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="statements" class="relative mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
+            <div class="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+                <div class="reveal rounded-[2rem] border border-slate-200/80 bg-white/85 p-6 shadow-sm">
+                    <div class="flex flex-wrap gap-2" role="tablist" aria-label="Visi Misi Tabs">
+                        <button class="tab-btn active" data-tab="visi">Visi</button>
+                        <button class="tab-btn" data-tab="misi">Misi</button>
+                        <button class="tab-btn" data-tab="tujuan">Tujuan</button>
+                        <button class="tab-btn" data-tab="nilai">Nilai</button>
+                    </div>
+
+                    <div id="visi" class="mt-6 space-y-4">
+                        <p class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">Visi</p>
+                        <h2 class="text-3xl font-black tracking-tight text-slate-950">Menjadi pusat inovasi teknologi
+                            dan bisnis berkelanjutan.</h2>
+                        <p class="text-base leading-8 text-slate-600">
+                            Kampus ini bertujuan menjadi institusi yang mendorong pembelajaran, riset, dan kolaborasi
+                            yang berdampak luas bagi masyarakat, industri, dan ekosistem ekonomi lokal.
+                        </p>
+                        <div class="grid gap-3 sm:grid-cols-2">
+                            <div class="rounded-3xl bg-slate-50 p-4">
+                                <p class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-400">Arah</p>
+                                <p class="mt-2 text-sm leading-7 text-slate-700">Penerapan teknologi yang relevan,
+                                    manusiawi, dan berkelanjutan.</p>
+                            </div>
+                            <div class="rounded-3xl bg-slate-50 p-4">
+                                <p class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-400">Motto</p>
+                                <p class="mt-2 text-lg font-bold text-slate-950">Kualitas, profesional, dan inovatif.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="misi" class="mt-6 hidden space-y-4">
+                        <p class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">Misi</p>
+                        <h2 class="text-3xl font-black tracking-tight text-slate-950">Menyelenggarakan pendidikan yang
+                            relevan dan berdampak.</h2>
+                        <p class="text-base leading-8 text-slate-600">
+                            Misi kampus diarahkan untuk menghasilkan lulusan yang kompeten, berkarakter, adaptif, dan
+                            siap berkontribusi secara nyata di dunia kerja dan masyarakat.
+                        </p>
+                        <div class="rounded-3xl border border-slate-200 bg-gradient-to-br from-[#f8fbff] to-white p-4">
+                            <p class="text-sm font-semibold text-slate-900">Pilar unggulan</p>
+                            <ul class="mt-3 list-disc pl-5 text-sm leading-7 text-slate-600">
+                                <li>Pendidikan berbasis industri dan kebutuhan masyarakat</li>
+                                <li>Riset aplikatif yang memberi solusi nyata</li>
+                                <li>Kolaborasi strategis untuk memperluas pengaruh</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div id="tujuan" class="mt-6 hidden space-y-4">
+                        <p class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">Tujuan</p>
+                        <h2 class="text-3xl font-black tracking-tight text-slate-950">Target kinerja yang terukur dan
+                            mudah dipantau.</h2>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex items-center justify-between text-sm text-slate-700">
+                                    <span>Lulusan terserap kerja</span>
+                                    <span class="text-slate-500"><span class="counter"
+                                            data-target="70">0</span>%</span>
+                                </div>
+                                <div class="mt-2 h-3 overflow-hidden rounded-full bg-slate-100">
+                                    <div class="progress-bar h-full bg-gradient-to-r from-[#BE1A1A] to-[#1B4EF5]"
+                                        data-progress="70" style="width:0%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex items-center justify-between text-sm text-slate-700">
+                                    <span>Publikasi dan kerja sama industri</span>
+                                    <span class="text-slate-500"><span class="counter"
+                                            data-target="45">0</span>%</span>
+                                </div>
+                                <div class="mt-2 h-3 overflow-hidden rounded-full bg-slate-100">
+                                    <div class="progress-bar h-full bg-gradient-to-r from-[#10B981] to-[#047857]"
+                                        data-progress="45" style="width:0%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="nilai" class="mt-6 hidden space-y-4">
+                        <p class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">Nilai</p>
+                        <h2 class="text-3xl font-black tracking-tight text-slate-950">Nilai yang menuntun setiap
+                            keputusan dan langkah.</h2>
+                        <div class="grid gap-3 sm:grid-cols-2">
+                            <div class="rounded-3xl border border-slate-200 bg-white p-4">
+                                <p class="font-semibold text-slate-900">Integritas</p>
+                                <p class="mt-2 text-sm leading-7 text-slate-600">Transparan, adil, dan bertanggung
+                                    jawab dalam setiap proses.</p>
+                            </div>
+                            <div class="rounded-3xl border border-slate-200 bg-white p-4">
+                                <p class="font-semibold text-slate-900">Kolaborasi</p>
+                                <p class="mt-2 text-sm leading-7 text-slate-600">Mengangkat kerja sama lintas bidang
+                                    sebagai kekuatan utama.</p>
+                            </div>
+                            <div class="rounded-3xl border border-slate-200 bg-white p-4">
+                                <p class="font-semibold text-slate-900">Inovasi</p>
+                                <p class="mt-2 text-sm leading-7 text-slate-600">Terus bereksperimen dan menghadirkan
+                                    solusi yang relevan.</p>
+                            </div>
+                            <div class="rounded-3xl border border-slate-200 bg-white p-4">
+                                <p class="font-semibold text-slate-900">Berkelanjutan</p>
+                                <p class="mt-2 text-sm leading-7 text-slate-600">Memastikan dampak yang positif bagi
+                                    generasi sekarang dan mendatang.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <div
+                        class="reveal rounded-[2rem] border border-slate-200/80 bg-gradient-to-br from-[#1B4EF5] to-[#BE1A1A] p-6 text-white shadow-[0_20px_80px_rgba(27,78,245,0.16)]">
+                        <p class="text-xs font-semibold uppercase tracking-[0.24em] text-white/70">Ringkasan</p>
+                        <h3 class="mt-3 text-2xl font-black">Arah kuat untuk masa depan kampus.</h3>
+                        <p class="mt-3 text-sm leading-7 text-white/80">Visi dan misi disusun agar mudah dipahami,
+                            mudah dipakai sebagai dasar keputusan, dan menggerakkan seluruh elemen institusi.</p>
+                    </div>
+                    <div class="reveal rounded-[2rem] border border-slate-200/80 bg-white/85 p-6 shadow-sm">
+                        <p class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">Kenapa ini penting
+                        </p>
+                        <ul class="mt-4 space-y-3 text-sm leading-7 text-slate-600">
+                            <li>• Menyatukan arah akademik, kelembagaan, dan sosial.</li>
+                            <li>• Membantu stakeholder memahami fokus utama kampus.</li>
+                            <li>• Membentuk citra yang modern, terbuka, dan berbasis dampak.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="missions" class="relative mx-auto max-w-7xl px-4 pb-24 sm:px-6 lg:px-8">
+            <div class="reveal rounded-[2rem] border border-slate-200/80 bg-white/85 p-6 shadow-sm">
+                <div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+                    <div>
+                        <p class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">Eksplorasi misi</p>
+                        <h2 class="mt-2 text-3xl font-black tracking-tight text-slate-950">Jelajahi setiap misi secara
+                            lebih interaktif.</h2>
+                    </div>
+                    <div class="flex flex-col gap-3 sm:flex-row">
+                        <input id="mission-search" type="text" placeholder="Cari misi atau tema..."
+                            class="w-full rounded-full border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700 outline-none ring-0 focus:border-[#1B4EF5] sm:w-72" />
+                        <button id="btn-copy"
+                            class="rounded-full bg-slate-950 px-4 py-3 text-sm font-semibold text-white transition hover:opacity-90">Salin
+                            Ringkasan</button>
+                    </div>
+                </div>
+
+                <div class="mt-6 grid gap-4">
+                    <div class="mission-card rounded-[1.5rem] border border-slate-200 bg-slate-50 p-4">
+                        <button class="w-full text-left" data-target="panel-1">
+                            <div class="flex items-start justify-between gap-3">
+                                <div>
+                                    <p class="text-sm font-semibold text-slate-900">Misi 1 — Pendidikan Berkualitas</p>
+                                    <p class="mt-2 text-sm leading-7 text-slate-600">Menyelenggarakan pembelajaran yang
+                                        adaptif, relevan, dan berorientasi pada kebutuhan industri dan masyarakat.</p>
+                                </div>
+                                <span
+                                    class="rounded-full bg-[#1B4EF5]/10 px-3 py-1 text-xs font-semibold text-[#1B4EF5]">Detail</span>
+                            </div>
+                        </button>
+                        <div id="panel-1"
+                            class="mt-4 hidden rounded-2xl border border-slate-200 bg-white p-4 text-sm leading-7 text-slate-600">
+                            <p>Program pembelajaran dirancang dengan pendekatan hybrid, kolaboratif, dan berbasis
+                                teknologi untuk menghasilkan lulusan yang unggul.</p>
+                        </div>
+                    </div>
+
+                    <div class="mission-card rounded-[1.5rem] border border-slate-200 bg-slate-50 p-4">
+                        <button class="w-full text-left" data-target="panel-2">
+                            <div class="flex items-start justify-between gap-3">
+                                <div>
+                                    <p class="text-sm font-semibold text-slate-900">Misi 2 — Riset dan Inovasi</p>
+                                    <p class="mt-2 text-sm leading-7 text-slate-600">Mengembangkan penelitian yang
+                                        memberi solusi nyata bagi persoalan ekonomi, sosial, dan lingkungan.</p>
+                                </div>
+                                <span
+                                    class="rounded-full bg-[#BE1A1A]/10 px-3 py-1 text-xs font-semibold text-[#BE1A1A]">Detail</span>
+                            </div>
+                        </button>
+                        <div id="panel-2"
+                            class="mt-4 hidden rounded-2xl border border-slate-200 bg-white p-4 text-sm leading-7 text-slate-600">
+                            <p>Riset dilakukan secara terukur dengan kolaborasi dosen, mahasiswa, dan mitra industri
+                                untuk menciptakan dampak yang nyata.</p>
+                        </div>
+                    </div>
+
+                    <div class="mission-card rounded-[1.5rem] border border-slate-200 bg-slate-50 p-4">
+                        <button class="w-full text-left" data-target="panel-3">
+                            <div class="flex items-start justify-between gap-3">
+                                <div>
+                                    <p class="text-sm font-semibold text-slate-900">Misi 3 — Kewirausahaan dan Daya
+                                        Saing</p>
+                                    <p class="mt-2 text-sm leading-7 text-slate-600">Mendorong pembentukan ekosistem
+                                        kewirausahaan yang kuat, praktis, dan siap bersaing secara global.</p>
+                                </div>
+                                <span
+                                    class="rounded-full bg-emerald-600/10 px-3 py-1 text-xs font-semibold text-emerald-700">Detail</span>
+                            </div>
+                        </button>
+                        <div id="panel-3"
+                            class="mt-4 hidden rounded-2xl border border-slate-200 bg-white p-4 text-sm leading-7 text-slate-600">
+                            <p>Program inkubasi, mentor, dan kolaborasi usaha menjadi fondasi untuk menciptakan lulusan
+                                yang mandiri dan inovatif.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="relative mx-auto max-w-7xl px-4 pb-24 sm:px-6 lg:px-8">
+            <div
+                class="reveal rounded-[2rem] border border-slate-200/80 bg-gradient-to-r from-white to-slate-50 p-8 shadow-sm">
+                <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+                    <div>
+                        <p class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">Ayo lanjutkan</p>
+                        <h2 class="mt-2 text-3xl font-black tracking-tight text-slate-950">Buka halaman lain untuk
+                            melihat konteks kampus yang lebih lengkap.</h2>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="/profil"
+                            class="rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition hover:opacity-90">Profil
+                            Kampus</a>
+                        <a href="/sejarah"
+                            class="rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-[#1B4EF5] hover:text-[#1B4EF5]">Jejak
+                            Sejarah</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-slate-200/80 bg-white py-6">
+        <div class="mx-auto max-w-7xl px-4 text-center text-sm text-slate-500 sm:px-6 lg:px-8">
+            &copy; 2026 Jelajah Kampus. Halaman Visi & Misi - Tampilan Interaktif.
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuClose = document.getElementById('menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (menuToggle && menuClose && mobileMenu) {
+            const openMenu = () => {
+                mobileMenu.classList.remove('invisible', 'opacity-0');
+                mobileMenu.querySelector('div').classList.remove('translate-x-full');
+            };
+
+            const closeMenu = () => {
+                mobileMenu.classList.add('invisible', 'opacity-0');
+                mobileMenu.querySelector('div').classList.add('translate-x-full');
+            };
+
+            menuToggle.addEventListener('click', openMenu);
+            menuClose.addEventListener('click', closeMenu);
+            mobileMenu.addEventListener('click', (event) => {
+                if (event.target === mobileMenu) {
+                    closeMenu();
+                }
+            });
+
+            mobileMenu.querySelectorAll('a').forEach((link) => {
+                link.addEventListener('click', closeMenu);
+            });
+        }
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.15
+        });
+
+        document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
+
+        const tabButtons = Array.from(document.querySelectorAll('.tab-btn'));
+        const panels = ['visi', 'misi', 'tujuan', 'nilai'];
+
+        tabButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                tabButtons.forEach((btn) => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                const target = button.getAttribute('data-tab');
+                panels.forEach((panelId) => {
+                    const panel = document.getElementById(panelId);
+                    if (panel) {
+                        panel.classList.toggle('hidden', panelId !== target);
+                    }
+                });
+            });
+        });
+
+        document.querySelectorAll('.mission-card button').forEach((button) => {
+            button.addEventListener('click', () => {
+                const targetId = button.getAttribute('data-target');
+                const targetPanel = document.getElementById(targetId);
+                const card = button.closest('.mission-card');
+
+                if (!targetPanel || !card) {
+                    return;
+                }
+
+                const isHidden = targetPanel.classList.contains('hidden');
+                document.querySelectorAll('.mission-card .mt-4').forEach((panel) => panel.classList.add(
+                    'hidden'));
+                document.querySelectorAll('.mission-card').forEach((item) => item.classList.remove(
+                    'active'));
+
+                if (isHidden) {
+                    targetPanel.classList.remove('hidden');
+                    card.classList.add('active');
+                }
+            });
+        });
+
+        const searchInput = document.getElementById('mission-search');
+        const missionCards = Array.from(document.querySelectorAll('.mission-card'));
+
+        if (searchInput) {
+            searchInput.addEventListener('input', (event) => {
+                const query = event.target.value.trim().toLowerCase();
+
+                missionCards.forEach((card) => {
+                    const text = card.innerText.toLowerCase();
+                    const match = query === '' || text.includes(query);
+                    card.style.display = match ? '' : 'none';
+                });
+            });
+        }
+
+        const copyButton = document.getElementById('btn-copy');
+        if (copyButton) {
+            copyButton.addEventListener('click', async () => {
+                const summary = missionCards.map((card) => card.innerText.replace(/\s+/g, ' ').trim()).join(
+                    '\n\n');
+
+                try {
+                    await navigator.clipboard.writeText(summary);
+                    copyButton.textContent = 'Tersalin ✓';
+                    setTimeout(() => {
+                        copyButton.textContent = 'Salin Ringkasan';
+                    }, 1400);
+                } catch (error) {
+                    copyButton.textContent = 'Gagal menyalin';
+                }
+            });
+        }
+
+        const progressObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const bar = entry.target;
+                    const target = parseInt(bar.getAttribute('data-progress') || '0', 10);
+                    bar.style.width = target + '%';
+                    progressObserver.unobserve(bar);
+                }
+            });
+        }, {
+            threshold: 0.2
+        });
+
+        document.querySelectorAll('.progress-bar').forEach((bar) => progressObserver.observe(bar));
+
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target;
+                    const target = parseInt(counter.getAttribute('data-target') || '0', 10);
+                    const duration = 900;
+                    const start = performance.now();
+
+                    const tick = (now) => {
+                        const progress = Math.min(1, (now - start) / duration);
+                        counter.textContent = Math.floor(progress * target);
+                        if (progress < 1) {
+                            requestAnimationFrame(tick);
+                        }
+                    };
+
+                    requestAnimationFrame(tick);
+                    counterObserver.unobserve(counter);
+                }
+            });
+        }, {
+            threshold: 0.2
+        });
+
+        document.querySelectorAll('.counter').forEach((counter) => counterObserver.observe(counter));
+    </script>
+</body>
+
+</html>

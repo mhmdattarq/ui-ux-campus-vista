@@ -1,0 +1,60 @@
+/**
+ * Jelajah Kampus - Premium Light Mode Design System
+ * Architecture: Optimized Modern CSS
+ */
+
+/* --- Typography & Smooth Scrolling --- */
+html {
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Core Animations --- */
+@keyframes navbarEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.navbar-fade-in {
+    animation: navbarEntrance 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* --- Dropdown Micro-interactions Engine --- */
+.id-dropdown div {
+    will-change: transform, opacity;
+    transform-origin: top center;
+}
+
+/* --- Enterprise Light Ambient Glow Ornaments --- */
+.blur-bg {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.6;
+    mix-blend-mode: multiply;
+}
+
+/* Penyesuaian gradasi warna twotone untuk background putih netral */
+.bg-glow-top {
+    top: -150px;
+    left: -100px;
+    background: radial-gradient(circle, rgba(27, 78, 245, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+}
+
+.bg-glow-bottom {
+    bottom: 15%;
+    right: -150px;
+    background: radial-gradient(circle, rgba(190, 26, 26, 0.05) 0%, rgba(255, 255, 255, 0) 70%);
+}
