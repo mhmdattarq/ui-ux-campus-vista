@@ -218,89 +218,125 @@
     <script src="assets/js/navbar.js"></script>
 
     <!-- HERO SECTION -->
-    <section
-        class="relative pt-12 pb-8 md:pt-20 flex flex-col items-center justify-center text-center px-4 md:px-6 overflow-hidden">
+    <section class="relative pt-16 pb-12 md:pt-24 md:pb-16 flex flex-col items-center justify-center text-center px-4 md:px-6 overflow-hidden">
         <div class="absolute inset-0 hero-glow pointer-events-none"></div>
-        <div class="max-w-5xl space-y-6 z-10">
-            <div
-                class="reveal inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold bg-white/80 text-[#1B4EF5] border border-blue-100/70 rounded-full shadow-sm">
-                ✨ Paradigm Shift Website Kampus
+        
+        <div class="max-w-6xl space-y-8 z-10">
+            <div class="reveal inline-flex items-center gap-2 px-4 py-2 text-xs font-bold bg-gradient-to-r from-red-50 to-blue-50 text-slate-700 border border-red-100/50 rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
+                <span class="flex h-2 w-2 relative">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-gradient-to-r from-[#BE1A1A] to-[#1B4EF5]"></span>
+                </span>
+                Institut Teknologi & Bisnis Riau Pesisir
             </div>
-            <h1 class="reveal text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-slate-900 leading-[1.1]">
-                Kenali Kampus Melalui <span
-                    class="bg-gradient-to-r from-[#BE1A1A] to-[#1B4EF5] bg-clip-text text-transparent animate-gradient">Pengalaman</span>,<br
-                    class="hidden sm:inline">
-                Bukan Sekadar Informasi.
+            
+            <h1 class="reveal text-4xl sm:text-5xl md:text-7xl font-black tracking-tight text-slate-900 leading-[1.1]">
+                Kenali <span class="bg-gradient-to-r from-[#BE1A1A] via-rose-600 to-red-600 bg-clip-text text-transparent animate-gradient">Kampus</span> Melalui<br class="hidden sm:inline">
+                <span class="bg-gradient-to-r from-[#1B4EF5] via-blue-600 to-indigo-600 bg-clip-text text-transparent animate-gradient">Pengalaman</span> Virtual 360°
             </h1>
-            <p class="reveal-left text-sm md:text-base text-slate-500 max-w-2xl mx-auto font-normal leading-relaxed px-2">
-                Ubah cara lama membaca teks dan gambar statis. Masuki ekosistem digital imersif dan jelajahi seluruh
-                fasilitas kampus secara nyata dari genggamanmu.
+            
+            <p class="reveal-left text-base md:text-lg text-slate-600 max-w-3xl mx-auto font-medium leading-relaxed px-2">
+                Jelajahi kampus secara <strong class="text-[#BE1A1A]">imersif</strong> dengan teknologi virtual tour 360°. 
+                Lihat fasilitas, ruangan, dan lingkungan kampus secara <strong class="text-[#1B4EF5]">interaktif</strong> dari mana saja.
             </p>
-            <div class="reveal-right pt-2 flex flex-col sm:flex-row items-center justify-center gap-3 px-4 sm:px-0">
-                <a href="#explore"
-                    class="btn-shine w-full sm:w-auto px-8 py-3.5 bg-gradient-to-r from-[#BE1A1A] to-[#1B4EF5] hover:opacity-95 text-white font-semibold text-sm rounded-xl shadow-lg shadow-blue-500/10 transition-all active:scale-[0.98]">
-                    Jelajahi Sekarang
+            
+            <div class="reveal-right pt-4 flex flex-col sm:flex-row items-center justify-center gap-4 px-4 sm:px-0">
+                <a href="#explore" class="group relative w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-[#BE1A1A] via-purple-600 to-[#1B4EF5] text-white font-bold text-sm rounded-xl shadow-xl shadow-purple-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/40 hover:scale-105 active:scale-95 overflow-hidden">
+                    <span class="relative z-10 flex items-center justify-center gap-2">
+                        Mulai Jelajahi Sekarang
+                        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                        </svg>
+                    </span>
+                    <span class="absolute inset-0 bg-gradient-to-r from-red-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                 </a>
-                <a href="#about"
-                    class="w-full sm:w-auto px-8 py-3.5 bg-white/80 hover:bg-slate-100 border border-slate-200/60 text-slate-600 font-semibold text-sm rounded-xl transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5">
-                    Pelajari Konsep
+                <a href="#about" class="w-full sm:w-auto px-8 py-4 bg-white hover:bg-slate-50 border-2 border-slate-200 hover:border-[#1B4EF5] text-slate-700 hover:text-[#1B4EF5] font-bold text-sm rounded-xl transition-all shadow-md hover:shadow-xl hover:-translate-y-1">
+                    Tentang Kampus
                 </a>
             </div>
 
-            <div class="reveal-scale mt-4 grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-3xl mx-auto">
-                <div class="card-hover-effect rounded-2xl border border-slate-200/70 bg-white/80 px-4 py-3 text-left shadow-sm">
-                    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">Virtual Tour</p>
-                    <p class="mt-1 text-sm font-bold text-slate-900">360° immersive view</p>
+            <div class="reveal-scale mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto">
+                <div class="card-hover-effect group rounded-2xl border-2 border-red-100 bg-gradient-to-br from-red-50 to-white px-5 py-4 text-left shadow-lg hover:shadow-xl hover:border-[#BE1A1A] transition-all duration-300">
+                    <div class="flex items-center gap-3">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br from-[#BE1A1A] to-red-600 flex items-center justify-center text-white font-bold text-lg shadow-md">
+                            🎯
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold uppercase tracking-wider text-red-600">Didirikan</p>
+                            <p class="mt-0.5 text-xl font-black text-slate-900">1985</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-hover-effect rounded-2xl border border-slate-200/70 bg-white/80 px-4 py-3 text-left shadow-sm">
-                    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">Live Info</p>
-                    <p class="mt-1 text-sm font-bold text-slate-900">Fasilitas & aktivitas</p>
+                <div class="card-hover-effect group rounded-2xl border-2 border-blue-100 bg-gradient-to-br from-blue-50 to-white px-5 py-4 text-left shadow-lg hover:shadow-xl hover:border-[#1B4EF5] transition-all duration-300">
+                    <div class="flex items-center gap-3">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br from-[#1B4EF5] to-blue-600 flex items-center justify-center text-white font-bold text-lg shadow-md">
+                            📚
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold uppercase tracking-wider text-blue-600">Program Studi</p>
+                            <p class="mt-0.5 text-xl font-black text-slate-900">4 Prodi S1</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-hover-effect rounded-2xl border border-slate-200/70 bg-white/80 px-4 py-3 text-left shadow-sm">
-                    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">Experience</p>
-                    <p class="mt-1 text-sm font-bold text-slate-900">Designed like top-tier brands</p>
+                <div class="card-hover-effect group rounded-2xl border-2 border-purple-100 bg-gradient-to-br from-purple-50 to-white px-5 py-4 text-left shadow-lg hover:shadow-xl hover:border-purple-500 transition-all duration-300">
+                    <div class="flex items-center gap-3">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br from-purple-600 to-indigo-600 flex items-center justify-center text-white font-bold text-lg shadow-md">
+                            🏆
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold uppercase tracking-wider text-purple-600">Akreditasi</p>
+                            <p class="mt-0.5 text-xl font-black text-slate-900">BAIK</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- DYNAMIC ENTERPRISE-GRADE HERO FOTO CAMPUS BANNER -->
+    <!-- HERO BANNER SECTION -->
     <section class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8 md:py-12">
         <div
-            class="reveal group relative w-full h-[250px] sm:h-[400px] md:h-[520px] rounded-2xl md:rounded-3xl overflow-hidden border border-slate-200/60 bg-slate-100 shadow-xl shadow-slate-200/40">
-            <!-- Overlay Proteksi Keterbacaan Kontras Teks -->
-            <div
-                class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent z-10 transition-opacity duration-300 group-hover:opacity-90">
+            class="reveal group relative w-full h-[280px] sm:h-[420px] md:h-[560px] rounded-3xl md:rounded-4xl overflow-hidden border-2 border-gradient-to-r from-[#BE1A1A] via-purple-600 to-[#1B4EF5] bg-slate-100 shadow-2xl shadow-purple-500/20">
+            <!-- Gradient Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/30 to-transparent z-10 transition-opacity duration-500 group-hover:opacity-95">
             </div>
 
-            <!-- Foto Utama Kampus -->
+            <!-- Banner Image -->
             <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1600"
-                class="absolute inset-0 w-full h-full object-cover z-0 transform transition-transform duration-700 ease-out group-hover:scale-105"
-                alt="Main University Campus Complex Layout">
+                class="absolute inset-0 w-full h-full object-cover z-0 transform transition-transform duration-800 ease-out group-hover:scale-110"
+                alt="Campus Main Complex">
 
-            <!-- Elemen Teks Informasi Di Atas Banner -->
-            <div
-                class="absolute bottom-0 left-0 right-0 p-6 sm:p-10 z-20 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-                <div class="space-y-1">
-                    <span
-                        class="px-2.5 py-1 text-[10px] font-bold bg-white/20 text-white backdrop-blur-sm rounded uppercase tracking-widest">Main
-                        Campus Hub</span>
-                    <h2 class="text-xl sm:text-3xl font-black text-white tracking-tight">Gedung Rektorat & Pusat
-                        Pembelajaran Utama</h2>
-                    <p class="text-xs sm:text-sm text-slate-200/90 max-w-xl font-medium">Titik awal eksplorasi virtual
-                        360 derajat yang menghubungkan zona akademik, inovasi riset, dan area kemahasiswaan.
+            <!-- Info Content -->
+            <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-10 z-20 flex flex-col sm:flex-row sm:items-end justify-between gap-6">
+                <div class="space-y-3">
+                    <span class="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold bg-gradient-to-r from-[#BE1A1A] to-[#1B4EF5] text-white backdrop-blur-sm rounded-lg shadow-lg">
+                        🏛️ Gedung Rektorat & Pusat Pembelajaran Utama
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl md:text-5xl font-black text-white tracking-tight">
+                        Pusat Kepemimpinan & Akademik ITB Riau Pesisir
+                    </h2>
+                    <p class="text-sm sm:text-base text-slate-200/95 max-w-xl font-medium">
+                        Gerbang utama kampus yang menghubungkan zona akademik, pusat inovasi, dan area kemahasiswaan.
+                        Bangunan ikonik dengan desain modern yang mencerminkan identitas kampus sebagai pusat unggulan teknologi.
                     </p>
                 </div>
-                <div class="shrink-0">
+                
+                <div class="shrink-0 space-y-3">
                     <a href="#explore"
-                        class="inline-flex items-center gap-2 px-5 py-3 text-xs font-bold bg-white text-slate-900 rounded-xl shadow-lg hover:bg-slate-50 transition-colors">
-                        Buka Mode Tur 360° 🔄
+                        class="inline-flex items-center gap-2 px-6 py-4 text-sm font-bold bg-white text-slate-900 rounded-xl shadow-2xl hover:bg-slate-50 hover:scale-105 transition-all duration-300">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5m-5-5l-5 5"></path>
+                        </svg>
+                        Buka Mode Tur 360°
                     </a>
-                </div>
-                <div
-                    class="glass-card float-slow absolute top-4 right-4 sm:top-6 sm:right-6 rounded-2xl border border-white/30 bg-white/20 px-4 py-3 text-left text-white shadow-lg">
-                    <p class="text-[10px] uppercase tracking-[0.3em] text-slate-200">Now exploring</p>
-                    <p class="mt-1 text-sm font-semibold">Ruang Kolaborasi & Inovasi</p>
+                    
+                    <div class="glass-card float-slow absolute top-4 right-4 sm:top-6 sm:right-6 rounded-2xl border-2 border-white/30 bg-white/20 backdrop-blur-xl px-4 py-3 text-left text-white shadow-2xl">
+                        <p class="text-[10px] uppercase tracking-[0.3em] text-slate-200">Lokasi Saat Ini</p>
+                        <p class="mt-1 text-sm font-bold">Gedung Rektorat</p>
+                        <div class="mt-2 w-full bg-white/30 rounded-full h-1 overflow-hidden">
+                            <div class="bg-gradient-to-r from-[#BE1A1A] to-[#1B4EF5] h-full" style="width: 75%"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -309,36 +345,55 @@
     <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
         <!-- ==================== CORPORATE ABOUT INFORMATION HUB ==================== -->
         <section id="about"
-            class="reveal bg-white border border-slate-200/80 rounded-3xl p-6 md:p-12 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.03)] space-y-10 scroll-mt-24 w-full">
+            class="reveal bg-gradient-to-br from-white via-slate-50 to-white border-2 border-slate-200/80 rounded-3xl p-6 md:p-12 shadow-2xl shadow-slate-200/50 space-y-10 scroll-mt-24 w-full">
 
             <!-- Section Header -->
-            <div class="max-w-3xl space-y-2">
+            <div class="max-w-3xl space-y-4">
                 <span
-                    class="inline-flex items-center px-3 py-1 text-[11px] font-bold tracking-wider uppercase bg-blue-50 text-[#1B4EF5] rounded-md border border-blue-100/50">
-                    Tentang Platform & Institusi
+                    class="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-50 to-blue-50 text-slate-700 rounded-lg border-2 border-red-100/50 shadow-md">
+                    <span class="flex h-2 w-2 relative">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-gradient-to-r from-[#BE1A1A] to-[#1B4EF5]"></span>
+                    </span>
+                    Tentang Institut Teknologi & Bisnis Riau Pesisir
                 </span>
-                <h2 class="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                    Sekilas Mengenai Kampus Kami
+                <h2 class="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">
+                    Kenali Lebih Dekat <span class="bg-gradient-to-r from-[#BE1A1A] to-red-600 bg-clip-text text-transparent">Kampus</span> <span class="bg-gradient-to-r from-[#1B4EF5] to-blue-600 bg-clip-text text-transparent">Kami</span>
                 </h2>
-                <p class="text-slate-500 text-xs sm:text-sm font-medium leading-relaxed max-w-2xl">
-                    Platform ini tidak hanya menawarkan visual imersif, tetapi juga merangkum rekam jejak, identitas,
-                    serta
-                    komitmen masa depan institusi dalam satu ruang digital yang terintegrasi.
+                <p class="text-slate-600 text-sm sm:text-base font-medium leading-relaxed max-w-2xl">
+                    <strong class="text-[#BE1A1A]">Institut Teknologi dan Bisnis Riau Pesisir</strong> adalah pusat pendidikan tinggi yang berfokus pada 
+                    <strong class="text-[#1B4EF5]">teknologi</strong>, <strong class="text-[#1B4EF5]">inovasi</strong>, dan <strong class="text-[#1B4EF5]">bisnis digital</strong>.
+                    Dengan sejarah panjang sejak 1985, kami terus berkembang menjadi institusi yang relevan dengan kebutuhan industri modern.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                <div class="card-hover-effect rounded-2xl border border-slate-200/70 bg-slate-50/70 p-4">
-                    <p class="text-2xl font-black text-slate-900">12+</p>
-                    <p class="text-xs font-medium text-slate-500">Area interaktif yang siap dijelajahi</p>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div class="card-hover-effect rounded-2xl border-2 border-red-100 bg-gradient-to-br from-red-50 to-white p-5 shadow-lg hover:shadow-xl hover:border-[#BE1A1A] transition-all duration-300">
+                    <div class="flex items-center gap-3 mb-2">
+                        <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-[#BE1A1A] to-red-600 flex items-center justify-center text-white font-bold text-xl shadow-md">
+                            🎯
+                        </div>
+                    </div>
+                    <p class="text-3xl font-black text-slate-900">40+</p>
+                    <p class="text-sm font-medium text-slate-600 mt-1">Tahun pengalaman mendidik generasi teknologi</p>
                 </div>
-                <div class="card-hover-effect rounded-2xl border border-slate-200/70 bg-slate-50/70 p-4">
-                    <p class="text-2xl font-black text-slate-900">98%</p>
-                    <p class="text-xs font-medium text-slate-500">Kesan visual modern yang terasa premium</p>
+                <div class="card-hover-effect rounded-2xl border-2 border-blue-100 bg-gradient-to-br from-blue-50 to-white p-5 shadow-lg hover:shadow-xl hover:border-[#1B4EF5] transition-all duration-300">
+                    <div class="flex items-center gap-3 mb-2">
+                        <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-[#1B4EF5] to-blue-600 flex items-center justify-center text-white font-bold text-xl shadow-md">
+                            🏆
+                        </div>
+                    </div>
+                    <p class="text-3xl font-black text-slate-900">BAIK</p>
+                    <p class="text-sm font-medium text-slate-600 mt-1">Akreditasi institusi dengan standar berkualitas</p>
                 </div>
-                <div class="card-hover-effect rounded-2xl border border-slate-200/70 bg-slate-50/70 p-4">
-                    <p class="text-2xl font-black text-slate-900">24/7</p>
-                    <p class="text-xs font-medium text-slate-500">Access untuk melihat informasi fasilitas</p>
+                <div class="card-hover-effect rounded-2xl border-2 border-purple-100 bg-gradient-to-br from-purple-50 to-white p-5 shadow-lg hover:shadow-xl hover:border-purple-500 transition-all duration-300">
+                    <div class="flex items-center gap-3 mb-2">
+                        <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-600 to-indigo-600 flex items-center justify-center text-white font-bold text-xl shadow-md">
+                            📚
+                        </div>
+                    </div>
+                    <p class="text-3xl font-black text-slate-900">4 Program Studi</p>
+                    <p class="text-sm font-medium text-slate-600 mt-1">Program Studi S1 terakreditasi dan unggulan</p>
                 </div>
             </div>
 
@@ -346,147 +401,149 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
 
                 <!-- 1. SEJARAH KAMPUS -->
-                <div
-                    class="group card-hover-effect p-5 rounded-2xl border border-slate-200/60 bg-slate-50/40 hover:bg-white shadow-2xs hover:shadow-md hover:border-slate-300/80 transition-all duration-300 flex flex-col justify-between">
+                <a href="sejarah.html"
+                    class="group card-hover-effect p-6 rounded-2xl border-2 border-red-100 bg-gradient-to-br from-red-50 to-white hover:from-red-100 hover:to-red-50 shadow-lg hover:shadow-2xl hover:border-[#BE1A1A] transition-all duration-300 flex flex-col justify-between">
                     <div class="space-y-4">
                         <div
-                            class="w-10 h-10 rounded-xl bg-red-50 text-[#BE1A1A] flex items-center justify-center text-lg font-bold group-hover:scale-105 transition-transform shadow-3xs">
+                            class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#BE1A1A] to-red-600 flex items-center justify-center text-2xl font-bold group-hover:scale-110 group-hover:rotate-6 transition-all shadow-lg">
                             📜
                         </div>
-                        <div class="space-y-1.5">
+                        <div class="space-y-2">
                             <h3
-                                class="font-extrabold text-slate-900 text-sm sm:text-base group-hover:text-[#BE1A1A] transition-colors">
+                                class="font-black text-slate-900 text-base sm:text-lg group-hover:text-[#BE1A1A] transition-colors">
                                 Sejarah Kampus
                             </h3>
-                            <p class="text-[11px] sm:text-xs text-slate-500 font-medium leading-relaxed">
-                                Berdiri sejak puluhan tahun lalu dari sebuah akademi kecil, kini bertransformasi menjadi
-                                salah satu institut teknologi dan bisnis terkemuka yang melahirkan ribuan inovator di
-                                era
-                                digital.
+                            <p class="text-xs sm:text-sm text-slate-600 font-medium leading-relaxed">
+                                Dari ATMI Dumai tahun 1985 hingga menjadi Institut Teknologi dan Bisnis Riau Pesisir. Perjalanan 40 tahun penuh dedikasi.
                             </p>
                         </div>
                     </div>
-                    <div class="pt-4 border-t border-slate-100 mt-4">
+                    <div class="pt-4 border-t-2 border-red-100 mt-4">
                         <span
-                            class="text-[11px] font-bold text-slate-400 group-hover:text-slate-700 flex items-center gap-1 transition-colors">
-                            Pelajari Linimasa <span
-                                class="transform group-hover:translate-x-1 transition-transform">→</span>
+                            class="text-xs font-bold text-[#BE1A1A] group-hover:text-red-700 flex items-center gap-2 transition-colors">
+                            Pelajari Linimasa 
+                            <svg class="w-4 h-4 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                            </svg>
                         </span>
                     </div>
-                </div>
+                </a>
 
                 <!-- 2. PROFIL KAMPUS -->
-                <div
-                    class="group card-hover-effect p-5 rounded-2xl border border-slate-200/60 bg-slate-50/40 hover:bg-white shadow-2xs hover:shadow-md hover:border-slate-300/80 transition-all duration-300 flex flex-col justify-between">
+                <a href="profil.html"
+                    class="group card-hover-effect p-6 rounded-2xl border-2 border-blue-100 bg-gradient-to-br from-blue-50 to-white hover:from-blue-100 hover:to-blue-50 shadow-lg hover:shadow-2xl hover:border-[#1B4EF5] transition-all duration-300 flex flex-col justify-between">
                     <div class="space-y-4">
                         <div
-                            class="w-10 h-10 rounded-xl bg-blue-50 text-[#1B4EF5] flex items-center justify-center text-lg font-bold group-hover:scale-105 transition-transform shadow-3xs">
+                            class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#1B4EF5] to-blue-600 flex items-center justify-center text-2xl font-bold group-hover:scale-110 group-hover:rotate-6 transition-all shadow-lg">
                             🏢
                         </div>
-                        <div class="space-y-1.5">
+                        <div class="space-y-2">
                             <h3
-                                class="font-extrabold text-slate-900 text-sm sm:text-base group-hover:text-[#1B4EF5] transition-colors">
+                                class="font-black text-slate-900 text-base sm:text-lg group-hover:text-[#1B4EF5] transition-colors">
                                 Profil Kampus
                             </h3>
-                            <p class="text-[11px] sm:text-xs text-slate-500 font-medium leading-relaxed">
-                                Menghadirkan ekosistem pendidikan modern dengan akreditasi unggul. Didukung oleh ratusan
-                                dosen praktisi industri, laboratorium mutakhir, serta jaringan korporasi global yang
-                                luas.
+                            <p class="text-xs sm:text-sm text-slate-600 font-medium leading-relaxed">
+                                Institusi dengan 4 Program Studi S1 terakreditasi: Teknik Industri, Teknik Informatika, Teknik Sipil, dan Bisnis Digital.
                             </p>
                         </div>
                     </div>
-                    <div class="pt-4 border-t border-slate-100 mt-4">
+                    <div class="pt-4 border-t-2 border-blue-100 mt-4">
                         <span
-                            class="text-[11px] font-bold text-slate-400 group-hover:text-slate-700 flex items-center gap-1 transition-colors">
-                            Lihat Fakta & Data <span
-                                class="transform group-hover:translate-x-1 transition-transform">→</span>
+                            class="text-xs font-bold text-[#1B4EF5] group-hover:text-blue-700 flex items-center gap-2 transition-colors">
+                            Lihat Fakta & Data
+                            <svg class="w-4 h-4 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                            </svg>
                         </span>
                     </div>
-                </div>
+                </a>
 
                 <!-- 3. PRESTASI -->
-                <div
-                    class="group card-hover-effect p-5 rounded-2xl border border-slate-200/60 bg-slate-50/40 hover:bg-white shadow-2xs hover:shadow-md hover:border-slate-300/80 transition-all duration-300 flex flex-col justify-between">
+                <a href="prestasi.html"
+                    class="group card-hover-effect p-6 rounded-2xl border-2 border-amber-100 bg-gradient-to-br from-amber-50 to-white hover:from-amber-100 hover:to-amber-50 shadow-lg hover:shadow-2xl hover:border-amber-500 transition-all duration-300 flex flex-col justify-between">
                     <div class="space-y-4">
                         <div
-                            class="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-lg font-bold group-hover:scale-105 transition-transform shadow-3xs">
+                            class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500 to-yellow-600 flex items-center justify-center text-2xl font-bold group-hover:scale-110 group-hover:rotate-6 transition-all shadow-lg">
                             🏆
                         </div>
-                        <div class="space-y-1.5">
+                        <div class="space-y-2">
                             <h3
-                                class="font-extrabold text-slate-900 text-sm sm:text-base group-hover:text-amber-600 transition-colors">
+                                class="font-black text-slate-900 text-base sm:text-lg group-hover:text-amber-600 transition-colors">
                                 Prestasi Gemilang
                             </h3>
-                            <p class="text-[11px] sm:text-xs text-slate-500 font-medium leading-relaxed">
-                                Konsisten menduduki peringkat teratas dalam kompetisi IT nasional, memenangkan hibah
-                                riset
-                                internasional, serta mencetak talenta-talenta juara di berbagai bidang kompetensi.
+                            <p class="text-xs sm:text-sm text-slate-600 font-medium leading-relaxed">
+                                Konsisten meraih penghargaan dalam kompetisi IT nasional, hibah riset, dan mencetak talenta juara di berbagai bidang.
                             </p>
                         </div>
                     </div>
-                    <div class="pt-4 border-t border-slate-100 mt-4">
+                    <div class="pt-4 border-t-2 border-amber-100 mt-4">
                         <span
-                            class="text-[11px] font-bold text-slate-400 group-hover:text-slate-700 flex items-center gap-1 transition-colors">
-                            Daftar Penghargaan <span
-                                class="transform group-hover:translate-x-1 transition-transform">→</span>
+                            class="text-xs font-bold text-amber-600 group-hover:text-amber-700 flex items-center gap-2 transition-colors">
+                            Daftar Penghargaan
+                            <svg class="w-4 h-4 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                            </svg>
                         </span>
                     </div>
-                </div>
+                </a>
 
                 <!-- 4. VISI & MISI -->
-                <div
-                    class="group card-hover-effect p-5 rounded-2xl border border-slate-200/60 bg-slate-100/70 hover:bg-white shadow-2xs hover:shadow-md hover:border-slate-300/80 transition-all duration-300 flex flex-col justify-between">
+                <a href="visimisi.html"
+                    class="group card-hover-effect p-6 rounded-2xl border-2 border-emerald-100 bg-gradient-to-br from-emerald-50 to-white hover:from-emerald-100 hover:to-emerald-50 shadow-lg hover:shadow-2xl hover:border-emerald-500 transition-all duration-300 flex flex-col justify-between">
                     <div class="space-y-4">
                         <div
-                            class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-lg font-bold group-hover:scale-105 transition-transform shadow-3xs">
+                            class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-green-600 flex items-center justify-center text-2xl font-bold group-hover:scale-110 group-hover:rotate-6 transition-all shadow-lg">
                             🎯
                         </div>
                         <div class="space-y-2">
                             <h3
-                                class="font-extrabold text-slate-900 text-sm sm:text-base group-hover:text-emerald-600 transition-colors">
+                                class="font-black text-slate-900 text-base sm:text-lg group-hover:text-emerald-600 transition-colors">
                                 Visi & Misi
                             </h3>
-                            <div class="space-y-1.5 text-[11px] text-slate-500 font-medium leading-relaxed">
-                                <p class="font-bold text-slate-700">Visi:</p>
-                                <p class="italic mb-1.5 text-slate-600">"Menjadi pusat unggulan teknologi global yang
-                                    humanis."</p>
-                                <p class="font-bold text-slate-700">Misi:</p>
-                                <p class="flex items-center gap-1"><span class="text-emerald-500">•</span> Riset
-                                    aplikatif.</p>
-                                <p class="flex items-center gap-1"><span class="text-emerald-500">•</span> Talenta
-                                    siap kerja.</p>
-                            </div>
+                            <p class="text-xs sm:text-sm text-slate-600 font-medium leading-relaxed">
+                                <span class="font-bold text-emerald-600">"Menjadi pusat unggulan teknologi global yang humanis"</span> dengan fokus pada riset aplikatif dan talenta siap kerja.
+                            </p>
                         </div>
                     </div>
-                    <div class="pt-4 border-t border-slate-200 mt-4">
+                    <div class="pt-4 border-t-2 border-emerald-100 mt-4">
                         <span
-                            class="text-[11px] font-bold text-slate-400 group-hover:text-slate-700 flex items-center gap-1 transition-colors">
-                            Selengkapnya <span
-                                class="transform group-hover:translate-x-1 transition-transform">→</span>
+                            class="text-xs font-bold text-emerald-600 group-hover:text-emerald-700 flex items-center gap-2 transition-colors">
+                            Selengkapnya
+                            <svg class="w-4 h-4 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                            </svg>
                         </span>
                     </div>
-                </div>
+                </a>
 
             </div>
         </section>
 
     </div>
     <!-- EXPLORE SECTION -->
-    <section id="explore" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-slate-50 border-t border-slate-100 w-full">
+    <section id="explore" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 via-white to-slate-50 border-t-2 border-slate-200 w-full">
         <div class="max-w-7xl mx-auto space-y-12">
-            <div class="reveal text-center space-y-3 max-w-2xl mx-auto">
-                <p class="text-xs font-bold text-[#1B4EF5] tracking-wider uppercase">Inti Fitur Utama</p>
-                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">Pilih Destinasi
-                    Eksplorasi Virtualmu</h2>
-                <p class="text-slate-500 text-xs sm:text-sm font-medium">Gunakan fitur Virtual Tour 360° dilengkapi
-                    Ikon Interaktif kontekstual untuk mengamati detail ruangan.</p>
+            <div class="reveal text-center space-y-4 max-w-3xl mx-auto">
+                <div class="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold bg-gradient-to-r from-[#1B4EF5]/10 to-[#BE1A1A]/10 text-slate-700 rounded-lg border-2 border-blue-100/50 shadow-md">
+                    <span class="flex h-2 w-2 relative">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-gradient-to-r from-[#1B4EF5] to-[#BE1A1A]"></span>
+                    </span>
+                    Fitur Virtual Tour 360°
+                </div>
+                <h2 class="text-3xl md:text-5xl font-black text-slate-900 tracking-tight">
+                    Eksplorasi <span class="bg-gradient-to-r from-[#1B4EF5] to-blue-600 bg-clip-text text-transparent">Destinasi</span> Kampus Mu
+                </h2>
+                <p class="text-slate-600 text-sm sm:text-base font-medium">
+                    Gunakan fitur Virtual Tour 360° dengan ikon interaktif kontekstual untuk mengamati detail fasilitas kampus secara langsung.
+                </p>
             </div>
 
             <!-- Bento Grid Layout (True Multi-Ratio Support) -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- CARD 1: LAB KOMPUTER -->
                 <a href="/explore/lab"
-                    class="reveal card-hover-effect group relative sm:col-span-2 overflow-hidden rounded-2xl border border-slate-200/80 bg-white p-6 flex flex-col justify-between h-64 hover:border-blue-500/40 transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-1">
+                    class="reveal card-hover-effect group relative sm:col-span-2 overflow-hidden rounded-3xl border-2 border-blue-100 bg-white p-6 flex flex-col justify-between h-72 hover:border-[#1B4EF5] transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-2">
                     <div
                         class="absolute inset-0 bg-gradient-to-t from-white via-white/10 to-transparent opacity-90 z-0">
                     </div>
@@ -495,74 +552,91 @@
                         alt="">
                     <div class="z-10 flex justify-between items-start">
                         <span
-                            class="px-2.5 py-1 text-[10px] font-bold bg-blue-50 text-[#1B4EF5] border border-blue-100 rounded uppercase tracking-wider">Terpopuler</span>
+                            class="px-3 py-1 text-[10px] font-bold bg-gradient-to-r from-[#1B4EF5] to-blue-600 text-white border-2 border-blue-200 rounded shadow-lg uppercase tracking-wider">Terpopuler</span>
                         <span
-                            class="text-slate-400 group-hover:text-slate-800 transition-transform group-hover:translate-x-1">→</span>
+                            class="text-slate-400 group-hover:text-[#1B4EF5] transition-transform group-hover:translate-x-2 group-hover:scale-110">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                            </svg>
+                        </span>
                     </div>
-                    <div class="z-10 space-y-1">
+                    <div class="z-10 space-y-2">
                         <h3
-                            class="font-extrabold text-lg md:text-xl text-slate-900 group-hover:text-[#1B4EF5] transition">
-                            Laboratorium Komputer 01</h3>
-                        <p class="text-xs text-slate-500 font-medium">Cek spesifikasi Lenovo ThinkCentre, RTX 3060, dan
-                            software terinstall secara real-time.</p>
+                            class="font-black text-xl md:text-2xl text-slate-900 group-hover:text-[#1B4EF5] transition">
+                            Laboratorium Komputer 01
+                        </h3>
+                        <p class="text-xs text-slate-600 font-medium">Cek spesifikasi Lenovo ThinkCentre, RTX 3060, dan software terinstall secara real-time.</p>
                     </div>
                 </a>
 
                 <!-- CARD 2: PERPUSTAKAAN -->
-                <div
-                    class="reveal card-hover-effect group overflow-hidden rounded-2xl border border-slate-200/80 bg-white p-6 flex flex-col justify-between h-64 hover:border-indigo-500/40 transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-1">
+                <a href="explore.html"
+                    class="reveal card-hover-effect group overflow-hidden rounded-3xl border-2 border-indigo-100 bg-white p-6 flex flex-col justify-between h-72 hover:border-indigo-600 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-2">
                     <div class="flex justify-between items-start">
                         <span
-                            class="px-2.5 py-1 text-[10px] font-bold bg-indigo-50 text-indigo-600 border border-indigo-100 rounded uppercase tracking-wider">Koleksi
-                            Buku</span>
+                            class="px-3 py-1 text-[10px] font-bold bg-gradient-to-r from-indigo-600 to-purple-600 text-white border-2 border-indigo-200 rounded shadow-lg uppercase tracking-wider">Koleksi Buku</span>
+                        <span
+                            class="text-slate-400 group-hover:text-indigo-600 transition-transform group-hover:translate-x-2 group-hover:scale-110">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                            </svg>
+                        </span>
                     </div>
-                    <div class="space-y-1">
-                        <h3 class="font-extrabold text-lg text-slate-900 group-hover:text-indigo-600 transition">
+                    <div class="space-y-2">
+                        <h3 class="font-black text-xl text-slate-900 group-hover:text-indigo-600 transition">
                             Perpustakaan Pusat</h3>
-                        <p class="text-xs text-slate-500 font-medium">Eksplorasi koleksi digital, ruang diskusi, dan
-                            jam operasional layanan umum.</p>
+                        <p class="text-xs text-slate-600 font-medium">Eksplorasi koleksi digital, ruang diskusi, dan jam operasional layanan umum.</p>
                     </div>
-                </div>
+                </a>
 
                 <!-- CARD 3: KANTIN -->
-                <div
-                    class="reveal card-hover-effect group overflow-hidden rounded-2xl border border-slate-200/80 bg-white p-6 flex flex-col justify-between h-60 hover:border-amber-500/40 transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-1">
+                <a href="explore.html"
+                    class="reveal card-hover-effect group overflow-hidden rounded-3xl border-2 border-amber-100 bg-white p-6 flex flex-col justify-between h-64 hover:border-amber-600 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-2">
                     <div class="flex justify-between items-start">
                         <span
-                            class="px-2.5 py-1 text-[10px] font-bold bg-amber-50 text-amber-700 border border-amber-100 rounded uppercase tracking-wider">Culinary
-                            Area</span>
+                            class="px-3 py-1 text-[10px] font-bold bg-gradient-to-r from-amber-600 to-orange-600 text-white border-2 border-amber-200 rounded shadow-lg uppercase tracking-wider">Culinary</span>
+                        <span
+                            class="text-slate-400 group-hover:text-amber-600 transition-transform group-hover:translate-x-2 group-hover:scale-110">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                            </svg>
+                        </span>
                     </div>
-                    <div class="space-y-1">
-                        <h3 class="font-extrabold text-lg text-slate-900 group-hover:text-amber-600 transition">Kantin
-                            Kampus</h3>
-                        <p class="text-xs text-slate-500 font-medium">Lihat ketersediaan tenant, kapasitas tempat
-                            duduk, dan metode pembayaran digital.</p>
+                    <div class="space-y-2">
+                        <h3 class="font-black text-xl text-slate-900 group-hover:text-amber-600 transition">Kantin Kampus</h3>
+                        <p class="text-xs text-slate-600 font-medium">Lihat ketersediaan tenant, kapasitas tempat duduk, dan metode pembayaran digital.</p>
                     </div>
-                </div>
+                </a>
 
                 <!-- CARD 4: MUSHOLA -->
-                <div
-                    class="reveal card-hover-effect group overflow-hidden rounded-2xl border border-slate-200/80 bg-white p-6 flex flex-col justify-between h-60 hover:border-emerald-500/40 transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-1">
+                <a href="explore.html"
+                    class="reveal card-hover-effect group overflow-hidden rounded-3xl border-2 border-emerald-100 bg-white p-6 flex flex-col justify-between h-64 hover:border-emerald-600 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-2">
                     <div class="flex justify-between items-start">
                         <span
-                            class="px-2.5 py-1 text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-100 rounded uppercase tracking-wider">Fasilitas
-                            Umum</span>
+                            class="px-3 py-1 text-[10px] font-bold bg-gradient-to-r from-emerald-600 to-green-600 text-white border-2 border-emerald-200 rounded shadow-lg uppercase tracking-wider">Fasilitas</span>
+                        <span
+                            class="text-slate-400 group-hover:text-emerald-600 transition-transform group-hover:translate-x-2 group-hover:scale-110">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                            </svg>
+                        </span>
                     </div>
-                    <div class="space-y-1">
-                        <h3 class="font-extrabold text-lg text-slate-900 group-hover:text-emerald-600 transition">
+                    <div class="space-y-2">
+                        <h3 class="font-black text-xl text-slate-900 group-hover:text-emerald-600 transition">
                             Mushola Ibnu Sina</h3>
-                        <p class="text-xs text-slate-500 font-medium">Informasi kapasitas jamaah, sirkulasi udara,
-                            serta kenyamanan area wudhu.</p>
+                        <p class="text-xs text-slate-600 font-medium">Informasi kapasitas jamaah, sirkulasi udara, serta kenyamanan area wudhu.</p>
                     </div>
-                </div>
+                </a>
 
                 <!-- CARD 5: COMING SOON -->
                 <div
-                    class="reveal group overflow-hidden rounded-2xl border border-dashed border-slate-200 bg-slate-100/60 p-6 flex flex-col justify-center items-center text-center h-60">
-                    <div class="space-y-1">
-                        <p class="text-sm font-bold text-slate-500">Gedung Kuliah & Area Lapangan</p>
-                        <p class="text-xs text-slate-400 max-w-[200px] font-medium">Sedang dikembangkan untuk fase
-                            pembaruan berikutnya.</p>
+                    class="reveal group overflow-hidden rounded-3xl border-2 border-dashed border-slate-300 bg-gradient-to-br from-slate-100 to-slate-50 p-6 flex flex-col justify-center items-center text-center h-64 hover:border-slate-400 transition-all duration-300">
+                    <div class="space-y-3">
+                        <div class="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-slate-300 to-slate-400 flex items-center justify-center text-3xl">
+                            ✨
+                        </div>
+                        <p class="text-base font-black text-slate-700">Gedung Kuliah & Lapangan</p>
+                        <p class="text-xs text-slate-500 max-w-[200px] font-medium">Sedang dikembangkan untuk fase pembaruan berikutnya.</p>
                     </div>
                 </div>
             </div>
@@ -570,23 +644,58 @@
     </section>
 
     <!-- CONTACT SECTION -->
-    <section id="contact" class="py-16 px-4 max-w-4xl mx-auto w-full text-center border-t border-slate-100">
+    <section id="contact" class="py-16 px-4 max-w-5xl mx-auto w-full text-center border-t-2 border-slate-200">
         <div
-            class="reveal space-y-6 rounded-3xl border border-slate-200/70 bg-gradient-to-br from-white to-slate-50 px-6 py-10 shadow-sm">
-            <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900">Punya Pertanyaan Seputar Campus Vista?</h2>
-            <p class="text-xs text-slate-500 max-w-md mx-auto font-medium">Kami mengemas pusat bantuan dan kontak resmi
-                universitas mengikuti keselarasan pengalaman digital modern platform ini.</p>
-            <div
-                class="pt-2 flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 text-xs font-bold text-slate-500">
-                <a href="#" class="hover:text-slate-900 transition">📧 info@universitas.ac.id</a>
-                <a href="#" class="hover:text-slate-900 transition">📞 (021) 8899-7766</a>
-                <a href="#" class="hover:text-slate-900 transition">📍 Lokasi Pusat Utama</a>
+            class="reveal space-y-8 rounded-3xl border-2 border-slate-200/70 bg-gradient-to-br from-white via-slate-50 to-white px-6 py-12 shadow-2xl">
+            <div class="space-y-4">
+                <div class="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold bg-gradient-to-r from-red-50 to-blue-50 text-slate-700 rounded-lg border-2 border-red-100/50 shadow-md">
+                    <span class="flex h-2 w-2 relative">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-gradient-to-r from-[#BE1A1A] to-[#1B4EF5]"></span>
+                    </span>
+                    Hubungi Kami
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-black text-slate-900">
+                    Ada Pertanyaan Seputar <span class="bg-gradient-to-r from-[#BE1A1A] to-red-600 bg-clip-text text-transparent">Campus</span> <span class="bg-gradient-to-r from-[#1B4EF5] to-blue-600 bg-clip-text text-transparent">Vista</span>?
+                </h2>
+                <p class="text-sm text-slate-600 max-w-2xl mx-auto font-medium">
+                    Tim kami siap membantu Anda dengan informasi lengkap tentang kampus, program studi, dan fasilitas yang tersedia.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
+                <a href="mailto:info@itbriaupesisir.ac.id" class="card-hover-effect group p-5 rounded-2xl border-2 border-red-100 bg-gradient-to-br from-red-50 to-white hover:border-[#BE1A1A] shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div class="w-12 h-12 mx-auto rounded-xl bg-gradient-to-br from-[#BE1A1A] to-red-600 flex items-center justify-center text-white text-2xl mb-3 group-hover:scale-110 transition-transform shadow-md">
+                        📧
+                    </div>
+                    <p class="text-xs font-bold text-slate-900 mb-1">Email</p>
+                    <p class="text-xs text-slate-600 font-medium break-all">info@itbriaupesisir.ac.id</p>
+                </a>
+                
+                <a href="tel:+6282187654321" class="card-hover-effect group p-5 rounded-2xl border-2 border-blue-100 bg-gradient-to-br from-blue-50 to-white hover:border-[#1B4EF5] shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div class="w-12 h-12 mx-auto rounded-xl bg-gradient-to-br from-[#1B4EF5] to-blue-600 flex items-center justify-center text-white text-2xl mb-3 group-hover:scale-110 transition-transform shadow-md">
+                        📞
+                    </div>
+                    <p class="text-xs font-bold text-slate-900 mb-1">Telepon</p>
+                    <p class="text-xs text-slate-600 font-medium">(0765) 12345678</p>
+                </a>
+                
+                <a href="https://maps.google.com" target="_blank" class="card-hover-effect group p-5 rounded-2xl border-2 border-purple-100 bg-gradient-to-br from-purple-50 to-white hover:border-purple-500 shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div class="w-12 h-12 mx-auto rounded-xl bg-gradient-to-br from-purple-600 to-indigo-600 flex items-center justify-center text-white text-2xl mb-3 group-hover:scale-110 transition-transform shadow-md">
+                        📍
+                    </div>
+                    <p class="text-xs font-bold text-slate-900 mb-1">Lokasi</p>
+                    <p class="text-xs text-slate-600 font-medium">Dumai, Riau</p>
+                </a>
             </div>
         </div>
     </section>
 
-    <footer class="mt-auto border-t border-slate-100 py-6 text-center text-xs text-slate-400 bg-white font-medium">
-        <p>&copy; 2026 Campus Vista. All Rights Reserved. Prototype UI/UX Competition Edition.</p>
+    <footer class="mt-auto border-t-2 border-slate-200 py-8 text-center text-sm text-slate-500 bg-gradient-to-br from-white to-slate-50 font-medium">
+        <div class="max-w-7xl mx-auto px-4">
+            <p class="mb-2">&copy; 2026 <span class="font-bold bg-gradient-to-r from-[#BE1A1A] to-[#1B4EF5] bg-clip-text text-transparent">Campus Vista</span>. All Rights Reserved.</p>
+            <p class="text-xs text-slate-400">Prototype UI/UX Competition Edition - Institut Teknologi & Bisnis Riau Pesisir</p>
+        </div>
     </footer>
 
     <!-- JavaScript Interaktif Hamburger Menu (Dukungan Responsif Semua Rasio HP) -->
