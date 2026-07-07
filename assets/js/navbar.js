@@ -2,7 +2,7 @@
     const navbarMarkup = `
 <header class="sticky top-0 z-50 w-full px-3 sm:px-6 lg:px-8 pt-3 md:pt-4">
     <div class="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-slate-200/80 bg-white/80 px-3 py-2.5 shadow-[0_10px_35px_rgba(15,23,42,0.08)] backdrop-blur-xl transition-all duration-300 sm:px-4">
-        <a href="home.html" class="flex items-center gap-3 group">
+        <a href="index.html" class="flex items-center gap-3 group">
             <div class="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-[#BE1A1A] to-[#1B4EF5] text-sm font-black text-white shadow-sm">JK</div>
             <span class="text-base font-black tracking-tight transition-transform duration-300 group-hover:scale-[1.01] sm:text-lg">
                 <span class="text-[#BE1A1A]">JELAJAH</span>
@@ -11,7 +11,7 @@
         </a>
 
         <nav class="hidden items-center gap-1 text-[13px] font-semibold text-slate-600 md:flex" aria-label="Main navigation">
-            <a data-nav-link href="home.html" class="rounded-full px-3.5 py-2 transition-all duration-300 hover:bg-slate-100 hover:text-slate-900">Home</a>
+            <a data-nav-link href="index.html" class="rounded-full px-3.5 py-2 transition-all duration-300 hover:bg-slate-100 hover:text-slate-900">Home</a>
 
             <div class="relative id-dropdown group py-2">
                 <button type="button" data-nav-group="about" class="flex items-center gap-1 rounded-full px-3.5 py-2 transition-all duration-200 hover:bg-slate-100 hover:text-slate-900 focus:outline-none">
@@ -47,7 +47,7 @@
                 </div>
             </div>
 
-            <a data-nav-link href="home.html#contact" class="rounded-full px-3.5 py-2 transition-all duration-300 hover:bg-slate-100 hover:text-slate-900">Contact</a>
+            <a data-nav-link href="index.html#contact" class="rounded-full px-3.5 py-2 transition-all duration-300 hover:bg-slate-100 hover:text-slate-900">Contact</a>
         </nav>
 
         <div class="flex items-center gap-2 sm:gap-3">
@@ -73,7 +73,7 @@
                 </button>
             </div>
             <nav class="mt-6 space-y-4 flex flex-col text-sm font-semibold text-slate-600" aria-label="Mobile navigation">
-                <a data-nav-link href="home.html" class="rounded-full px-3.5 py-2 transition-all duration-200 hover:bg-slate-100 hover:text-slate-900">Home</a>
+                <a data-nav-link href="index.html" class="rounded-full px-3.5 py-2 transition-all duration-200 hover:bg-slate-100 hover:text-slate-900">Home</a>
                 <div>
                     <p class="text-xs text-slate-400 font-bold uppercase tracking-wider">About</p>
                     <div class="mt-2 space-y-2 pl-2">
@@ -95,7 +95,7 @@
                         <a data-nav-link data-nav-parent="explore" href="explore.html" class="block rounded-full px-3.5 py-2 transition-all duration-200 hover:bg-slate-100 hover:text-slate-900">⚽ Lapangan</a>
                     </div>
                 </div>
-                <a data-nav-link href="home.html#contact" class="rounded-full px-3.5 py-2 transition-all duration-200 hover:bg-slate-100 hover:text-slate-900">Contact</a>
+                <a data-nav-link href="index.html#contact" class="rounded-full px-3.5 py-2 transition-all duration-200 hover:bg-slate-100 hover:text-slate-900">Contact</a>
             </nav>
         </div>
     </div>
@@ -141,8 +141,8 @@
         try {
             const url = new URL(urlString, window.location.href);
             let file = url.pathname.split('/').pop().toLowerCase();
-            if (!file || file === 'index.html') {
-                file = 'home.html';
+            if (!file || file === 'home.html') {
+                file = 'index.html';
             }
             return file;
         } catch (error) {
@@ -172,8 +172,8 @@
         }
     });
 
-    if (currentPage === 'home.html') {
-        const homeLink = navLinks.find((link) => getPageSlug(link.href) === 'home.html');
+    if (currentPage === 'index.html') {
+        const homeLink = navLinks.find((link) => getPageSlug(link.href) === 'index.html');
         if (homeLink) {
             homeLink.classList.add(...activeLinkClasses);
         }

@@ -38,6 +38,81 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        .card-hover-effect {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .card-hover-effect:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .tab-btn {
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .tab-btn::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(to right, #BE1A1A, #1B4EF5);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .tab-btn:hover::after,
+        .tab-btn.active::after {
+            width: 100%;
+        }
+
+        .tab-btn.active {
+            color: #1B4EF5;
+        }
+
+        .progress-bar {
+            transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .counter {
+            transition: all 0.3s ease;
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.5s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .image-zoom {
+            transition: transform 0.5s ease;
+        }
+
+        .image-zoom:hover {
+            transform: scale(1.05);
+        }
+
+        .stat-card {
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
     </style>
 </head>
 
@@ -72,19 +147,19 @@
                     </div>
 
                     <div class="grid gap-3 sm:grid-cols-3">
-                        <div class="glow-card rounded-3xl p-4">
+                        <div class="stat-card glow-card rounded-3xl p-4">
                             <p class="text-2xl font-black text-slate-950"><span class="counter"
                                     data-target="6">0</span>
                             </p>
                             <p class="mt-1 text-sm text-slate-500">Misi utama</p>
                         </div>
-                        <div class="glow-card rounded-3xl p-4">
+                        <div class="stat-card glow-card rounded-3xl p-4">
                             <p class="text-2xl font-black text-slate-950"><span class="counter"
                                     data-target="4">0</span>
                             </p>
                             <p class="mt-1 text-sm text-slate-500">Pilar arah</p>
                         </div>
-                        <div class="glow-card rounded-3xl p-4">
+                        <div class="stat-card glow-card rounded-3xl p-4">
                             <p class="text-2xl font-black text-slate-950"><span class="counter"
                                     data-target="100">0</span>%</p>
                             <p class="mt-1 text-sm text-slate-500">Fokus pada dampak</p>
@@ -97,7 +172,7 @@
                     <div class="overflow-hidden rounded-[1.75rem] bg-slate-100">
                         <img src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?q=80&w=1200"
                             alt="Kampus modern"
-                            class="h-[420px] w-full object-cover transition duration-500 hover:scale-[1.03]" />
+                            class="image-zoom h-[420px] w-full object-cover transition duration-500 hover:scale-[1.03]" />
                     </div>
                     <div
                         class="mt-4 flex items-center justify-between rounded-2xl border border-slate-200/80 bg-slate-50 px-4 py-3 text-sm text-slate-600">
@@ -116,10 +191,10 @@
             <div class="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
                 <div class="reveal rounded-[2rem] border border-slate-200/80 bg-white/85 p-6 shadow-sm">
                     <div class="flex flex-wrap gap-2" role="tablist" aria-label="Visi Misi Tabs">
-                        <button class="tab-btn active" data-tab="visi">Visi</button>
-                        <button class="tab-btn" data-tab="misi">Misi</button>
-                        <button class="tab-btn" data-tab="tujuan">Tujuan</button>
-                        <button class="tab-btn" data-tab="nilai">Nilai</button>
+                        <button class="tab-btn active px-4 py-2 rounded-full text-sm font-semibold text-slate-600 hover:text-[#1B4EF5] transition" data-tab="visi">Visi</button>
+                        <button class="tab-btn px-4 py-2 rounded-full text-sm font-semibold text-slate-600 hover:text-[#1B4EF5] transition" data-tab="misi">Misi</button>
+                        <button class="tab-btn px-4 py-2 rounded-full text-sm font-semibold text-slate-600 hover:text-[#1B4EF5] transition" data-tab="tujuan">Tujuan</button>
+                        <button class="tab-btn px-4 py-2 rounded-full text-sm font-semibold text-slate-600 hover:text-[#1B4EF5] transition" data-tab="nilai">Nilai</button>
                     </div>
 
                     <div id="visi" class="mt-6 space-y-4">
@@ -404,6 +479,11 @@
                     const panel = document.getElementById(panelId);
                     if (panel) {
                         panel.classList.toggle('hidden', panelId !== target);
+                        if (panelId === target) {
+                            panel.classList.remove('fade-in-up');
+                            void panel.offsetWidth; // Trigger reflow
+                            panel.classList.add('fade-in-up');
+                        }
                     }
                 });
             });
