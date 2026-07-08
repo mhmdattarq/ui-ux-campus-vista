@@ -72,7 +72,7 @@
                 </div>
             </div>
 
-            <a data-nav-link href="index.html#contact" class="nav-link rounded-full px-4 py-2.5 transition-all duration-300 hover:bg-gradient-to-r hover:from-slate-100 hover:to-slate-50 hover:text-slate-900 hover:shadow-md hover:scale-105">Contact</a>
+            <a data-nav-link href="contact.html" class="nav-link rounded-full px-4 py-2.5 transition-all duration-300 hover:bg-gradient-to-r hover:from-slate-100 hover:to-slate-50 hover:text-slate-900 hover:shadow-md hover:scale-105">Contact</a>
         </nav>
 
         <div class="flex items-center gap-2 sm:gap-3">
@@ -152,7 +152,7 @@
                         </a>
                     </div>
                 </div>
-                <a data-nav-link href="index.html#contact" class="nav-link-mobile rounded-xl px-4 py-3 transition-all duration-200 hover:bg-gradient-to-r hover:from-slate-100 hover:to-slate-50 hover:text-slate-900 hover:shadow-sm hover:scale-[1.02]">Contact</a>
+                <a data-nav-link href="contact.html" class="nav-link-mobile rounded-xl px-4 py-3 transition-all duration-200 hover:bg-gradient-to-r hover:from-slate-100 hover:to-slate-50 hover:text-slate-900 hover:shadow-sm hover:scale-[1.02]">Contact</a>
             </nav>
         </div>
         <div class="pt-6 border-t border-slate-200/80">
