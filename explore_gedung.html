@@ -25,6 +25,7 @@
     </script>
 
     <link rel="stylesheet" href="assets/css/landing.css">
+    <link rel="stylesheet" href="assets/css/laboratorium.css">
 
     <style>
         html { scroll-behavior: smooth; scroll-padding-top: 5.5rem; }
@@ -95,39 +96,83 @@
     <div id="navbar" class="animate-slideDown"></div>
     <script src="assets/js/navbar.js"></script>
 
-    <!-- BREADCRUMBS -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-2">
-        <nav class="flex text-sm text-slate-500">
+    <!-- HERO - Full Bleed + Wave Divider -->
+  <section class="hero-full text-white">
+    <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=1920&h=1080&fit=crop');"></div>
+    <div class="hero-overlay-center"></div>
+
+    <div class="hero-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto text-center">
+        <!-- Breadcrumb -->
+        <div class="reveal mb-6">
+          <nav class="flex text-sm text-white/70 justify-center">
             <ol class="inline-flex items-center gap-1.5">
-                <li><a href="index.html" class="hover:text-brand-red transition-colors font-medium">Home</a></li>
-                <li class="flex items-center gap-1.5">
-                    <svg class="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-                    <span class="text-brand-red font-semibold">Gedung Perkuliahan</span>
-                </li>
+              <li><a href="index.html" class="hover:text-white transition-colors font-medium">Home</a></li>
+              <li class="flex items-center gap-1.5">
+                <svg class="w-3 h-3 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                <span class="text-white font-semibold">Gedung Perkuliahan</span>
+              </li>
             </ol>
-        </nav>
+          </nav>
+        </div>
+
+        <!-- Badge -->
+        <div class="reveal inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full mb-5">
+          <span class="w-2 h-2 rounded-full brand-gradient animate-pulse"></span>
+          <span class="text-xs font-bold text-white/80 tracking-wider uppercase">Eksplorasi Kampus</span>
+        </div>
+
+        <h1 class="reveal text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[0.95] mb-4">
+          Gedung <br>
+          <span class="brand-text text-6xl sm:text-7xl md:text-8xl lg:text-9xl">Perkuliahan</span>
+        </h1>
+
+        <p class="reveal text-lg sm:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed mb-8">
+          Jelajahi gedung perkuliahan di lingkungan <strong class="text-white font-bold">Institut Teknologi & Bisnis Riau Pesisir</strong> yang dirancang untuk mendukung proses belajar mengajar yang nyaman dan modern.
+        </p>
+
+        <!-- Stats -->
+        <div class="reveal flex flex-wrap justify-center gap-3">
+          <div class="hero-stat px-5 py-3 rounded-2xl flex items-center gap-2">
+            <span class="text-2xl">🏛️</span>
+            <div>
+              <p class="text-lg font-black leading-none">2</p>
+              <p class="text-[10px] text-white/60 font-semibold uppercase tracking-wide">Gedung</p>
+            </div>
+          </div>
+          <div class="hero-stat px-5 py-3 rounded-2xl flex items-center gap-2">
+            <span class="text-2xl">🚪</span>
+            <div>
+              <p class="text-lg font-black leading-none">16+</p>
+              <p class="text-[10px] text-white/60 font-semibold uppercase tracking-wide">Ruangan</p>
+            </div>
+          </div>
+          <div class="hero-stat px-5 py-3 rounded-2xl flex items-center gap-2">
+            <span class="text-2xl">📚</span>
+            <div>
+              <p class="text-lg font-black leading-none">4</p>
+              <p class="text-[10px] text-white/60 font-semibold uppercase tracking-wide">Prodi</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- HERO -->
-    <section class="relative pt-6 pb-16 md:pt-10 md:pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        <div class="absolute inset-0 hero-glow pointer-events-none"></div>
-        <div class="max-w-7xl mx-auto relative z-10">
-            <div class="reveal text-center max-w-4xl mx-auto">
-                <div class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-brand-red/10 to-brand-blue/10 border border-brand-red/20 rounded-full mb-5">
-                    <span class="w-2 h-2 rounded-full brand-gradient animate-pulse"></span>
-                    <span class="text-xs font-bold text-slate-700 tracking-wider uppercase">Eksplorasi Kampus</span>
-                </div>
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.1] mb-5">
-                    Gedung <span class="brand-text">Perkuliahan</span>
-                </h1>
-                <p class="text-lg md:text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto">
-                    Jelajahi gedung perkuliahan di lingkungan <strong class="text-brand-blue font-bold">Institut Teknologi & Bisnis Riau Pesisir</strong> yang dirancang untuk mendukung proses belajar mengajar yang nyaman dan modern.
-                </p>
-            </div>
-        </div>
-    </section>
+    <!-- Wave divider -->
+    <div class="hero-wave">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+        <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="white"/>
+      </svg>
+    </div>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="section-divider"></div></div>
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator absolute bottom-20 left-1/2 -translate-x-1/2 z-10 text-white/50 text-center">
+      <p class="text-[10px] font-semibold uppercase tracking-widest mb-1">Scroll</p>
+      <svg class="w-5 h-5 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+      </svg>
+    </div>
+  </section>
 
     <!-- BUILDING CARDS -->
     <section class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-white via-slate-50 to-white">

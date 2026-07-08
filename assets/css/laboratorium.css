@@ -99,20 +99,176 @@
 }
 
 /* ═══════════════════════════════════════════════
-   3. HERO GLOW EFFECT
-   Efek cahaya samar di background hero section.
+   3. FULL-BLEED HERO SYSTEM
+   Base class untuk hero full-screen dengan background
+   gambar. Setiap halaman punya overlay & variasi sendiri.
    ═══════════════════════════════════════════════ */
 
-@keyframes glowPulse {
-  0%, 100% { opacity: 1; }
-  50%      { opacity: 0.7; }
+/* --- Base hero container --- */
+.hero-full {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
 }
 
-.hero-glow {
+.hero-full .hero-bg {
+  position: absolute;
+  inset: -10px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: scale(1.1);
+  animation: heroZoom 20s ease-in-out infinite alternate;
+}
+
+@keyframes heroZoom {
+  0%   { transform: scale(1.1) translateX(0); }
+  100% { transform: scale(1.15) translateX(-2%); }
+}
+
+.hero-full .hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+/* --- Overlay variants — every page picks one --- */
+.hero-overlay-dark {
+  position: absolute;
+  inset: 0;
   background:
-    radial-gradient(circle at top left, rgba(190, 26, 26, 0.14), transparent 34%),
-    radial-gradient(circle at bottom right, rgba(27, 78, 245, 0.12), transparent 36%);
-  animation: glowPulse 8s ease-in-out infinite;
+    linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 50%, transparent 100%),
+    linear-gradient(to right, rgba(190,26,26,0.3) 0%, transparent 50%, rgba(27,78,245,0.3) 100%);
+  z-index: 1;
+}
+
+.hero-overlay-left {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to right, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.4) 50%, transparent 100%),
+    linear-gradient(to bottom, rgba(190,26,26,0.25), transparent 60%);
+  z-index: 1;
+}
+
+.hero-overlay-right {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to left, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.4) 50%, transparent 100%),
+    linear-gradient(to bottom, rgba(27,78,245,0.25), transparent 60%);
+  z-index: 1;
+}
+
+.hero-overlay-center {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
+  z-index: 1;
+}
+
+/* --- Overlay pattern supplements --- */
+.hero-pattern-grid::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px);
+  background-size: 32px 32px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-pattern-dots::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.12) 1.5px, transparent 1.5px);
+  background-size: 48px 48px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-pattern-geometric::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(255,255,255,0.03) 40px, rgba(255,255,255,0.03) 41px),
+    repeating-linear-gradient(-45deg, transparent, transparent 40px, rgba(255,255,255,0.03) 40px, rgba(255,255,255,0.03) 41px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-pattern-code::after {
+  content: '</>';
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  font-size: 6rem;
+  font-weight: 900;
+  color: rgba(255,255,255,0.06);
+  font-family: 'Courier New', monospace;
+  z-index: 1;
+  pointer-events: none;
+  line-height: 1;
+}
+
+.hero-pattern-shield::after {
+  content: '';
+  position: absolute;
+  top: 20%;
+  right: 8%;
+  width: 120px;
+  height: 120px;
+  border: 3px solid rgba(255,255,255,0.08);
+  border-radius: 50%;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: 0 0 60px rgba(27,78,245,0.1);
+}
+
+/* --- Glassmorphism stat badge --- */
+.hero-stat {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.15);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hero-stat:hover {
+  background: rgba(255,255,255,0.18);
+  transform: translateY(-4px) scale(1.02);
+}
+
+/* --- Scroll indicator --- */
+.scroll-indicator {
+  animation: scrollBounce 2s ease-in-out infinite;
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); opacity: 0.6; }
+  50%      { transform: translateY(8px); opacity: 1; }
+}
+
+/* --- Wave divider (SVG) --- */
+.hero-wave {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  line-height: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero-wave svg {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 /* ═══════════════════════════════════════════════
