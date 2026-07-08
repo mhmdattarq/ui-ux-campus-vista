@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-slate-900">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Laboratorium Komputer 1 - Campus Vista</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=2000') no-repeat center center;
+            background-size: cover;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .section-title {
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 4px;
+            background-color: #FF3B3B;
+            border-radius: 2px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .gallery-item img {
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body class="bg-slate-900 text-white">
+
+    <div id="navbar"></div>
+    <script src="assets/js/navbar.js"></script>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section text-center text-white py-20 px-4">
+            <div class="container mx-auto">
+                <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight">Laboratorium Komputer 1</h1>
+                <p class="mt-4 text-xl md:text-2xl text-slate-200">
+                    Pusat inovasi dan pembelajaran dengan teknologi terkini.
+                </p>
+            </div>
+        </section>
+
+        <!-- Informasi Laboratorium Detail -->
+        <section class="py-16 bg-slate-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-white mb-8 section-title">Informasi Detail Laboratorium</h2>
+
+                <div class="bg-slate-800 p-8 rounded-lg shadow-xl border border-slate-700">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-2xl font-semibold text-white mb-4">Fasilitas Utama</h3>
+                            <ul class="list-disc list-inside space-y-2 text-lg text-slate-300">
+                                <li>WiFi berkecepatan tinggi</li>
+                                <li>2 unit Air Conditioner (AC)</li>
+                                <li>24 Personal Computer (PC) modern</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold text-white mb-4">Deskripsi</h3>
+                            <p class="text-lg text-slate-300 leading-relaxed">
+                                Laboratorium Komputer 1 adalah fasilitas unggulan yang dirancang untuk mendukung
+                                berbagai kegiatan praktikum dan penelitian di bidang ilmu komputer. Dilengkapi dengan
+                                perangkat keras dan lunak terbaru, lab ini menyediakan lingkungan yang kondusif bagi
+                                mahasiswa dan dosen untuk berinovasi dan mengembangkan solusi teknologi.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galeri Laboratorium -->
+        <section class="py-16 bg-slate-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-white mb-8 section-title">Galeri Laboratorium</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1547944062-a25e98f060b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1ODc3MTd8MHwxfHNlYXJjaHw1OXx8Y29tcHV0ZXIlMjBsYWJ8ZW58MHx8fHwxNzIxMjQ0NjIzfDA&ixlib=rb-4.0.3&q=80&w=1080"
+                            alt="Lab Interior 1" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1602576086786-9a2cf110e527?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1ODc3MTd8MHwxfHNlYXJjaHwyMnx8Y29tcHV0ZXIlMjBsYWJ8ZW58MHx8fHwxNzIxMjQ0NTUyfDA&ixlib=rb-4.0.3&q=80&w=1080"
+                            alt="Lab Interior 2" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1533750849688-66258aa19273?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1ODc3MTd8MHwxfHNlYXJjaHw0OXx8Y29tcHV0ZXIlMjBsYWJ8ZW58MHx8fHwxNzIxMjQ0NjIzfDA&ixlib=rb-4.0.3&q=80&w=1080"
+                            alt="Lab Interior 3" class="w-full h-64 object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Virtual Tour 360 -->
+        <section class="py-16 bg-slate-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-white mb-8 section-title">Virtual Tour 360</h2>
+                <div class="relative w-full overflow-hidden rounded-lg shadow-xl border border-slate-700"
+                    style="padding-top: 56.25%;">
+                    <!-- 16:9 Aspect Ratio -->
+                    <iframe class="absolute top-0 left-0 w-full h-full"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.693898099898!2d106.81702811476885!3d-6.170624095536413!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5d17dd3c8e7%3A0x6b6c6b6c6b6c6b6c!2sUniversitas%20Pembangunan%20Nasional%20Veteran%20Jakarta!5e0!3m2!1sen!2sid!4v1678901234567!5m2!1sen!2sid"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <p class="mt-6 text-center text-slate-400">
+                    Jelajahi Lab Komputer 1 secara virtual dan rasakan pengalaman berada di dalamnya.
+                </p>
+            </div>
+        </section>
+    </main>
+
+</body>
+
+</html>

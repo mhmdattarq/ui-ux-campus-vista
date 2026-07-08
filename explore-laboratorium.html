@@ -1,47 +1,110 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en" class="h-full bg-slate-900">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Explore Laboratorium - ITBRP</title>
+    <title>Explore Laboratorium - Campus Vista</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <style>
-        .brand-red { color: #d32f2f; }
-        .bg-brand-red { background-color: #d32f2f; }
-        .brand-blue { color: #1565c0; }
-        .bg-brand-blue { background-color: #1565c0; }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #FF3B3B 0%, #4A90E2 100%);
+        }
+
+        .card-hover-effect {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card-hover-effect:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
     </style>
 </head>
-<body class="bg-gray-50">
-    <nav class="p-4 bg-white shadow-md">
-        <a href="index.html" class="font-bold text-lg brand-blue">ITBRP</a>
-        <a href="explore-laboratorium.html" class="ml-4 brand-red font-semibold">Explore Laboratorium</a>
-    </nav>
-    <header class="py-16 text-center bg-brand-blue text-white">
-        <h1 class="text-4xl font-bold">Laboratorium Komputer ITBRP</h1>
-    </header>
-    <main class="max-w-6xl mx-auto p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
-        <!-- Card 1 -->
-        <div class="bg-white p-4 rounded-lg shadow-lg">
-            <img src="https://via.placeholder.com/400x200" alt="Lab 1" class="rounded">
-            <h2 class="text-xl font-bold mt-4 brand-blue">Laboratorium 1</h2>
-            <p class="text-gray-600 mt-2">Deskripsi singkat Lab 1.</p>
-            <a href="detail-laboratorium.html?id=1" class="block mt-4 text-center bg-brand-red text-white py-2 rounded">Lihat Detail</a>
-        </div>
-        <!-- Card 2 -->
-        <div class="bg-white p-4 rounded-lg shadow-lg">
-            <img src="https://via.placeholder.com/400x200" alt="Lab 2" class="rounded">
-            <h2 class="text-xl font-bold mt-4 brand-blue">Laboratorium 2</h2>
-            <p class="text-gray-600 mt-2">Deskripsi singkat Lab 2.</p>
-            <a href="detail-laboratorium.html?id=2" class="block mt-4 text-center bg-brand-red text-white py-2 rounded">Lihat Detail</a>
-        </div>
-        <!-- Card 3 -->
-        <div class="bg-white p-4 rounded-lg shadow-lg">
-            <img src="https://via.placeholder.com/400x200" alt="Lab 3" class="rounded">
-            <h2 class="text-xl font-bold mt-4 brand-blue">Laboratorium 3</h2>
-            <p class="text-gray-600 mt-2">Deskripsi singkat Lab 3.</p>
-            <a href="detail-laboratorium.html?id=3" class="block mt-4 text-center bg-brand-red text-white py-2 rounded">Lihat Detail</a>
-        </div>
+
+<body class="bg-slate-900 text-white">
+
+    <div id="navbar"></div>
+    <script src="assets/js/navbar.js"></script>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-gradient text-white py-20 px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight">Laboratorium Komputer ITBRP</h1>
+            <p class="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-slate-200">
+                Jelajahi fasilitas laboratorium komputer modern kami yang dirancang untuk mendukung inovasi dan
+                pembelajaran.
+            </p>
+        </section>
+
+        <!-- Labs Card Section -->
+        <section class="py-16 sm:py-24 bg-slate-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+                    <!-- Lab Card 1 -->
+                    <div
+                        class="card-hover-effect bg-slate-800 rounded-lg overflow-hidden shadow-lg border border-slate-700">
+                        <img class="w-full h-56 object-cover" src="https://via.placeholder.com/400x250/FF3B3B/FFFFFF?text=Lab+Komputer+1" alt="Laboratorium Komputer 1">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-white mb-2">Laboratorium Komputer 1</h3>
+                            <p class="text-slate-300 mb-4">
+                                Laboratorium serbaguna untuk praktikum dasar dan pengembangan perangkat lunak dengan
+                                spesifikasi hardware terbaru.
+                            </p>
+                            <a href="detail-laboratorium-1.html"
+                                class="inline-block bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300">
+                                Lihat Detail
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Lab Card 2 -->
+                    <div
+                        class="card-hover-effect bg-slate-800 rounded-lg overflow-hidden shadow-lg border border-slate-700">
+                        <img class="w-full h-56 object-cover" src="https://via.placeholder.com/400x250/4A90E2/FFFFFF?text=Lab+Komputer+2" alt="Laboratorium Komputer 2">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-white mb-2">Laboratorium Komputer 2</h3>
+                            <p class="text-slate-300 mb-4">
+                                Didedikasikan untuk riset jaringan dan keamanan siber, dilengkapi dengan perangkat keras
+                                dan lunak khusus.
+                            </p>
+                            <a href="detail-laboratorium-2.html"
+                                class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300">
+                                Lihat Detail
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Lab Card 3 -->
+                    <div
+                        class="card-hover-effect bg-slate-800 rounded-lg overflow-hidden shadow-lg border border-slate-700">
+                        <img class="w-full h-56 object-cover" src="https://via.placeholder.com/400x250/34D399/FFFFFF?text=Lab+Komputer+3" alt="Laboratorium Komputer 3">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-white mb-2">Laboratorium Komputer 3</h3>
+                            <p class="text-slate-300 mb-4">
+                                Pusat pengembangan multimedia dan kecerdasan buatan dengan workstation grafis performa
+                                tinggi.
+                            </p>
+                            <a href="detail-laboratorium-3.html"
+                                class="inline-block bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300">
+                                Lihat Detail
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
     </main>
+
 </body>
+
 </html>

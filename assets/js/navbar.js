@@ -73,9 +73,9 @@
                     <a data-nav-link data-nav-parent="explore" href="explore.html" class="nav-dropdown-link flex items-center gap-3 block px-4 py-3 text-xs rounded-xl text-slate-600 hover:text-[#1B4EF5] hover:bg-gradient-to-r hover:from-[#1B4EF5]/5 hover:to-transparent transition-all duration-200 hover:scale-[1.02] hover:shadow-sm">
                         <span>🚪</span> Ruang Kelas
                     </a>
-                    <a data-nav-link data-nav-parent="explore" href="explore-laboratorium.html" class="nav-dropdown-link flex items-center gap-3 block px-4 py-3 text-xs rounded-xl text-slate-600 hover:text-[#1B4EF5] hover:bg-gradient-to-r hover:from-[#1B4EF5]/5 hover:to-transparent transition-all duration-200 hover:scale-[1.02] hover:shadow-sm">
-                        <span>💻</span> Laboratorium
-                    </a>
+                        <a data-nav-link data-nav-parent="explore" href="explore-laboratorium.html" class="nav-dropdown-link flex items-center gap-3 block px-4 py-3 text-xs rounded-xl text-slate-600 hover:text-[#1B4EF5] hover:bg-gradient-to-r hover:from-[#1B4EF5]/5 hover:to-transparent transition-all duration-200 hover:scale-[1.02] hover:shadow-sm">
+                            <span>💻</span> Laboratorium
+                        </a>
                     <a data-nav-link data-nav-parent="explore" href="explore.html" class="nav-dropdown-link flex items-center gap-3 block px-4 py-3 text-xs rounded-xl text-slate-600 hover:text-[#1B4EF5] hover:bg-gradient-to-r hover:from-[#1B4EF5]/5 hover:to-transparent transition-all duration-200 hover:scale-[1.02] hover:shadow-sm">
                         <span>📚</span> Perpustakaan
                     </a>
