@@ -37,84 +37,83 @@
   <div id="navbar" class="animate-slideDown"></div>
   <script src="assets/js/navbar.js"></script>
 
-  <!-- ═══════ BREADCRUMBS ═══════ -->
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-2">
-    <nav class="flex text-sm text-slate-500">
-      <ol class="inline-flex items-center gap-1.5">
-        <li><a href="index.html" class="hover:text-brand-red transition-colors font-medium">Home</a></li>
-        <li class="flex items-center gap-1.5">
-          <svg class="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-          </svg>
-          <a href="explore-laboratorium.html" class="hover:text-brand-blue transition-colors font-medium">Laboratorium Komputer</a>
-        </li>
-        <li class="flex items-center gap-1.5">
-          <svg class="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-          </svg>
-          <span class="text-brand-red font-semibold">Lab Komputer 2</span>
-        </li>
-      </ol>
-    </nav>
-  </div>
+  <!-- ═══════ HERO — Full Bleed + Network Shield ═══════ -->
+  <section class="hero-full text-white">
+    <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1920&h=1080&fit=crop');"></div>
+    <div class="hero-overlay-dark"></div>
+    <div class="hero-pattern-dots"></div>
+    <div class="hero-pattern-shield"></div>
 
-  <!-- ═══════ HERO ═══════ -->
-  <section class="relative pt-6 pb-16 md:pt-10 md:pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
-    <div class="absolute inset-0 hero-glow pointer-events-none"></div>
-    <div class="max-w-7xl mx-auto relative z-10">
-      <div class="reveal grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-        <!-- Left: Text -->
-        <div class="space-y-6">
-          <div class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-brand-blue/10 to-brand-red/10 border border-brand-blue/20 rounded-full">
-            <span class="w-2 h-2 rounded-full brand-gradient animate-pulse"></span>
-            <span class="text-xs font-bold text-slate-700 tracking-wider uppercase">Lab Komputer 2</span>
-          </div>
-          <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.1]">
-            Lab Komputer <span class="brand-text">2</span>
-          </h1>
-          <p class="text-lg text-slate-600 leading-relaxed max-w-lg">
-            Fasilitas khusus untuk riset jaringan komputer dan keamanan siber. Dilengkapi perangkat keras
-            dan lunak spesifik untuk simulasi infrastruktur jaringan dan pengujian keamanan.
-          </p>
-          <!-- Key numbers -->
-          <div class="flex items-center gap-4 pt-2">
-            <div class="px-5 py-3 brand-gradient text-white rounded-2xl shadow-lg brand-glow">
-              <p class="text-2xl font-black">18</p>
-              <p class="text-xs text-white/80 font-medium">Total PC</p>
-            </div>
-            <div class="px-5 py-3 brand-gradient text-white rounded-2xl shadow-lg brand-glow">
-              <p class="text-2xl font-black">08:00-17:00</p>
-              <p class="text-xs text-white/80 font-medium">Jam Operasional</p>
-            </div>
-          </div>
+    <div class="hero-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl ml-auto text-right">
+        <!-- Breadcrumb -->
+        <div class="reveal mb-6">
+          <nav class="flex text-sm text-white/70 justify-end">
+            <ol class="inline-flex items-center gap-1.5">
+              <li><a href="index.html" class="hover:text-white transition-colors font-medium">Home</a></li>
+              <li class="flex items-center gap-1.5">
+                <svg class="w-3 h-3 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                <a href="explore-laboratorium.html" class="hover:text-white transition-colors font-medium">Laboratorium</a>
+              </li>
+              <li class="flex items-center gap-1.5">
+                <svg class="w-3 h-3 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                <span class="text-white font-semibold">Lab 2</span>
+              </li>
+            </ol>
+          </nav>
         </div>
 
-        <!-- Right: Image -->
-        <div class="relative">
-          <div class="absolute -top-6 -right-6 w-40 h-40 bg-brand-blue/5 rounded-full blur-3xl"></div>
-          <div class="absolute -bottom-6 -left-6 w-40 h-40 bg-brand-red/5 rounded-full blur-3xl"></div>
-          <div class="relative rounded-3xl overflow-hidden shadow-2xl shadow-brand-blue/20 group">
-            <div class="absolute inset-0 bg-gradient-to-t from-brand-blue/60 to-transparent z-10"></div>
-            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1200&h=600&fit=crop"
-                 alt="Lab Komputer 2" class="w-full h-[400px] md:h-[480px] object-cover group-hover:scale-105 transition-transform duration-700">
-            <div class="absolute bottom-5 left-5 right-5 z-20">
-              <div class="bg-white/20 backdrop-blur-xl rounded-xl px-4 py-3 border border-white/30">
-                <div class="flex items-center gap-2 text-white text-sm">
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                  </svg>
-                  Kampus ITBRP, Dumai
-                </div>
-              </div>
+        <!-- Badge -->
+        <div class="reveal inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full mb-5">
+          <span class="w-2 h-2 rounded-full brand-gradient animate-pulse"></span>
+          <span class="text-xs font-bold text-white/80 tracking-wider uppercase">Lab Komputer 2</span>
+        </div>
+
+        <h1 class="reveal text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[0.95] mb-4">
+          Lab Komputer <br>
+          <span class="brand-text text-6xl sm:text-7xl md:text-8xl lg:text-9xl">2</span>
+        </h1>
+
+        <p class="reveal text-lg sm:text-xl text-white/80 max-w-xl leading-relaxed mb-8 ml-auto">
+          Fasilitas khusus untuk riset jaringan komputer dan keamanan siber. Dilengkapi perangkat keras
+          dan lunak spesifik untuk simulasi infrastruktur jaringan dan pengujian keamanan.
+        </p>
+
+        <!-- Stats -->
+        <div class="reveal flex flex-wrap gap-3 justify-end">
+          <div class="hero-stat px-5 py-3 rounded-2xl flex items-center gap-2">
+            <span class="text-2xl">🖥️</span>
+            <div>
+              <p class="text-lg font-black leading-none">18</p>
+              <p class="text-[10px] text-white/60 font-semibold uppercase tracking-wide">PC</p>
+            </div>
+          </div>
+          <div class="hero-stat px-5 py-3 rounded-2xl flex items-center gap-2">
+            <span class="text-2xl">🕐</span>
+            <div>
+              <p class="text-lg font-black leading-none">08:00-17:00</p>
+              <p class="text-[10px] text-white/60 font-semibold uppercase tracking-wide">Operasional</p>
+            </div>
+          </div>
+          <div class="hero-stat px-5 py-3 rounded-2xl flex items-center gap-2">
+            <span class="text-2xl">🛡️</span>
+            <div>
+              <p class="text-lg font-black leading-none">Cyber</p>
+              <p class="text-[10px] text-white/60 font-semibold uppercase tracking-wide">Security</p>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
 
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="section-divider"></div></div>
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-white/50 text-center">
+      <p class="text-[10px] font-semibold uppercase tracking-widest mb-1">Scroll</p>
+      <svg class="w-5 h-5 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+      </svg>
+    </div>
+  </section>
 
   <!-- ═══════ INFORMASI & FASILITAS ═══════ -->
   <section class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-white via-slate-50 to-white">
