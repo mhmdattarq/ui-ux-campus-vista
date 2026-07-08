@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-slate-50 text-slate-900 scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teknik Sipil - Campus Vista</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','sans-serif']}}}}</script>
+    <style>
+        .reveal{opacity:0;transform:translateY(24px);transition:opacity 650ms ease,transform 650ms cubic-bezier(0.22,1,0.36,1)}.reveal.is-visible{opacity:1;transform:translateY(0)}.card-hover{transition:all .4s cubic-bezier(.175,.885,.32,1.275)}.card-hover:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 20px 40px rgba(0,0,0,.1)}.hero-spot{background:radial-gradient(circle at top left,rgba(190,26,26,.12),transparent 36%),radial-gradient(circle at bottom right,rgba(190,26,26,.06),transparent 32%)}.float-construct{animation:constructFloat 6s ease-in-out infinite}@keyframes constructFloat{0%,100%{transform:translateY(0) rotate(0)}33%{transform:translateY(-8px) rotate(2deg)}66%{transform:translateY(-4px) rotate(-1deg)}}.stat-card{backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}.float-bubble{position:absolute;border-radius:50%;opacity:.08;animation:floatAnim 7s ease-in-out infinite;pointer-events:none}@keyframes floatAnim{0%,100%{transform:translateY(0) translateX(0)}33%{transform:translateY(-25px) translateX(15px)}66%{transform:translateY(-10px) translateX(-15px)}}.pulse-ring{animation:pulseRing 2.5s cubic-bezier(.215,.61,.355,1) infinite}@keyframes pulseRing{0%{transform:scale(.95);opacity:1}50%{transform:scale(1.08);opacity:.7}100%{transform:scale(.95);opacity:1}}
+    </style>
+</head>
+
+<body class="min-h-full font-sans bg-slate-50 antialiased">
+    <div id="navbar"></div>
+    <script src="assets/js/navbar.js"></script>
+
+    <main class="relative overflow-hidden">
+        <div class="float-bubble" style="width:260px;height:260px;background:linear-gradient(135deg,#BE1A1A,#DC2626);top:12%;left:4%;animation-delay:0s"></div>
+        <div class="float-bubble" style="width:190px;height:190px;background:linear-gradient(135deg,#EF4444,#BE1A1A);bottom:30%;right:6%;animation-delay:2.5s"></div>
+        <div class="absolute inset-x-0 top-0 h-[420px] hero-spot opacity-80"></div>
+
+        <section class="relative mx-auto max-w-7xl px-4 pt-20 pb-16 sm:px-6 lg:px-8">
+            <div class="grid gap-12 lg:grid-cols-[1.2fr_1fr] lg:items-start">
+                <div class="space-y-6">
+                    <span class="reveal inline-flex items-center gap-2 rounded-full bg-red-50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-[#BE1A1A] shadow-sm border border-red-200">
+                        🏗️ Program Studi S1
+                    </span>
+                    <h1 class="reveal text-4xl font-black tracking-tight text-slate-950 sm:text-5xl">
+                        Teknik <span class="bg-gradient-to-r from-[#BE1A1A] to-red-600 bg-clip-text text-transparent">Sipil</span>
+                    </h1>
+                    <div class="reveal-left flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-red-100 text-red-800 text-xs font-bold rounded-full">Akreditasi BAIK SEKALI</span>
+                        <span class="px-4 py-2 bg-slate-100 text-slate-700 text-xs font-bold rounded-full">Gelar S.T.</span>
+                        <span class="px-4 py-2 bg-slate-100 text-slate-700 text-xs font-bold rounded-full">8 Semester</span>
+                    </div>
+
+                    <div class="reveal rounded-[2rem] border-2 border-red-100 bg-white p-6 shadow-lg">
+                        <p class="text-sm leading-7 text-slate-600">
+                            Program studi yang membekali mahasiswa dengan kemampuan desain, konstruksi, dan manajemen proyek infrastruktur. Kurikulum dirancang untuk menghasilkan insinyur sipil yang kompeten dan siap membangun negeri.
+                        </p>
+                    </div>
+
+                    <div class="reveal grid grid-cols-3 gap-4">
+                        <div class="rounded-2xl bg-white border-2 border-red-100 p-5 text-center card-hover hover:border-[#BE1A1A]">
+                            <p class="text-3xl font-black text-[#BE1A1A]">144</p>
+                            <p class="text-xs text-slate-600 mt-1 font-semibold">SKS</p>
+                        </div>
+                        <div class="rounded-2xl bg-white border-2 border-red-100 p-5 text-center card-hover hover:border-[#BE1A1A]">
+                            <p class="text-3xl font-black text-[#BE1A1A]">4</p>
+                            <p class="text-xs text-slate-600 mt-1 font-semibold">Tahun</p>
+                        </div>
+                        <div class="rounded-2xl bg-white border-2 border-red-100 p-5 text-center card-hover hover:border-[#BE1A1A]">
+                            <p class="text-3xl font-black text-[#BE1A1A]">A</p>
+                            <p class="text-xs text-slate-600 mt-1 font-semibold">Akreditasi</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal space-y-5">
+                    <div class="rounded-[2rem] border-2 border-red-200 bg-white p-6 shadow-xl shadow-red-500/10">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#BE1A1A] to-red-600 flex items-center justify-center text-white text-3xl shadow-lg float-construct">
+                                🏗️
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold uppercase tracking-wider text-[#BE1A1A]">Fokus Utama</p>
+                                <p class="text-lg font-black text-slate-950">Infrastruktur & Konstruksi</p>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="rounded-xl bg-slate-50 p-4 border border-slate-200">
+                                <span class="text-2xl">🏢</span>
+                                <p class="mt-2 text-sm font-bold text-slate-950">Struktur</p>
+                            </div>
+                            <div class="rounded-xl bg-slate-50 p-4 border border-slate-200">
+                                <span class="text-2xl">🌊</span>
+                                <p class="mt-2 text-sm font-bold text-slate-950">Geoteknik</p>
+                            </div>
+                            <div class="rounded-xl bg-slate-50 p-4 border border-slate-200">
+                                <span class="text-2xl">💧</span>
+                                <p class="mt-2 text-sm font-bold text-slate-950">Hidrologi</p>
+                            </div>
+                            <div class="rounded-xl bg-slate-50 p-4 border border-slate-200">
+                                <span class="text-2xl">📋</span>
+                                <p class="mt-2 text-sm font-bold text-slate-950">Manajemen Proyek</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="relative mx-auto max-w-7xl px-4 pb-24 sm:px-6 lg:px-8">
+            <div class="reveal rounded-[2.5rem] border-2 border-slate-200 bg-white p-8 shadow-xl">
+                <div class="text-center mb-10">
+                    <span class="inline-flex items-center gap-2 rounded-full bg-red-50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-[#BE1A1A] shadow-sm border border-red-200">
+                        🎯 Kompetensi Lulusan
+                    </span>
+                    <h2 class="mt-4 text-3xl font-black text-slate-950 sm:text-4xl">Keunggulan Program</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div class="card-hover group rounded-2xl border-2 border-red-100 bg-gradient-to-br from-red-50 to-white p-6 hover:border-[#BE1A1A]">
+                        <div class="flex items-center gap-4 mb-3">
+                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#BE1A1A] to-red-600 flex items-center justify-center text-white text-xl shadow-md group-hover:scale-110 transition-transform">📐</div>
+                            <h3 class="font-black text-slate-950">Perancangan Struktur</h3>
+                        </div>
+                        <p class="text-sm text-slate-600">Mampu merancang bangunan gedung, jembatan, dan infrastruktur tahan gempa.</p>
+                    </div>
+                    <div class="card-hover group rounded-2xl border-2 border-red-100 bg-gradient-to-br from-red-50 to-white p-6 hover:border-[#BE1A1A]">
+                        <div class="flex items-center gap-4 mb-3">
+                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#BE1A1A] to-red-600 flex items-center justify-center text-white text-xl shadow-md group-hover:scale-110 transition-transform">📊</div>
+                            <h3 class="font-black text-slate-950">Manajemen Konstruksi</h3>
+                        </div>
+                        <p class="text-sm text-slate-600">Mengelola proyek konstruksi dari perencanaan hingga pelaksanaan.</p>
+                    </div>
+                    <div class="card-hover group rounded-2xl border-2 border-red-100 bg-gradient-to-br from-red-50 to-white p-6 hover:border-[#BE1A1A]">
+                        <div class="flex items-center gap-4 mb-3">
+                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#BE1A1A] to-red-600 flex items-center justify-center text-white text-xl shadow-md group-hover:scale-110 transition-transform">🌱</div>
+                            <h3 class="font-black text-slate-950">Infrastruktur Hijau</h3>
+                        </div>
+                        <p class="text-sm text-slate-600">Konsep pembangunan berkelanjutan yang ramah lingkungan.</p>
+                    </div>
+                    <div class="card-hover group rounded-2xl border-2 border-red-100 bg-gradient-to-br from-red-50 to-white p-6 hover:border-[#BE1A1A]">
+                        <div class="flex items-center gap-4 mb-3">
+                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#BE1A1A] to-red-600 flex items-center justify-center text-white text-xl shadow-md group-hover:scale-110 transition-transform">💻</div>
+                            <h3 class="font-black text-slate-950">Teknologi BIM</h3>
+                        </div>
+                        <p class="text-sm text-slate-600">Building Information Modeling untuk desain digital modern.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-slate-200/80 bg-white py-6">
+        <div class="mx-auto max-w-7xl px-4 text-center text-sm text-slate-500">&copy; 2026 Campus Vista - Teknik Sipil ITB Riau Pesisir.</div>
+    </footer>
+
+    <script>
+        const ro = new IntersectionObserver((e)=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('is-visible');ro.unobserve(el.target)}})},{threshold:.2});
+        document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el=>ro.observe(el));
+    </script>
+</body>
+</html>

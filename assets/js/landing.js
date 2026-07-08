@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // --- 1. Active Navigation State On Scroll ---
     const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('header nav a, .id-dropdown button');
+    const navLinks = document.querySelectorAll('a[href^="#"]:not(nav a)');
 
     const updateActiveNavState = () => {
         let currentSectionId = '';
