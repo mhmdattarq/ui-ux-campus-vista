@@ -15,10 +15,9 @@
         </a>
 
         <nav class="hidden items-center gap-1 text-[13px] font-semibold text-slate-600 md:flex" aria-label="Main navigation">
-            <a data-nav-link href="index.html" class="nav-link relative rounded-full px-4 py-2.5 transition-all duration-300 hover:bg-gradient-to-r hover:from-slate-100 hover:to-slate-50 hover:text-slate-900 hover:shadow-md hover:scale-105 before:absolute before:inset-0 before:rounded-full before:border before:border-transparent before:content-[''] before:transition-all before:duration-300 before:hover:border-red-100">Home</a>
-
+           <a data-nav-link href="index.html" class="nav-link rounded-full px-4 py-2.5 transition-all duration-300 hover:bg-gradient-to-r hover:from-slate-100 hover:to-slate-50 hover:text-slate-900 hover:shadow-md hover:scale-105">Home</a>
             <div class="relative id-dropdown group py-2">
-                <button type="button" data-nav-group="about" class="nav-link flex items-center gap-1.5 rounded-full px-4 py-2.5 transition-all duration-300 hover:bg-gradient-to-r hover:from-slate-100 hover:to-slate-50 hover:text-slate-900 hover:shadow-md hover:scale-105 focus:outline-none">
+                <button type="button" data-nav-group="about" class="flex items-center gap-1.5 rounded-full px-4 py-2.5 transition-all duration-300 hover:bg-gradient-to-r hover:from-slate-100 hover:to-slate-50 hover:text-slate-900 hover:shadow-md hover:scale-105 focus:outline-none text-[13px] font-semibold text-slate-600">
                     About
                     <svg class="h-3.5 w-3.5 transition-transform duration-300 group-hover:rotate-180 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -38,7 +37,30 @@
             </div>
 
             <div class="relative id-dropdown group py-2">
-                <button type="button" data-nav-group="explore" class="nav-link flex items-center gap-1.5 rounded-full px-4 py-2.5 transition-all duration-300 hover:bg-gradient-to-r hover:from-slate-100 hover:to-slate-50 hover:text-slate-900 hover:shadow-md hover:scale-105 focus:outline-none">
+                <button type="button" data-nav-group="prodi" class="flex items-center gap-1.5 rounded-full px-4 py-2.5 transition-all duration-300 hover:bg-gradient-to-r hover:from-slate-100 hover:to-slate-50 hover:text-slate-900 hover:shadow-md hover:scale-105 focus:outline-none text-[13px] font-semibold text-slate-600">
+                    Prodi
+                    <svg class="h-3.5 w-3.5 transition-transform duration-300 group-hover:rotate-180 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="absolute left-0 mt-3 w-60 rounded-2xl border border-slate-200/80 bg-white/95 p-2.5 shadow-2xl opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 z-50 backdrop-blur-xl">
+                    <a data-nav-link data-nav-parent="prodi" href="prodi-teknik-industri.html" class="nav-dropdown-link flex items-center gap-3 block px-4 py-3 text-xs rounded-xl text-slate-600 hover:text-[#1B4EF5] hover:bg-gradient-to-r hover:from-[#1B4EF5]/5 hover:to-transparent transition-all duration-200 hover:scale-[1.02] hover:shadow-sm">
+                        <span>⚙️</span> Teknik Industri
+                    </a>
+                    <a data-nav-link data-nav-parent="prodi" href="prodi-teknik-informatika.html" class="nav-dropdown-link flex items-center gap-3 block px-4 py-3 text-xs rounded-xl text-slate-600 hover:text-[#1B4EF5] hover:bg-gradient-to-r hover:from-[#1B4EF5]/5 hover:to-transparent transition-all duration-200 hover:scale-[1.02] hover:shadow-sm">
+                        <span>💻</span> Teknik Informatika
+                    </a>
+                    <a data-nav-link data-nav-parent="prodi" href="prodi-teknik-sipil.html" class="nav-dropdown-link flex items-center gap-3 block px-4 py-3 text-xs rounded-xl text-slate-600 hover:text-[#1B4EF5] hover:bg-gradient-to-r hover:from-[#1B4EF5]/5 hover:to-transparent transition-all duration-200 hover:scale-[1.02] hover:shadow-sm">
+                        <span>🏗️</span> Teknik Sipil
+                    </a>
+                    <a data-nav-link data-nav-parent="prodi" href="prodi-bisnis-digital.html" class="nav-dropdown-link flex items-center gap-3 block px-4 py-3 text-xs rounded-xl text-slate-600 hover:text-[#1B4EF5] hover:bg-gradient-to-r hover:from-[#1B4EF5]/5 hover:to-transparent transition-all duration-200 hover:scale-[1.02] hover:shadow-sm">
+                        <span>📱</span> Bisnis Digital
+                    </a>
+                </div>
+            </div>
+
+            <div class="relative id-dropdown group py-2">
+                <button type="button" data-nav-group="explore" class="flex items-center gap-1.5 rounded-full px-4 py-2.5 transition-all duration-300 hover:bg-gradient-to-r hover:from-slate-100 hover:to-slate-50 hover:text-slate-900 hover:shadow-md hover:scale-105 focus:outline-none text-[13px] font-semibold text-slate-600">
                     Explore
                     <svg class="h-3.5 w-3.5 transition-transform duration-300 group-hover:rotate-180 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -123,6 +145,23 @@
                         </a>
                         <a data-nav-link data-nav-parent="about" href="visimisi.html" class="nav-link-mobile flex items-center gap-3 rounded-xl px-4 py-3 transition-all duration-200 hover:bg-gradient-to-r hover:from-[#BE1A1A]/5 hover:to-transparent hover:text-[#BE1A1A] hover:shadow-sm hover:scale-[1.02]">
                             <span>🎯</span> Visi &amp; Misi
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <p class="text-xs text-slate-400 font-bold uppercase tracking-wider mb-3 pl-1">Program Studi</p>
+                    <div class="space-y-2 pl-2">
+                        <a data-nav-link data-nav-parent="prodi" href="prodi-teknik-industri.html" class="nav-link-mobile flex items-center gap-3 rounded-xl px-4 py-3 transition-all duration-200 hover:bg-gradient-to-r hover:from-[#1B4EF5]/5 hover:to-transparent hover:text-[#1B4EF5] hover:shadow-sm hover:scale-[1.02]">
+                            <span>⚙️</span> Teknik Industri
+                        </a>
+                        <a data-nav-link data-nav-parent="prodi" href="prodi-teknik-informatika.html" class="nav-link-mobile flex items-center gap-3 rounded-xl px-4 py-3 transition-all duration-200 hover:bg-gradient-to-r hover:from-[#1B4EF5]/5 hover:to-transparent hover:text-[#1B4EF5] hover:shadow-sm hover:scale-[1.02]">
+                            <span>💻</span> Teknik Informatika
+                        </a>
+                        <a data-nav-link data-nav-parent="prodi" href="prodi-teknik-sipil.html" class="nav-link-mobile flex items-center gap-3 rounded-xl px-4 py-3 transition-all duration-200 hover:bg-gradient-to-r hover:from-[#1B4EF5]/5 hover:to-transparent hover:text-[#1B4EF5] hover:shadow-sm hover:scale-[1.02]">
+                            <span>🏗️</span> Teknik Sipil
+                        </a>
+                        <a data-nav-link data-nav-parent="prodi" href="prodi-bisnis-digital.html" class="nav-link-mobile flex items-center gap-3 rounded-xl px-4 py-3 transition-all duration-200 hover:bg-gradient-to-r hover:from-[#1B4EF5]/5 hover:to-transparent hover:text-[#1B4EF5] hover:shadow-sm hover:scale-[1.02]">
+                            <span>📱</span> Bisnis Digital
                         </a>
                     </div>
                 </div>
@@ -213,10 +252,6 @@
 
     const currentPage = getPageSlug(window.location.href);
     const navLinks = Array.from(document.querySelectorAll('[data-nav-link]'));
-    const menuGroupButtons = {
-        about: document.querySelector('[data-nav-group="about"]'),
-        explore: document.querySelector('[data-nav-group="explore"]'),
-    };
 
     const activeLinkClasses = ['bg-gradient-to-r', 'from-[#BE1A1A]/10', 'to-[#1B4EF5]/10', 'text-[#1B4EF5]', 'shadow-md', 'font-bold', 'scale-105'];
     const activeButtonClasses = ['bg-gradient-to-r', 'from-[#BE1A1A]/10', 'to-[#1B4EF5]/10', 'text-[#1B4EF5]', 'shadow-md', 'font-bold'];
@@ -241,9 +276,15 @@
             } else if (link.classList.contains('nav-dropdown-link')) {
                 link.classList.add('text-[#1B4EF5]', 'font-bold', 'bg-gradient-to-r', 'from-[#1B4EF5]/10', 'to-transparent', 'shadow-sm');
             }
-            
-            if (linkParent && menuGroupButtons[linkParent]) {
-                menuGroupButtons[linkParent].classList.add(...activeButtonClasses);
+
+            if (linkParent) {
+                const parentButton = document.querySelector(`button[data-nav-group="${linkParent}"]`);
+                if (parentButton) {
+                    parentButton.style.background = 'linear-gradient(to right, rgba(190,26,26,0.1), rgba(27,78,245,0.1))';
+                    parentButton.style.color = '#1B4EF5';
+                    parentButton.style.fontWeight = '700';
+                    parentButton.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+                }
             }
         }
     });

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-slate-50 text-slate-900 scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teknik Informatika - Campus Vista</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','sans-serif']}}}}</script>
+    <style>
+        .reveal{opacity:0;transform:translateY(24px);transition:opacity 650ms ease,transform 650ms cubic-bezier(0.22,1,0.36,1)}.reveal.is-visible{opacity:1;transform:translateY(0)}.card-hover{transition:all .4s cubic-bezier(.175,.885,.32,1.275)}.card-hover:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 20px 40px rgba(0,0,0,.1)}.hero-spot{background:radial-gradient(circle at top left,rgba(27,78,245,.16),transparent 36%),radial-gradient(circle at bottom right,rgba(27,78,245,.08),transparent 32%)}.code-float{animation:codeFloat 4s ease-in-out infinite}@keyframes codeFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}.pulse-blue{animation:pulseBlue 3s ease-in-out infinite}@keyframes pulseBlue{0%,100%{box-shadow:0 0 0 0 rgba(27,78,245,.4)}50%{box-shadow:0 0 0 16px rgba(27,78,245,0)}}.float-bubble{position:absolute;border-radius:50%;opacity:.08;animation:floatAnim 7s ease-in-out infinite;pointer-events:none}@keyframes floatAnim{0%,100%{transform:translateY(0) translateX(0)}33%{transform:translateY(-25px) translateX(15px)}66%{transform:translateY(-10px) translateX(-15px)}}
+    </style>
+</head>
+
+<body class="min-h-full font-sans bg-slate-50 antialiased">
+    <div id="navbar"></div>
+    <script src="assets/js/navbar.js"></script>
+
+    <main class="relative overflow-hidden">
+        <div class="float-bubble" style="width:280px;height:280px;background:linear-gradient(135deg,#1B4EF5,#3B82F6);top:10%;left:2%;animation-delay:0s"></div>
+        <div class="float-bubble" style="width:200px;height:200px;background:linear-gradient(135deg,#6366F1,#1B4EF5);bottom:20%;right:5%;animation-delay:3.5s"></div>
+        <div class="absolute inset-x-0 top-0 h-[500px] bg-gradient-to-br from-blue-50 via-white to-indigo-50 opacity-90"></div>
+
+        <section class="relative mx-auto max-w-7xl px-4 pt-20 pb-16 sm:px-6 lg:px-8">
+            <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
+                <div class="space-y-6 order-2 lg:order-1">
+                    <span class="reveal inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-[#1B4EF5] shadow-sm border border-blue-200">
+                        💻 Program Studi S1
+                    </span>
+                    <h1 class="reveal text-4xl font-black tracking-tight text-slate-950 sm:text-5xl">
+                        Teknik <span class="bg-gradient-to-r from-[#1B4EF5] to-blue-600 bg-clip-text text-transparent">Informatika</span>
+                    </h1>
+                    <div class="reveal-left flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-blue-100 text-blue-800 text-xs font-bold rounded-full">Akreditasi BAIK SEKALI</span>
+                        <span class="px-4 py-2 bg-slate-100 text-slate-700 text-xs font-bold rounded-full">Gelar S.Kom</span>
+                        <span class="px-4 py-2 bg-slate-100 text-slate-700 text-xs font-bold rounded-full">144 SKS</span>
+                    </div>
+                    <p class="reveal text-base leading-8 text-slate-600 sm:text-lg">
+                        Program studi yang fokus pada pengembangan perangkat lunak, kecerdasan buatan, data science, dan solusi digital inovatif. Lulusan siap menjadi talenta unggulan di era transformasi digital.
+                    </p>
+                </div>
+
+                <div class="reveal order-1 lg:order-2 relative">
+                    <div class="relative rounded-[2.5rem] border-2 border-blue-200 bg-white/95 p-8 shadow-2xl shadow-blue-500/20">
+                        <div class="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-[#1B4EF5] to-blue-600 rounded-2xl flex items-center justify-center text-white text-3xl shadow-lg pulse-blue rotate-12">
+                            💻
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="rounded-2xl bg-gradient-to-br from-blue-50 to-white p-5 border border-blue-200">
+                                <p class="text-xs uppercase tracking-wider text-blue-600 font-bold">Masa Studi</p>
+                                <p class="mt-2 text-2xl font-black text-slate-950">4 Tahun</p>
+                            </div>
+                            <div class="rounded-2xl bg-gradient-to-br from-indigo-50 to-white p-5 border border-indigo-200">
+                                <p class="text-xs uppercase tracking-wider text-indigo-600 font-bold">SKS Total</p>
+                                <p class="mt-2 text-2xl font-black text-slate-950">144 SKS</p>
+                            </div>
+                            <div class="rounded-2xl bg-gradient-to-br from-cyan-50 to-white p-5 border border-cyan-200">
+                                <p class="text-xs uppercase tracking-wider text-cyan-600 font-bold">Praktikum</p>
+                                <p class="mt-2 text-2xl font-black text-slate-950">60%</p>
+                            </div>
+                            <div class="rounded-2xl bg-gradient-to-br from-blue-50 to-white p-5 border border-blue-200">
+                                <p class="text-xs uppercase tracking-wider text-blue-600 font-bold">Prospek</p>
+                                <p class="mt-2 text-lg font-black text-slate-950">Sangat Tinggi</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="relative mx-auto max-w-7xl px-4 pb-24 sm:px-6 lg:px-8">
+            <div class="reveal rounded-[2.5rem] border-2 border-slate-200 bg-white p-8 shadow-xl">
+                <div class="text-center mb-10">
+                    <span class="inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-[#1B4EF5] shadow-sm border border-blue-200">
+                        🚀 Bidang Keahlian
+                    </span>
+                    <h2 class="mt-4 text-3xl font-black text-slate-950 sm:text-4xl">Konsentrasi Unggulan</h2>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                    <div class="card-hover group rounded-2xl border-2 border-blue-100 bg-white p-6 hover:border-[#1B4EF5]">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#1B4EF5] to-blue-600 flex items-center justify-center text-white text-xl mb-4 group-hover:scale-110 transition-transform shadow-md">
+                            🤖
+                        </div>
+                        <h3 class="font-black text-slate-950">AI & Machine Learning</h3>
+                        <p class="mt-2 text-xs text-slate-600">Pengembangan sistem cerdas dan model prediktif untuk solusi bisnis.</p>
+                    </div>
+                    <div class="card-hover group rounded-2xl border-2 border-indigo-100 bg-white p-6 hover:border-indigo-600">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-600 to-indigo-800 flex items-center justify-center text-white text-xl mb-4 group-hover:scale-110 transition-transform shadow-md">
+                            🌐
+                        </div>
+                        <h3 class="font-black text-slate-950">Web & Mobile Dev</h3>
+                        <p class="mt-2 text-xs text-slate-600">Pembangunan aplikasi web dan mobile berbasis teknologi modern.</p>
+                    </div>
+                    <div class="card-hover group rounded-2xl border-2 border-cyan-100 bg-white p-6 hover:border-cyan-600">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500 to-cyan-700 flex items-center justify-center text-white text-xl mb-4 group-hover:scale-110 transition-transform shadow-md">
+                            📊
+                        </div>
+                        <h3 class="font-black text-slate-950">Data Science</h3>
+                        <p class="mt-2 text-xs text-slate-600">Analisis big data, visualisasi, dan pengambilan keputusan berbasis data.</p>
+                    </div>
+                    <div class="card-hover group rounded-2xl border-2 border-blue-100 bg-white p-6 hover:border-[#1B4EF5]">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#1B4EF5] to-blue-600 flex items-center justify-center text-white text-xl mb-4 group-hover:scale-110 transition-transform shadow-md">
+                            🔒
+                        </div>
+                        <h3 class="font-black text-slate-950">Cybersecurity</h3>
+                        <p class="mt-2 text-xs text-slate-600">Keamanan jaringan, enkripsi data, dan ethical hacking.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-slate-200/80 bg-white py-6">
+        <div class="mx-auto max-w-7xl px-4 text-center text-sm text-slate-500">&copy; 2026 Campus Vista - Teknik Informatika ITB Riau Pesisir.</div>
+    </footer>
+
+    <script>
+        const ro = new IntersectionObserver((e)=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('is-visible');ro.unobserve(el.target)}})},{threshold:.2});
+        document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el=>ro.observe(el));
+    </script>
+</body>
+</html>
