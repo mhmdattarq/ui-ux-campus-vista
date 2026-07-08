@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="id" class="h-full bg-white text-slate-800 scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gedung Perkuliahan - Campus Vista</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        brand: { red: '#BE1A1A', blue: '#1B4EF5' }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="assets/css/landing.css">
+
+    <style>
+        html { scroll-behavior: smooth; scroll-padding-top: 5.5rem; }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 700ms ease, transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal.is-visible { opacity: 1; transform: translateY(0); }
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: opacity 700ms ease, transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal-left.is-visible { opacity: 1; transform: translateX(0); }
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(40px);
+            transition: opacity 700ms ease, transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal-right.is-visible { opacity: 1; transform: translateX(0); }
+
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .card-hover:hover {
+            transform: translateY(-6px) scale(1.01);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .brand-gradient { background: linear-gradient(135deg, #BE1A1A 0%, #1B4EF5 100%); }
+        .brand-text { background: linear-gradient(135deg, #BE1A1A 0%, #1B4EF5 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .brand-glow { box-shadow: 0 0 30px rgba(190,26,26,0.15), 0 0 60px rgba(27,78,245,0.1); }
+
+        .section-divider { height: 2px; background: linear-gradient(90deg, transparent, #BE1A1A, #1B4EF5, transparent); }
+
+        @keyframes glowPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
+        .hero-glow {
+            background: radial-gradient(circle at top left, rgba(190,26,26,0.14), transparent 34%),
+                        radial-gradient(circle at bottom right, rgba(27,78,245,0.12), transparent 36%);
+            animation: glowPulse 8s ease-in-out infinite;
+        }
+
+        .building-card {
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .building-card:hover {
+            transform: translateY(-8px) scale(1.01);
+        }
+        .building-card .card-image img {
+            transition: transform 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .building-card:hover .card-image img {
+            transform: scale(1.08);
+        }
+        .building-card .card-overlay {
+            transition: opacity 0.5s ease;
+        }
+        .building-card:hover .card-overlay {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body class="min-h-full flex flex-col font-sans bg-white antialiased selection:bg-blue-600 selection:text-white">
+
+    <div id="navbar" class="animate-slideDown"></div>
+    <script src="assets/js/navbar.js"></script>
+
+    <!-- BREADCRUMBS -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-2">
+        <nav class="flex text-sm text-slate-500">
+            <ol class="inline-flex items-center gap-1.5">
+                <li><a href="index.html" class="hover:text-brand-red transition-colors font-medium">Home</a></li>
+                <li class="flex items-center gap-1.5">
+                    <svg class="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                    <span class="text-brand-red font-semibold">Gedung Perkuliahan</span>
+                </li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- HERO -->
+    <section class="relative pt-6 pb-16 md:pt-10 md:pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <div class="absolute inset-0 hero-glow pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="reveal text-center max-w-4xl mx-auto">
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-brand-red/10 to-brand-blue/10 border border-brand-red/20 rounded-full mb-5">
+                    <span class="w-2 h-2 rounded-full brand-gradient animate-pulse"></span>
+                    <span class="text-xs font-bold text-slate-700 tracking-wider uppercase">Eksplorasi Kampus</span>
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.1] mb-5">
+                    Gedung <span class="brand-text">Perkuliahan</span>
+                </h1>
+                <p class="text-lg md:text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto">
+                    Jelajahi gedung perkuliahan di lingkungan <strong class="text-brand-blue font-bold">Institut Teknologi & Bisnis Riau Pesisir</strong> yang dirancang untuk mendukung proses belajar mengajar yang nyaman dan modern.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="section-divider"></div></div>
+
+    <!-- BUILDING CARDS -->
+    <section class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-white via-slate-50 to-white">
+        <div class="max-w-7xl mx-auto space-y-16 md:space-y-24">
+
+            <!-- GEDUNG A -->
+            <div class="reveal-left building-card group relative bg-white rounded-3xl overflow-hidden shadow-xl shadow-slate-200/60 border border-slate-100">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                    <!-- Image side -->
+                    <div class="card-image relative overflow-hidden h-72 lg:h-full min-h-[320px]">
+                        <img src="https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=1000&h=800&fit=crop"
+                             alt="Gedung A IRBTP"
+                             class="w-full h-full object-cover">
+                        <div class="card-overlay absolute inset-0 bg-gradient-to-t from-brand-red/40 via-brand-blue/20 to-transparent opacity-0"></div>
+                        <div class="absolute top-4 left-4">
+                            <span class="inline-flex px-4 py-1.5 brand-gradient text-white text-xs font-bold rounded-full shadow-lg">Gedung Perkuliahan</span>
+                        </div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <div class="bg-white/20 backdrop-blur-xl rounded-xl px-4 py-3 border border-white/30">
+                                <div class="flex items-center gap-2 text-white text-sm">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                    Kampus ITBRP, Dumai
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Content side -->
+                    <div class="p-8 md:p-10 lg:p-12 flex flex-col justify-center relative">
+                        <div class="absolute top-0 right-0 w-48 h-48 bg-gradient-to-bl from-brand-red/5 to-transparent rounded-bl-full pointer-events-none"></div>
+                        <div class="relative">
+                            <div class="inline-flex items-center gap-2 px-3 py-1 bg-gradient-to-r from-brand-red/10 to-brand-blue/10 border border-brand-red/20 rounded-full mb-4">
+                                <span class="w-1.5 h-1.5 rounded-full brand-gradient"></span>
+                                <span class="text-[10px] font-bold text-slate-600 tracking-widest uppercase">Gedung A</span>
+                            </div>
+                            <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-3">
+                                Gedung A <span class="brand-text">IRBTP</span>
+                            </h2>
+                            <p class="text-base text-slate-600 leading-relaxed mb-2">
+                                Gedung perkuliahan utama yang menjadi pusat kegiatan akademik di kampus ITBRP. Dilengkapi dengan berbagai fasilitas modern untuk menunjang proses belajar mengajar yang optimal.
+                            </p>
+
+                            <!-- Quick info stats -->
+                            <div class="grid grid-cols-3 gap-3 my-6">
+                                <div class="text-center p-3 rounded-xl bg-gradient-to-br from-brand-red/5 to-brand-blue/5 border border-slate-100">
+                                    <span class="text-2xl">🏛️</span>
+                                    <p class="text-xs font-bold text-slate-700 mt-1">12 Ruangan</p>
+                                </div>
+                                <div class="text-center p-3 rounded-xl bg-gradient-to-br from-brand-blue/5 to-brand-red/5 border border-slate-100">
+                                    <span class="text-2xl">📚</span>
+                                    <p class="text-xs font-bold text-slate-700 mt-1">Perpustakaan</p>
+                                </div>
+                                <div class="text-center p-3 rounded-xl bg-gradient-to-br from-brand-red/5 to-brand-blue/5 border border-slate-100">
+                                    <span class="text-2xl">💻</span>
+                                    <p class="text-xs font-bold text-slate-700 mt-1">Lab Komputer</p>
+                                </div>
+                            </div>
+
+                            <a href="detail-gedung-a.html"
+                               class="inline-flex items-center gap-2 px-6 py-3 brand-gradient text-white font-bold rounded-xl shadow-lg shadow-brand-red/20 hover:shadow-xl hover:shadow-brand-blue/30 hover:scale-105 active:scale-[0.98] transition-all duration-300 group/btn">
+                                <span>Lihat Detail Gedung</span>
+                                <svg class="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GEDUNG B -->
+            <div class="reveal-right building-card group relative bg-white rounded-3xl overflow-hidden shadow-xl shadow-slate-200/60 border border-slate-100">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:direction-rtl">
+                    <!-- Image side (order on desktop: right) -->
+                    <div class="card-image relative overflow-hidden h-72 lg:h-full min-h-[320px] lg:order-2">
+                        <img src="https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=1000&h=800&fit=crop"
+                             alt="Gedung B iTBRP"
+                             class="w-full h-full object-cover">
+                        <div class="card-overlay absolute inset-0 bg-gradient-to-t from-brand-blue/40 via-brand-red/20 to-transparent opacity-0"></div>
+                        <div class="absolute top-4 left-4">
+                            <span class="inline-flex px-4 py-1.5 brand-gradient text-white text-xs font-bold rounded-full shadow-lg">Gedung Perkuliahan</span>
+                        </div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <div class="bg-white/20 backdrop-blur-xl rounded-xl px-4 py-3 border border-white/30">
+                                <div class="flex items-center gap-2 text-white text-sm">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                    Kampus ITBRP, Dumai
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Content side (order on desktop: left) -->
+                    <div class="p-8 md:p-10 lg:p-12 flex flex-col justify-center relative lg:order-1">
+                        <div class="absolute top-0 left-0 w-48 h-48 bg-gradient-to-br from-brand-blue/5 to-transparent rounded-br-full pointer-events-none"></div>
+                        <div class="relative">
+                            <div class="inline-flex items-center gap-2 px-3 py-1 bg-gradient-to-r from-brand-blue/10 to-brand-red/10 border border-brand-blue/20 rounded-full mb-4">
+                                <span class="w-1.5 h-1.5 rounded-full brand-gradient"></span>
+                                <span class="text-[10px] font-bold text-slate-600 tracking-widest uppercase">Gedung B</span>
+                            </div>
+                            <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-3">
+                                Gedung B <span class="brand-text">iTBRP</span>
+                            </h2>
+                            <p class="text-base text-slate-600 leading-relaxed mb-2">
+                                Gedung perkuliahan pendukung yang menyediakan ruang kelas dan laboratorium teknik untuk mendukung kegiatan akademik mahasiswa ITBRP.
+                            </p>
+
+                            <!-- Quick info stats -->
+                            <div class="grid grid-cols-3 gap-3 my-6">
+                                <div class="text-center p-3 rounded-xl bg-gradient-to-br from-brand-blue/5 to-brand-red/5 border border-slate-100">
+                                    <span class="text-2xl">🚪</span>
+                                    <p class="text-xs font-bold text-slate-700 mt-1">4 Ruangan</p>
+                                </div>
+                                <div class="text-center p-3 rounded-xl bg-gradient-to-br from-brand-red/5 to-brand-blue/5 border border-slate-100">
+                                    <span class="text-2xl">🔧</span>
+                                    <p class="text-xs font-bold text-slate-700 mt-1">Lab Sipil</p>
+                                </div>
+                                <div class="text-center p-3 rounded-xl bg-gradient-to-br from-brand-blue/5 to-brand-red/5 border border-slate-100">
+                                    <span class="text-2xl">📶</span>
+                                    <p class="text-xs font-bold text-slate-700 mt-1">WiFi Gratis</p>
+                                </div>
+                            </div>
+
+                            <a href="detail-gedung-b.html"
+                               class="inline-flex items-center gap-2 px-6 py-3 brand-gradient text-white font-bold rounded-xl shadow-lg shadow-brand-red/20 hover:shadow-xl hover:shadow-brand-blue/30 hover:scale-105 active:scale-[0.98] transition-all duration-300 group/btn">
+                                <span>Lihat Detail Gedung</span>
+                                <svg class="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="section-divider"></div></div>
+
+    <!-- FOOTER -->
+    <footer class="bg-gradient-to-br from-slate-900 to-slate-800 text-white py-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-10 h-10 brand-gradient rounded-xl flex items-center justify-center text-lg shadow-lg">🏛️</div>
+                        <h3 class="text-xl font-black brand-gradient bg-clip-text text-transparent">Gedung Perkuliahan</h3>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed">Fasilitas gedung perkuliahan modern yang mendukung kegiatan belajar mengajar di lingkungan ITBRP.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-black text-white mb-4">Daftar Gedung</h3>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full brand-gradient"></span><a href="detail-gedung-a.html" class="hover:text-white transition-colors">Gedung A IRBTP</a></li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full brand-gradient"></span><a href="detail-gedung-b.html" class="hover:text-white transition-colors">Gedung B iTBRP</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-black text-white mb-4">Lokasi</h3>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-red"></span>Jl. Simpang Hulu, Dumai, Riau</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-blue"></span>Kampus ITBRP</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-700 pt-8 text-center text-slate-500 text-sm">
+                <p>&copy; 2026 <span class="brand-gradient bg-clip-text text-transparent font-bold">Campus Vista</span>. Institut Teknologi & Bisnis Riau Pesisir.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); }
+            });
+        }, { threshold: 0.15 });
+        document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach((el) => observer.observe(el));
+    </script>
+
+</body>
+</html>

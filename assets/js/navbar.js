@@ -67,7 +67,7 @@
                     </svg>
                 </button>
                 <div class="absolute left-1/2 mt-3 w-[520px] -translate-x-1/2 rounded-2xl border border-slate-200/80 bg-white/95 p-4 shadow-2xl opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 z-50 backdrop-blur-xl grid grid-cols-2 gap-3">
-                    <a data-nav-link data-nav-parent="explore" href="explore.html" class="nav-dropdown-link flex items-center gap-3 block px-4 py-3 text-xs rounded-xl text-slate-600 hover:text-[#1B4EF5] hover:bg-gradient-to-r hover:from-[#1B4EF5]/5 hover:to-transparent transition-all duration-200 hover:scale-[1.02] hover:shadow-sm">
+                    <a data-nav-link data-nav-parent="explore" href="explore_gedung.html" class="nav-dropdown-link flex items-center gap-3 block px-4 py-3 text-xs rounded-xl text-slate-600 hover:text-[#1B4EF5] hover:bg-gradient-to-r hover:from-[#1B4EF5]/5 hover:to-transparent transition-all duration-200 hover:scale-[1.02] hover:shadow-sm">
                         <span>🏛️</span> Gedung Perkuliahan
                     </a>
                     <a data-nav-link data-nav-parent="explore" href="explore.html" class="nav-dropdown-link flex items-center gap-3 block px-4 py-3 text-xs rounded-xl text-slate-600 hover:text-[#1B4EF5] hover:bg-gradient-to-r hover:from-[#1B4EF5]/5 hover:to-transparent transition-all duration-200 hover:scale-[1.02] hover:shadow-sm">
@@ -168,7 +168,7 @@
                 <div>
                     <p class="text-xs text-slate-400 font-bold uppercase tracking-wider mb-3 pl-1">Explore</p>
                     <div class="grid grid-cols-2 gap-2 pl-2 text-xs">
-                        <a data-nav-link data-nav-parent="explore" href="explore.html" class="nav-link-mobile flex items-center gap-2 rounded-xl px-3 py-2.5 transition-all duration-200 hover:bg-gradient-to-r hover:from-[#1B4EF5]/5 hover:to-transparent hover:text-[#1B4EF5] hover:shadow-sm hover:scale-[1.02]">
+                        <a data-nav-link data-nav-parent="explore" href="explore_gedung.html" class="nav-link-mobile flex items-center gap-2 rounded-xl px-3 py-2.5 transition-all duration-200 hover:bg-gradient-to-r hover:from-[#1B4EF5]/5 hover:to-transparent hover:text-[#1B4EF5] hover:shadow-sm hover:scale-[1.02]">
                             <span>🏛️</span> Gedung
                         </a>
                         <a data-nav-link data-nav-parent="explore" href="explore.html" class="nav-link-mobile flex items-center gap-2 rounded-xl px-3 py-2.5 transition-all duration-200 hover:bg-gradient-to-r hover:from-[#1B4EF5]/5 hover:to-transparent hover:text-[#1B4EF5] hover:shadow-sm hover:scale-[1.02]">
