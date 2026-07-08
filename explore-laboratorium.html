@@ -1,110 +1,392 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full bg-slate-900">
+<html lang="id" class="h-full bg-white text-slate-800 scroll-smooth">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Explore Laboratorium - Campus Vista</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laboratorium Komputer - Campus Vista</title>
 
-        .hero-gradient {
-            background: linear-gradient(135deg, #FF3B3B 0%, #4A90E2 100%);
-        }
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
 
-        .card-hover-effect {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+  <!-- Tailwind CSS (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: {
+            brand: { red: '#BE1A1A', blue: '#1B4EF5' }
+          }
         }
+      }
+    }
+  </script>
 
-        .card-hover-effect:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-    </style>
+  <!-- Shared Design System -->
+  <link rel="stylesheet" href="assets/css/laboratorium.css">
+
+  <style>
+    html { scroll-behavior: smooth; scroll-padding-top: 5.5rem; }
+
+    .lab-card {
+      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .lab-card:hover {
+      transform: translateY(-8px) scale(1.01);
+    }
+    .lab-card .card-image img {
+      transition: transform 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .lab-card:hover .card-image img {
+      transform: scale(1.08);
+    }
+    .lab-card .card-overlay {
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    .lab-card:hover .card-overlay {
+      opacity: 1;
+    }
+
+    .stat-card {
+      transition: all 0.3s ease;
+    }
+    .stat-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+  </style>
 </head>
 
-<body class="bg-slate-900 text-white">
+<body class="min-h-full flex flex-col font-sans bg-white antialiased selection:bg-blue-600 selection:text-white">
 
-    <div id="navbar"></div>
-    <script src="assets/js/navbar.js"></script>
+  <!-- Navbar (injected via navbar.js) -->
+  <div id="navbar" class="animate-slideDown"></div>
+  <script src="assets/js/navbar.js"></script>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="hero-gradient text-white py-20 px-4 text-center">
-            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight">Laboratorium Komputer ITBRP</h1>
-            <p class="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-slate-200">
-                Jelajahi fasilitas laboratorium komputer modern kami yang dirancang untuk mendukung inovasi dan
-                pembelajaran.
-            </p>
-        </section>
+  <!-- ═══════ BREADCRUMBS ═══════ -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-2">
+    <nav class="flex text-sm text-slate-500">
+      <ol class="inline-flex items-center gap-1.5">
+        <li><a href="index.html" class="hover:text-brand-red transition-colors font-medium">Home</a></li>
+        <li class="flex items-center gap-1.5">
+          <svg class="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+          <span class="text-brand-red font-semibold">Laboratorium Komputer</span>
+        </li>
+      </ol>
+    </nav>
+  </div>
 
-        <!-- Labs Card Section -->
-        <section class="py-16 sm:py-24 bg-slate-900">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+  <!-- ═══════ HERO ═══════ -->
+  <section class="relative pt-6 pb-16 md:pt-10 md:pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <div class="absolute inset-0 hero-glow pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="reveal text-center max-w-4xl mx-auto">
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-brand-red/10 to-brand-blue/10 border border-brand-red/20 rounded-full mb-5">
+          <span class="w-2 h-2 rounded-full brand-gradient animate-pulse"></span>
+          <span class="text-xs font-bold text-slate-700 tracking-wider uppercase">Eksplorasi Fasilitas</span>
+        </div>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.1] mb-5">
+          Laboratorium <span class="brand-text">Komputer</span>
+        </h1>
+        <p class="text-lg md:text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto">
+          Jelajahi tiga laboratorium komputer modern milik
+          <strong class="text-brand-blue font-bold">Institut Teknologi & Bisnis Riau Pesisir</strong>
+          yang dirancang untuk mendukung praktikum, riset, dan pengembangan teknologi.
+        </p>
+      </div>
+    </div>
+  </section>
 
-                    <!-- Lab Card 1 -->
-                    <div
-                        class="card-hover-effect bg-slate-800 rounded-lg overflow-hidden shadow-lg border border-slate-700">
-                        <img class="w-full h-56 object-cover" src="https://via.placeholder.com/400x250/FF3B3B/FFFFFF?text=Lab+Komputer+1" alt="Laboratorium Komputer 1">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold text-white mb-2">Laboratorium Komputer 1</h3>
-                            <p class="text-slate-300 mb-4">
-                                Laboratorium serbaguna untuk praktikum dasar dan pengembangan perangkat lunak dengan
-                                spesifikasi hardware terbaru.
-                            </p>
-                            <a href="detail-laboratorium-1.html"
-                                class="inline-block bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300">
-                                Lihat Detail
-                            </a>
-                        </div>
-                    </div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="section-divider"></div></div>
 
-                    <!-- Lab Card 2 -->
-                    <div
-                        class="card-hover-effect bg-slate-800 rounded-lg overflow-hidden shadow-lg border border-slate-700">
-                        <img class="w-full h-56 object-cover" src="https://via.placeholder.com/400x250/4A90E2/FFFFFF?text=Lab+Komputer+2" alt="Laboratorium Komputer 2">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold text-white mb-2">Laboratorium Komputer 2</h3>
-                            <p class="text-slate-300 mb-4">
-                                Didedikasikan untuk riset jaringan dan keamanan siber, dilengkapi dengan perangkat keras
-                                dan lunak khusus.
-                            </p>
-                            <a href="detail-laboratorium-2.html"
-                                class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300">
-                                Lihat Detail
-                            </a>
-                        </div>
-                    </div>
+  <!-- ═══════ LAB CARDS ═══════ -->
+  <section class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-white via-slate-50 to-white">
+    <div class="max-w-7xl mx-auto space-y-16 md:space-y-24">
 
-                    <!-- Lab Card 3 -->
-                    <div
-                        class="card-hover-effect bg-slate-800 rounded-lg overflow-hidden shadow-lg border border-slate-700">
-                        <img class="w-full h-56 object-cover" src="https://via.placeholder.com/400x250/34D399/FFFFFF?text=Lab+Komputer+3" alt="Laboratorium Komputer 3">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold text-white mb-2">Laboratorium Komputer 3</h3>
-                            <p class="text-slate-300 mb-4">
-                                Pusat pengembangan multimedia dan kecerdasan buatan dengan workstation grafis performa
-                                tinggi.
-                            </p>
-                            <a href="detail-laboratorium-3.html"
-                                class="inline-block bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300">
-                                Lihat Detail
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
+      <!-- ─── LAB 1 ─── -->
+      <div class="reveal-left lab-card group relative bg-white rounded-3xl overflow-hidden shadow-xl shadow-slate-200/60 border border-slate-100">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-0">
+          <!-- Image -->
+          <div class="card-image relative overflow-hidden h-72 lg:h-full min-h-[320px]">
+            <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=1000&h=800&fit=crop"
+                 alt="Laboratorium Komputer 1"
+                 class="w-full h-full object-cover">
+            <div class="card-overlay absolute inset-0 bg-gradient-to-t from-brand-red/40 via-brand-blue/20 to-transparent"></div>
+            <div class="absolute top-4 left-4">
+              <span class="inline-flex px-4 py-1.5 brand-gradient text-white text-xs font-bold rounded-full shadow-lg">Lab Komputer</span>
             </div>
-        </section>
+            <div class="absolute bottom-4 left-4 right-4">
+              <div class="bg-white/20 backdrop-blur-xl rounded-xl px-4 py-3 border border-white/30">
+                <div class="flex items-center gap-2 text-white text-sm">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                  </svg>
+                  Kampus ITBRP, Dumai
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Content -->
+          <div class="p-8 md:p-10 lg:p-12 flex flex-col justify-center relative">
+            <div class="absolute top-0 right-0 w-48 h-48 bg-gradient-to-bl from-brand-red/5 to-transparent rounded-bl-full pointer-events-none"></div>
+            <div class="relative">
+              <div class="inline-flex items-center gap-2 px-3 py-1 bg-gradient-to-r from-brand-red/10 to-brand-blue/10 border border-brand-red/20 rounded-full mb-4">
+                <span class="w-1.5 h-1.5 rounded-full brand-gradient"></span>
+                <span class="text-[10px] font-bold text-slate-600 tracking-widest uppercase">Lab 1</span>
+              </div>
+              <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-3">
+                Lab Komputer <span class="brand-text">1</span>
+              </h2>
+              <p class="text-base text-slate-600 leading-relaxed mb-6">
+                Laboratorium serbaguna untuk praktikum dasar pemrograman dan pengembangan perangkat lunak.
+                Dilengkapi spesifikasi hardware terbaru dan lingkungan pengembangan yang lengkap.
+              </p>
 
-    </main>
+              <!-- Stats -->
+              <div class="grid grid-cols-3 gap-3 my-6">
+                <div class="stat-card text-center p-3 rounded-xl bg-gradient-to-br from-brand-red/5 to-brand-blue/5 border border-slate-100">
+                  <span class="text-2xl block">🖥️</span>
+                  <p class="text-lg font-black text-slate-900 mt-1">24</p>
+                  <p class="text-[10px] font-bold text-slate-500 uppercase tracking-wide">PC</p>
+                </div>
+                <div class="stat-card text-center p-3 rounded-xl bg-gradient-to-br from-brand-blue/5 to-brand-red/5 border border-slate-100">
+                  <span class="text-2xl block">❄️</span>
+                  <p class="text-lg font-black text-slate-900 mt-1">2</p>
+                  <p class="text-[10px] font-bold text-slate-500 uppercase tracking-wide">AC</p>
+                </div>
+                <div class="stat-card text-center p-3 rounded-xl bg-gradient-to-br from-brand-red/5 to-brand-blue/5 border border-slate-100">
+                  <span class="text-2xl block">📶</span>
+                  <p class="text-lg font-black text-slate-900 mt-1">WiFi</p>
+                  <p class="text-[10px] font-bold text-slate-500 uppercase tracking-wide">Free</p>
+                </div>
+              </div>
+
+              <a href="detail-laboratorium-1.html"
+                 class="inline-flex items-center gap-2 px-6 py-3 brand-gradient text-white font-bold rounded-xl shadow-lg shadow-brand-red/20 hover:shadow-xl hover:shadow-brand-blue/30 hover:scale-105 active:scale-[0.98] transition-all duration-300 group/btn">
+                <span>Lihat Detail Lab 1</span>
+                <svg class="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── LAB 2 ─── -->
+      <div class="reveal-right lab-card group relative bg-white rounded-3xl overflow-hidden shadow-xl shadow-slate-200/60 border border-slate-100">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-0">
+          <!-- Content first on desktop -->
+          <div class="p-8 md:p-10 lg:p-12 flex flex-col justify-center relative lg:order-1">
+            <div class="absolute top-0 left-0 w-48 h-48 bg-gradient-to-br from-brand-blue/5 to-transparent rounded-br-full pointer-events-none"></div>
+            <div class="relative">
+              <div class="inline-flex items-center gap-2 px-3 py-1 bg-gradient-to-r from-brand-blue/10 to-brand-red/10 border border-brand-blue/20 rounded-full mb-4">
+                <span class="w-1.5 h-1.5 rounded-full brand-gradient"></span>
+                <span class="text-[10px] font-bold text-slate-600 tracking-widest uppercase">Lab 2</span>
+              </div>
+              <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-3">
+                Lab Komputer <span class="brand-text">2</span>
+              </h2>
+              <p class="text-base text-slate-600 leading-relaxed mb-6">
+                Didedikasikan untuk riset jaringan komputer dan keamanan siber. Dilengkapi perangkat keras
+                dan lunak khusus untuk simulasi infrastruktur jaringan dan pengujian keamanan.
+              </p>
+
+              <!-- Stats -->
+              <div class="grid grid-cols-3 gap-3 my-6">
+                <div class="stat-card text-center p-3 rounded-xl bg-gradient-to-br from-brand-blue/5 to-brand-red/5 border border-slate-100">
+                  <span class="text-2xl block">🖥️</span>
+                  <p class="text-lg font-black text-slate-900 mt-1">18</p>
+                  <p class="text-[10px] font-bold text-slate-500 uppercase tracking-wide">PC</p>
+                </div>
+                <div class="stat-card text-center p-3 rounded-xl bg-gradient-to-br from-brand-red/5 to-brand-blue/5 border border-slate-100">
+                  <span class="text-2xl block">❄️</span>
+                  <p class="text-lg font-black text-slate-900 mt-1">2</p>
+                  <p class="text-[10px] font-bold text-slate-500 uppercase tracking-wide">AC</p>
+                </div>
+                <div class="stat-card text-center p-3 rounded-xl bg-gradient-to-br from-brand-blue/5 to-brand-red/5 border border-slate-100">
+                  <span class="text-2xl block">📶</span>
+                  <p class="text-lg font-black text-slate-900 mt-1">WiFi</p>
+                  <p class="text-[10px] font-bold text-slate-500 uppercase tracking-wide">Free</p>
+                </div>
+              </div>
+
+              <a href="detail-laboratorium-2.html"
+                 class="inline-flex items-center gap-2 px-6 py-3 brand-gradient text-white font-bold rounded-xl shadow-lg shadow-brand-red/20 hover:shadow-xl hover:shadow-brand-blue/30 hover:scale-105 active:scale-[0.98] transition-all duration-300 group/btn">
+                <span>Lihat Detail Lab 2</span>
+                <svg class="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <!-- Image -->
+          <div class="card-image relative overflow-hidden h-72 lg:h-full min-h-[320px] lg:order-2">
+            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1000&h=800&fit=crop"
+                 alt="Laboratorium Komputer 2"
+                 class="w-full h-full object-cover">
+            <div class="card-overlay absolute inset-0 bg-gradient-to-t from-brand-blue/40 via-brand-red/20 to-transparent"></div>
+            <div class="absolute top-4 left-4">
+              <span class="inline-flex px-4 py-1.5 brand-gradient text-white text-xs font-bold rounded-full shadow-lg">Lab Komputer</span>
+            </div>
+            <div class="absolute bottom-4 left-4 right-4">
+              <div class="bg-white/20 backdrop-blur-xl rounded-xl px-4 py-3 border border-white/30">
+                <div class="flex items-center gap-2 text-white text-sm">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                  </svg>
+                  Kampus ITBRP, Dumai
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── LAB 3 ─── -->
+      <div class="reveal-left lab-card group relative bg-white rounded-3xl overflow-hidden shadow-xl shadow-slate-200/60 border border-slate-100">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-0">
+          <!-- Image -->
+          <div class="card-image relative overflow-hidden h-72 lg:h-full min-h-[320px]">
+            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1000&h=800&fit=crop"
+                 alt="Laboratorium Komputer 3"
+                 class="w-full h-full object-cover">
+            <div class="card-overlay absolute inset-0 bg-gradient-to-t from-brand-red/40 via-brand-blue/20 to-transparent"></div>
+            <div class="absolute top-4 left-4">
+              <span class="inline-flex px-4 py-1.5 brand-gradient text-white text-xs font-bold rounded-full shadow-lg">Lab Komputer</span>
+            </div>
+            <div class="absolute bottom-4 left-4 right-4">
+              <div class="bg-white/20 backdrop-blur-xl rounded-xl px-4 py-3 border border-white/30">
+                <div class="flex items-center gap-2 text-white text-sm">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                  </svg>
+                  Kampus ITBRP, Dumai
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Content -->
+          <div class="p-8 md:p-10 lg:p-12 flex flex-col justify-center relative">
+            <div class="absolute top-0 right-0 w-48 h-48 bg-gradient-to-bl from-brand-red/5 to-transparent rounded-bl-full pointer-events-none"></div>
+            <div class="relative">
+              <div class="inline-flex items-center gap-2 px-3 py-1 bg-gradient-to-r from-brand-red/10 to-brand-blue/10 border border-brand-red/20 rounded-full mb-4">
+                <span class="w-1.5 h-1.5 rounded-full brand-gradient"></span>
+                <span class="text-[10px] font-bold text-slate-600 tracking-widest uppercase">Lab 3</span>
+              </div>
+              <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-3">
+                Lab Komputer <span class="brand-text">3</span>
+              </h2>
+              <p class="text-base text-slate-600 leading-relaxed mb-6">
+                Pusat pengembangan multimedia dan kecerdasan buatan dengan spesifikasi workstation grafis
+                performa tinggi untuk desain, rendering, dan pelatihan model AI.
+              </p>
+
+              <!-- Stats -->
+              <div class="grid grid-cols-3 gap-3 my-6">
+                <div class="stat-card text-center p-3 rounded-xl bg-gradient-to-br from-brand-red/5 to-brand-blue/5 border border-slate-100">
+                  <span class="text-2xl block">🖥️</span>
+                  <p class="text-lg font-black text-slate-900 mt-1">30</p>
+                  <p class="text-[10px] font-bold text-slate-500 uppercase tracking-wide">PC</p>
+                </div>
+                <div class="stat-card text-center p-3 rounded-xl bg-gradient-to-br from-brand-blue/5 to-brand-red/5 border border-slate-100">
+                  <span class="text-2xl block">❄️</span>
+                  <p class="text-lg font-black text-slate-900 mt-1">2</p>
+                  <p class="text-[10px] font-bold text-slate-500 uppercase tracking-wide">AC</p>
+                </div>
+                <div class="stat-card text-center p-3 rounded-xl bg-gradient-to-br from-brand-red/5 to-brand-blue/5 border border-slate-100">
+                  <span class="text-2xl block">📶</span>
+                  <p class="text-lg font-black text-slate-900 mt-1">WiFi</p>
+                  <p class="text-[10px] font-bold text-slate-500 uppercase tracking-wide">Free</p>
+                </div>
+              </div>
+
+              <a href="detail-laboratorium-3.html"
+                 class="inline-flex items-center gap-2 px-6 py-3 brand-gradient text-white font-bold rounded-xl shadow-lg shadow-brand-red/20 hover:shadow-xl hover:shadow-brand-blue/30 hover:scale-105 active:scale-[0.98] transition-all duration-300 group/btn">
+                <span>Lihat Detail Lab 3</span>
+                <svg class="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="section-divider"></div></div>
+
+  <!-- ═══════ FOOTER ═══════ -->
+  <footer class="bg-gradient-to-br from-slate-900 to-slate-800 text-white py-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+        <div>
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-10 h-10 brand-gradient rounded-xl flex items-center justify-center text-lg shadow-lg">💻</div>
+            <h3 class="text-xl font-black brand-gradient bg-clip-text text-transparent">Lab Komputer</h3>
+          </div>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Fasilitas laboratorium komputer modern yang mendukung praktikum, riset, dan pengembangan teknologi di lingkungan ITBRP.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-lg font-black text-white mb-4">Daftar Laboratorium</h3>
+          <ul class="space-y-2 text-sm text-slate-400">
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full brand-gradient"></span>
+              <a href="detail-laboratorium-1.html" class="hover:text-white transition-colors">Lab Komputer 1</a>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full brand-gradient"></span>
+              <a href="detail-laboratorium-2.html" class="hover:text-white transition-colors">Lab Komputer 2</a>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full brand-gradient"></span>
+              <a href="detail-laboratorium-3.html" class="hover:text-white transition-colors">Lab Komputer 3</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-black text-white mb-4">Lokasi</h3>
+          <ul class="space-y-2 text-sm text-slate-400">
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-red"></span>Jl. Simpang Hulu, Dumai, Riau</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-blue"></span>Kampus ITBRP</li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-slate-700 pt-8 text-center text-slate-500 text-sm">
+        <p>&copy; 2026 <span class="brand-gradient bg-clip-text text-transparent font-bold">Campus Vista</span>. Institut Teknologi & Bisnis Riau Pesisir.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════ SCROLL REVEAL OBSERVER ═══════ -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale')
+      .forEach((el) => observer.observe(el));
+  </script>
 
 </body>
-
 </html>
