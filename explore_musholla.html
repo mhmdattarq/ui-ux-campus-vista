@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="id" class="h-full bg-slate-50 text-slate-800 scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musholla ITBRP - Explore Kampus</title>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        campus: {
+                            red: '#BE1A1A',
+                            blue: '#1B4EF5',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="assets/css/landing.css">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 5.5rem;
+        }
+
+        section[id] {
+            scroll-margin-top: 6.5rem;
+        }
+
+        .hero-glow {
+            background: radial-gradient(circle at top left, rgba(190, 26, 26, 0.14), transparent 34%),
+                        radial-gradient(circle at bottom right, rgba(27, 78, 245, 0.12), transparent 36%);
+            animation: glowPulse 8s ease-in-out infinite;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 700ms ease, transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: opacity 700ms ease, transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal-left.is-visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .card-hover-effect {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .card-hover-effect:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-zoom {
+            transition: transform 0.5s ease;
+        }
+
+        .image-zoom:hover {
+            transform: scale(1.05);
+        }
+
+        .panorama-container {
+            cursor: grab;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .panorama-container:active {
+            cursor: grabbing;
+        }
+
+        .panorama-image {
+            width: 300vw;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @keyframes glowPulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+    </style>
+</head>
+
+<body class="min-h-full flex flex-col relative overflow-x-hidden font-sans bg-white antialiased selection:bg-blue-600 selection:text-white">
+
+    <div id="navbar" class="animate-slideDown"></div>
+    <script src="assets/js/navbar.js"></script>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <nav class="flex text-sm text-slate-600" aria-label="Breadcrumb">
+            <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                <li class="inline-flex items-center">
+                    <a href="index.html" class="hover:text-[#BE1A1A] transition-colors">Home</a>
+                </li>
+                <li>
+                    <div class="flex items-center">
+                        <svg class="w-3 h-3 mx-2 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        <a href="explore.html" class="hover:text-[#1B4EF5] transition-colors">Explore</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="flex items-center">
+                        <svg class="w-3 h-3 mx-2 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        <span class="text-[#BE1A1A] font-semibold">Musholla ITBRP</span>
+                    </div>
+                </li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative pt-8 pb-16 md:pt-16 md:pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <div class="absolute inset-0 hero-glow pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="reveal grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold bg-gradient-to-r from-[#BE1A1A]/10 to-[#1B4EF5]/10 text-slate-700 rounded-lg border-2 border-blue-100/50 shadow-md">
+                        <span class="flex h-2 w-2 relative">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-gradient-to-r from-[#1B4EF5] to-[#BE1A1A]"></span>
+                        </span>
+                        Fasilitas Ibadah
+                    </div>
+                    
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.1]">
+                        Musholla <span class="bg-gradient-to-r from-[#BE1A1A] via-rose-600 to-red-600 bg-clip-text text-transparent animate-gradient">ITBRP</span>
+                    </h1>
+                    
+                    <p class="text-lg md:text-xl text-slate-600 font-medium leading-relaxed">
+                        Fasilitas ibadah yang disediakan untuk mendukung kebutuhan mahasiswa, dosen, dan tenaga kependidikan dalam melaksanakan kegiatan keagamaan di lingkungan kampus.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-4 pt-4">
+                        <div class="card-hover-effect p-4 rounded-2xl border-2 border-red-100 bg-gradient-to-br from-red-50 to-white shadow-lg">
+                            <p class="text-3xl font-black text-[#BE1A1A]">60</p>
+                            <p class="text-sm font-medium text-slate-600 mt-1">Jamaah</p>
+                        </div>
+                        <div class="card-hover-effect p-4 rounded-2xl border-2 border-blue-100 bg-gradient-to-br from-blue-50 to-white shadow-lg">
+                            <p class="text-3xl font-black text-[#1B4EF5]">06:00-21:00</p>
+                            <p class="text-sm font-medium text-slate-600 mt-1">Jam Operasional</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative rounded-3xl overflow-hidden shadow-2xl shadow-[#BE1A1A]/20 group">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#BE1A1A]/50 to-transparent z-10"></div>
+                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=1200&h=600&fit=crop" 
+                         alt="Musholla ITBRP Front View" 
+                         class="w-full h-[400px] md:h-[500px] object-cover image-zoom transition-transform duration-700">
+                    <div class="absolute bottom-4 left-4 right-4 z-20">
+                        <div class="glass-card backdrop-blur-xl bg-white/20 rounded-xl p-3 text-white text-sm font-medium shadow-lg">
+                            <svg class="w-5 h-5 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            Jl. Simpang Hulu, Dumai, Riau
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-12 md:py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto space-y-16">
+            
+            <!-- Information Table -->
+            <div class="reveal-left">
+                <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-8 text-center">Informasi Musholla</h2>
+                
+                <div class="overflow-x-auto">
+                    <div class="card-hover-effect rounded-2xl border-2 border-slate-200 bg-white shadow-lg">
+                        <table class="w-full text-left">
+                            <tbody class="divide-y divide-slate-100">
+                                <tr class="hover:bg-slate-50 transition-colors">
+                                    <td class="px-6 py-4 w-1/4">
+                                        <p class="text-xs font-bold uppercase tracking-wider text-slate-500">Nama Musholla</p>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-[#BE1A1A] to-red-600 flex items-center justify-center text-white">
+                                                🕌
+                                            </div>
+                                            <p class="text-lg font-bold text-slate-900">Musholla ITBRP</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 transition-colors">
+                                    <td class="px-6 py-4">
+                                        <p class="text-xs font-bold uppercase tracking-wider text-slate-500">Kapasitas</p>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-[#1B4EF5] to-blue-600 flex items-center justify-center text-white">
+                                                👥
+                                            </div>
+                                            <p class="text-lg font-bold text-slate-900">60 Jamaah</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 transition-colors">
+                                    <td class="px-6 py-4">
+                                        <p class="text-xs font-bold uppercase tracking-wider text-slate-500">Jam Operasional</p>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-emerald-500 to-green-600 flex items-center justify-center text-white">
+                                                🕐
+                                            </div>
+                                            <p class="text-lg font-bold text-slate-900">06:00 - 21:00 WIB</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Description -->
+            <div class="reveal">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-6">Tentang Musholla</h2>
+                    <div class="glass-card backdrop-blur-xl bg-gradient-to-br from-white to-slate-50 p-8 rounded-3xl border-2 border-slate-100 shadow-xl">
+                        <p class="text-lg text-slate-700 leading-relaxed font-medium">
+                            Musholla ITBRP merupakan fasilitas ibadah yang disediakan untuk mendukung kebutuhan mahasiswa, dosen, dan tenaga kependidikan dalam melaksanakan kegiatan keagamaan di lingkungan kampus. Musholla ini didesain dengan konsep modern namun tetap mempertahankan nilai-nilai spiritual dan kenyamanan bagi para pengguna. Dengan kapasitas yang mencukupi dan lokasi yang strategis, musholla menjadi pusat kegiatan ibadah dan pengkajian ilmu agama di Institut Teknologi & Bisnis Riau Pesisir.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery -->
+            <div class="reveal">
+                <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-8 text-center">Galeri Musholla</h2>
+                
+                <div class="gallery-grid">
+                    <div class="card-hover-effect rounded-2xl overflow-hidden shadow-lg group">
+                        <div class="relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=800&h=500&fit=crop" 
+                                 alt="Tampak Depan Musholla" 
+                                 class="w-full h-64 object-cover image-zoom transition-transform duration-500">
+                            <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-slate-800 shadow-md">
+                                Tampak Depan
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-bold text-slate-900">Tampak Depan Musholla</h3>
+                            <p class="text-sm text-slate-500 mt-1">Fasade arsitektur modern dengan desain islami</p>
+                        </div>
+                    </div>
+
+                    <div class="card-hover-effect rounded-2xl overflow-hidden shadow-lg group">
+                        <div class="relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1566885769339-15f93f840f3e?q=80&w=800&h=500&fit=crop" 
+                                 alt="Tampak Samping Musholla" 
+                                 class="w-full h-64 object-cover image-zoom transition-transform duration-500">
+                            <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-slate-800 shadow-md">
+                                Tampak Samping
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-bold text-slate-900">Tampak Samping</h3>
+                            <p class="text-sm text-slate-500 mt-1">View samping menunjukkan luas area musholla</p>
+                        </div>
+                    </div>
+
+                    <div class="card-hover-effect rounded-2xl overflow-hidden shadow-lg group">
+                        <div class="relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1555824954-42d264937746?q=80&w=800&h=500&fit=crop" 
+                                 alt="Tampak Dalam Musholla" 
+                                 class="w-full h-64 object-cover image-zoom transition-transform duration-500">
+                            <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-slate-800 shadow-md">
+                                Tampak Dalam
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-bold text-slate-900">Tampak Dalam Musholla</h3>
+                            <p class="text-sm text-slate-500 mt-1">Interior nyaman dengan pencahayaan yang baik</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Virtual Tour Section -->
+            <div class="reveal">
+                <div class="max-w-7xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-6 text-center">Virtual Tour 360°</h2>
+                    <p class="text-center text-slate-600 mb-8 text-lg">Jelajahi Musholla ITBRP secara interaktif melalui virtual tour 360°</p>
+                    
+                    <div class="card-hover-effect rounded-3xl overflow-hidden shadow-2xl shadow-[#1B4EF5]/20 group relative bg-black">
+                        <!-- Placeholder for virtual tour - replace with actual virtual tour implementation -->
+                        <div class="relative w-full h-[500px] md:h-[600px] bg-slate-900 flex items-center justify-center group">
+                            <div class="absolute inset-0 opacity-40 bg-[url('https://images.unsplash.com/photo-1555824954-42d264937746?q=80&w=1600&h=900&fit=crop')] bg-cover bg-center"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
+                            
+                            <div class="relative z-10 text-center space-y-6 p-8">
+                                <div class="w-24 h-24 mx-auto bg-gradient-to-br from-[#BE1A1A] to-[#1B4EF5] rounded-full flex items-center justify-center text-white shadow-2xl shadow-[#1B4EF5]/50">
+                                    <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                </div>
+                                <h3 class="text-2xl md:text-3xl font-black text-white">Virtual Tour 360°</h3>
+                                <p class="text-slate-300 max-w-md mx-auto">Klik tombol di bawah untuk memulai tour interaktif musholla secara lengkap</p>
+                                
+                                <button onclick="startVirtualTour()" class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#BE1A1A] via-purple-600 to-[#1B4EF5] text-white font-bold rounded-xl shadow-xl shadow-purple-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/40 hover:scale-105 active:scale-95">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    Mulai Virtual Tour
+                                </button>
+                                
+                                <div class="flex items-center justify-center gap-8 mt-8">
+                                    <div class="text-center">
+                                        <div class="text-2xl font-black text-white">360°</div>
+                                        <div class="text-sm text-slate-400">Panorama</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="text-2xl font-black text-white">HD</div>
+                                        <div class="text-sm text-slate-400">High Quality</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="text-2xl font-black text-white">Interactive</div>
+                                        <div class="text-sm text-slate-400">Interaktif</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="absolute bottom-4 right-4 z-20">
+                                <button onclick="openVirtualTourModal()" class="bg-white/20 backdrop-blur-md hover:bg-white/30 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all">
+                                    Buka di Layar Penuh
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-gradient-to-br from-slate-900 to-slate-800 text-white py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-black mb-4">Musholla ITBRP</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Fasilitas ibadah modern yang nyaman untuk seluruh warga kampus ITBRP dalam melaksanakan ibadah sehari-hari.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-black mb-4">Jam Operasional</h3>
+                    <p class="text-slate-300 text-sm">
+                        Senin - Jum'at: 06:00 - 21:00 WIB<br>
+                        Sabtu: 06:00 - 14:00 WIB<br>
+                        Minggu & Hari Besar: 05:00 - 22:00 WIB
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-black mb-4">Lokasi</h3>
+                    <p class="text-slate-300 text-sm">
+                        Jl. Simpang Hulu, Dumai, Riau<br>
+                        Di dalam kampus Institut Teknologi & Bisnis Riau Pesisir
+                    </p>
+                </div>
+            </div>
+            <div class="border-t border-slate-700 pt-8 text-center text-slate-400 text-sm">
+                <p>&copy; 2026 Musholla ITBRP. Institut Teknologi & Bisnis Riau Pesisir.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Virtual Tour Modal -->
+    <div id="virtualTourModal" class="fixed inset-0 z-[100] bg-slate-900/95 backdrop-blur-lg hidden flex items-center justify-center p-4">
+        <div class="relative w-full max-w-6xl h-[80vh] rounded-2xl overflow-hidden shadow-2xl">
+            <button onclick="closeVirtualTourModal()" class="absolute top-4 right-4 z-20 bg-black/50 hover:bg-black/70 text-white p-2 rounded-lg transition-all">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            
+            <div class="absolute inset-0 flex items-center justify-center">
+                <div class="text-center space-y-6 p-8">
+                    <div class="w-20 h-20 mx-auto bg-gradient-to-br from-[#BE1A1A] to-[#1B4EF5] rounded-full flex items-center justify-center text-white shadow-2xl">
+                        <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    </div>
+                    <h3 class="text-2xl md:text-3xl font-black text-white">Virtual Tour Musholla ITBRP</h3>
+                    <p class="text-slate-300">Loading virtual tour 360°...</p>
+                    <div class="w-64 h-2 bg-slate-700 rounded-full overflow-hidden mx-auto">
+                        <div class="h-full bg-gradient-to-r from-[#BE1A1A] to-[#1B4EF5] animate-pulse"></div>
+                    </div>
+                    <p class="text-xs text-slate-400">*Virtual tour 360° menggunakan teknologi panorama interaktif</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Reveal animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.15,
+        });
+
+        document.querySelectorAll('.reveal, .reveal-left').forEach((element) => observer.observe(element));
+
+        // Virtual tour modal
+        function openVirtualTourModal() {
+            document.getElementById('virtualTourModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeVirtualTourModal() {
+            document.getElementById('virtualTourModal').classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        function startVirtualTour() {
+            openVirtualTourModal();
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('virtualTourModal').addEventListener('click', (e) => {
+            if (e.target.id === 'virtualTourModal') {
+                closeVirtualTourModal();
+            }
+        });
+
+        // Keyboard escape to close modal
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeVirtualTourModal();
+            }
+        });
+    </script>
+</body>
+
+</html>
