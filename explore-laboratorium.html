@@ -60,6 +60,23 @@
       transform: translateY(-3px);
       box-shadow: 0 10px 25px rgba(0,0,0,0.08);
     }
+
+    #lightbox {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+    #lightbox.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    #lightbox-img {
+      transform: scale(0.9);
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    #lightbox.open #lightbox-img {
+      transform: scale(1);
+    }
   </style>
 </head>
 
@@ -363,6 +380,170 @@
     </div>
   </section>
 
+  <!-- ═══════ GALERI ═══════ -->
+  <section class="py-20 md:py-28 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-white via-slate-50 to-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-14">
+        <div class="reveal inline-flex items-center gap-2.5 px-4 py-2 bg-gradient-to-r from-brand-blue/10 to-brand-red/10 border border-brand-blue/20 rounded-full mb-4">
+          <span class="w-2 h-2 rounded-full brand-gradient animate-pulse"></span>
+          <span class="text-[11px] font-bold text-slate-700 tracking-widest uppercase">Dokumentasi Foto</span>
+        </div>
+        <h2 class="reveal text-3xl md:text-5xl font-black text-slate-900 mb-3">
+          Galeri <span class="brand-text">Laboratorium</span>
+        </h2>
+        <p class="reveal text-slate-500 text-lg max-w-2xl mx-auto">
+          Dokumentasi Laboratorium Komputer ITBRP — klik foto untuk melihat lebih besar
+        </p>
+      </div>
+
+      <div class="reveal grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <!-- Lab 1 Depan -->
+        <div class="card-hover rounded-2xl overflow-hidden shadow-lg group bg-white border border-slate-100 cursor-pointer"
+             onclick="openLightbox('assets/img/lab-1-tampak-depan.jpg', 'Lab Komputer 1 — Tampak Depan')">
+          <div class="relative overflow-hidden">
+            <img src="assets/img/lab-1-tampak-depan.jpg" alt="Lab 1 Tampak Depan"
+                 class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-red/40 via-brand-blue/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="absolute top-4 right-4 brand-gradient backdrop-blur px-3 py-1.5 rounded-full text-xs font-bold text-white shadow-lg">
+              Lab 1
+            </div>
+            <div class="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              <div class="bg-white/20 backdrop-blur-xl rounded-lg p-3 border border-white/30">
+                <p class="text-white font-bold text-sm">Tampak Depan Lab 1</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-4">
+            <h3 class="font-bold text-slate-900">Lab Komputer 1</h3>
+            <p class="text-sm text-slate-500 mt-1">Laboratorium pemrograman dasar & pengembangan</p>
+          </div>
+        </div>
+
+        <!-- Lab 1 Samping -->
+        <div class="card-hover rounded-2xl overflow-hidden shadow-lg group bg-white border border-slate-100 cursor-pointer"
+             onclick="openLightbox('assets/img/lab-1-tampak-samping.jpg', 'Lab Komputer 1 — Tampak Samping')">
+          <div class="relative overflow-hidden">
+            <img src="assets/img/lab-1-tampak-samping.jpg" alt="Lab 1 Tampak Samping"
+                 class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-red/40 via-brand-blue/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="absolute top-4 right-4 brand-gradient backdrop-blur px-3 py-1.5 rounded-full text-xs font-bold text-white shadow-lg">
+              Lab 1
+            </div>
+            <div class="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              <div class="bg-white/20 backdrop-blur-xl rounded-lg p-3 border border-white/30">
+                <p class="text-white font-bold text-sm">Tampak Samping Lab 1</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-4">
+            <h3 class="font-bold text-slate-900">Lab Komputer 1 — Samping</h3>
+            <p class="text-sm text-slate-500 mt-1">View samping ruang lab komputer 1</p>
+          </div>
+        </div>
+
+        <!-- Lab 2 Depan -->
+        <div class="card-hover rounded-2xl overflow-hidden shadow-lg group bg-white border border-slate-100 cursor-pointer"
+             onclick="openLightbox('assets/img/lab-2-tampak-depan.jpg', 'Lab Komputer 2 — Tampak Depan')">
+          <div class="relative overflow-hidden">
+            <img src="assets/img/lab-2-tampak-depan.jpg" alt="Lab 2 Tampak Depan"
+                 class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-blue/40 via-brand-red/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="absolute top-4 right-4 brand-gradient backdrop-blur px-3 py-1.5 rounded-full text-xs font-bold text-white shadow-lg">
+              Lab 2
+            </div>
+            <div class="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              <div class="bg-white/20 backdrop-blur-xl rounded-lg p-3 border border-white/30">
+                <p class="text-white font-bold text-sm">Tampak Depan Lab 2</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-4">
+            <h3 class="font-bold text-slate-900">Lab Komputer 2</h3>
+            <p class="text-sm text-slate-500 mt-1">Laboratorium jaringan & keamanan siber</p>
+          </div>
+        </div>
+
+        <!-- Lab 2 Samping -->
+        <div class="card-hover rounded-2xl overflow-hidden shadow-lg group bg-white border border-slate-100 cursor-pointer"
+             onclick="openLightbox('assets/img/lab-2-tampak-samping.jpg', 'Lab Komputer 2 — Tampak Samping')">
+          <div class="relative overflow-hidden">
+            <img src="assets/img/lab-2-tampak-samping.jpg" alt="Lab 2 Tampak Samping"
+                 class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-blue/40 via-brand-red/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="absolute top-4 right-4 brand-gradient backdrop-blur px-3 py-1.5 rounded-full text-xs font-bold text-white shadow-lg">
+              Lab 2
+            </div>
+            <div class="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              <div class="bg-white/20 backdrop-blur-xl rounded-lg p-3 border border-white/30">
+                <p class="text-white font-bold text-sm">Tampak Samping Lab 2</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-4">
+            <h3 class="font-bold text-slate-900">Lab Komputer 2 — Samping</h3>
+            <p class="text-sm text-slate-500 mt-1">View samping ruang lab komputer 2</p>
+          </div>
+        </div>
+
+        <!-- Lab 3 Depan -->
+        <div class="card-hover rounded-2xl overflow-hidden shadow-lg group bg-white border border-slate-100 cursor-pointer"
+             onclick="openLightbox('assets/img/lab-3-tampak-depan.jpg', 'Lab Komputer 3 — Tampak Depan')">
+          <div class="relative overflow-hidden">
+            <img src="assets/img/lab-3-tampak-depan.jpg" alt="Lab 3 Tampak Depan"
+                 class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-red/40 via-brand-blue/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="absolute top-4 right-4 brand-gradient backdrop-blur px-3 py-1.5 rounded-full text-xs font-bold text-white shadow-lg">
+              Lab 3
+            </div>
+            <div class="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              <div class="bg-white/20 backdrop-blur-xl rounded-lg p-3 border border-white/30">
+                <p class="text-white font-bold text-sm">Tampak Depan Lab 3</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-4">
+            <h3 class="font-bold text-slate-900">Lab Komputer 3</h3>
+            <p class="text-sm text-slate-500 mt-1">Pusat multimedia & kecerdasan buatan</p>
+          </div>
+        </div>
+
+        <!-- Lab 3 Samping -->
+        <div class="card-hover rounded-2xl overflow-hidden shadow-lg group bg-white border border-slate-100 cursor-pointer"
+             onclick="openLightbox('assets/img/lab-3-tampak-samping.jpg', 'Lab Komputer 3 — Tampak Samping')">
+          <div class="relative overflow-hidden">
+            <img src="assets/img/lab-3-tampak-samping.jpg" alt="Lab 3 Tampak Samping"
+                 class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-red/40 via-brand-blue/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="absolute top-4 right-4 brand-gradient backdrop-blur px-3 py-1.5 rounded-full text-xs font-bold text-white shadow-lg">
+              Lab 3
+            </div>
+            <div class="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              <div class="bg-white/20 backdrop-blur-xl rounded-lg p-3 border border-white/30">
+                <p class="text-white font-bold text-sm">Tampak Samping Lab 3</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-4">
+            <h3 class="font-bold text-slate-900">Lab Komputer 3 — Samping</h3>
+            <p class="text-sm text-slate-500 mt-1">View samping ruang lab komputer 3</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX MODAL -->
+  <div id="lightbox" class="fixed inset-0 z-[110] bg-black/95 backdrop-blur-md flex items-center justify-center p-4"
+       onclick="closeLightbox(event)">
+    <button onclick="closeLightbox()" class="absolute top-5 right-5 z-20 bg-black/50 hover:bg-black/70 text-white p-2.5 rounded-full transition-all hover:scale-110">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+    <div class="relative max-w-5xl max-h-[85vh] w-full">
+      <img id="lightbox-img" src="" alt="" class="w-full h-auto rounded-2xl shadow-2xl">
+      <p id="lightbox-caption" class="text-white/70 text-sm mt-4 text-center font-medium"></p>
+    </div>
+  </div>
+
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="section-divider"></div></div>
 
   <!-- ═══════ FOOTER ═══════ -->
@@ -409,8 +590,9 @@
     </div>
   </footer>
 
-  <!-- ═══════ SCROLL REVEAL OBSERVER ═══════ -->
+  <!-- ═══════ SCROLL REVEAL + LIGHTBOX ═══════ -->
   <script>
+    // ─── Scroll Reveal ───
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -421,6 +603,23 @@
     }, { threshold: 0.15 });
     document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale')
       .forEach((el) => observer.observe(el));
+
+    // ─── Lightbox ───
+    function openLightbox(src, caption) {
+      document.getElementById('lightbox').classList.add('open');
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox-img').alt = caption;
+      document.getElementById('lightbox-caption').textContent = caption;
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox(e) {
+      if (e && e.target !== e.currentTarget) return;
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') { closeLightbox(); }
+    });
   </script>
 
 </body>
