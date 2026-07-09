@@ -1,6 +1,6 @@
 /**
  * Virtual Tour 360 — Panoramic Image Viewer
- * Equirectangular 360° viewer with drag interaction.
+ * Equirectangular 360° viewer with configurable yaw bounds.
  *
  * Cara pakai:
  *   <script src="assets/js/virtual-tour.js"></script>
@@ -12,20 +12,80 @@
  *   #close-360       — tombol close
  */
 
+// ─── Panorama Configuration ───
+// Setiap entri mengontrol arah pandang awal dan batas rotasi horizontal.
+// Semua nilai dalam derajat, relatif terhadap pusat gambar (180°).
+//   initialYaw: offset dari 180° untuk pandangan awal (0 = menghadap tengah, menjauhi seam)
+//   minYaw:     seberapa jauh (derajat) user bisa rotasi ke kiri dari pusat
+//   maxYaw:     seberapa jauh (derajat) user bisa rotasi ke kanan dari pusat
+//
+// Seam (batas kiri/kanan gambar) berada di rotation.y = 0° dan 360°.
+// Dengan H_FOV = 100°, seam terlihat saat rotation.y <= 50° atau rotation.y >= 310°.
+// Bawaan minYaw/maxYaw = ±128° memberikan batas aman [52°, 308°] dengan buffer 2°.
+//
+// Untuk menambah panorama baru di masa depan:
+//   cukup tambah entri baru ke PANORAMA_CONFIG tanpa mengubah engine.
+
+const PANORAMA_CONFIG = {
+  "gedung-a": { initialYaw: 0, minYaw: -128, maxYaw: 80 },
+  "gedung-b": { initialYaw: 0, minYaw: -128, maxYaw: 80 },
+  "lab-1": { initialYaw: 0, minYaw: -160, maxYaw: 80 },
+  "lab-2": { initialYaw: 0, minYaw: -128, maxYaw: 80 },
+  "lab-3": { initialYaw: 0, minYaw: -128, maxYaw: 80 },
+  "lapangan": { initialYaw: 0, minYaw: -128, maxYaw: 80 },
+  "musholla": { initialYaw: 0, minYaw: -128, maxYaw: 128 },
+  "perpustakaan": { initialYaw: 0, minYaw: -128, maxYaw: 128 },
+  "kantin": { initialYaw: 0, minYaw: -128, maxYaw: 128 },
+  "gedung-a-tampak-samping": { initialYaw: 0, minYaw: -128, maxYaw: 128 }
+};
+
+// ─── Mapping filename → panorama ID ───
+const FILENAME_TO_ID = {
+  'gedung-a-360': 'gedung-a',
+  'gedung-b-360': 'gedung-b',
+  'lab-1-360': 'lab-1',
+  'lab-2-360': 'lab-2',
+  'lab-3-360': 'lab-3',
+  'lapangan-360': 'lapangan',
+  'musholla-360': 'musholla',
+  'perpus-360': 'perpustakaan',
+  'kantin': 'kantin',
+  'gedung-a-tampak-samping': 'gedung-a-tampak-samping'
+};
+
+// ─── Engine ───
 (function () {
   let isDragging = false;
   let startX = 0;
   let startY = 0;
   let rotation = { x: 0, y: 0 };
   let currentImage = null;
+  let currentPanoramaId = null;
   let canvas = null;
   let ctx = null;
 
-  // Horizontal field of view in degrees (berapa derajat yang terlihat sekali lihat)
   const H_FOV = 100;
-  // Seberapa sensitif drag (semakin kecil, semakin lambat rotasi)
   const SENSITIVITY = 0.4;
+  const YAW_BASE = 180;
 
+  // ─── Helpers ───
+  function getPanoramaId(imageSrc) {
+    const filename = imageSrc.split('/').pop().replace(/\.[^.]+$/, '');
+    return FILENAME_TO_ID[filename] || filename;
+  }
+
+  function getConfig() {
+    return PANORAMA_CONFIG[currentPanoramaId] || {};
+  }
+
+  function clampRotation() {
+    const cfg = getConfig();
+    const minYaw = YAW_BASE + (cfg.minYaw !== undefined ? cfg.minYaw : -180);
+    const maxYaw = YAW_BASE + (cfg.maxYaw !== undefined ? cfg.maxYaw : 180);
+    rotation.y = Math.max(minYaw, Math.min(maxYaw, rotation.y));
+  }
+
+  // ─── Init ───
   function init360Viewer() {
     const modal = document.getElementById('tour-360-modal');
     const closeBtn = document.getElementById('close-360');
@@ -39,18 +99,20 @@
 
     // ─── Buka 360 Tour ───
     window.open360Tour = function (imageSrc) {
+      currentPanoramaId = getPanoramaId(imageSrc);
       currentImage = new Image();
 
       currentImage.onload = function () {
-        // Tampilkan modal dulu agar ukuran canvas akurat
         modal.classList.remove('hidden');
         modal.classList.add('flex');
 
         canvas.width = modal.clientWidth;
         canvas.height = modal.clientHeight;
 
+        const cfg = getConfig();
+        rotation.y = YAW_BASE + (cfg.initialYaw || 0);
         rotation.x = 0;
-        rotation.y = 180; // mulai dari tengah
+        clampRotation();
         document.body.style.overflow = 'hidden';
         render360();
       };
@@ -68,6 +130,7 @@
       modal.classList.remove('flex');
       document.body.style.overflow = '';
       currentImage = null;
+      currentPanoramaId = null;
     };
 
     closeBtn.addEventListener('click', window.close360Tour);
@@ -111,6 +174,7 @@
       rotation.y += dx * SENSITIVITY;
       rotation.x += dy * SENSITIVITY;
       rotation.x = Math.max(-60, Math.min(60, rotation.x));
+      clampRotation();
       startX = e.clientX;
       startY = e.clientY;
       render360();
@@ -138,6 +202,7 @@
       rotation.y += dx * SENSITIVITY;
       rotation.x += dy * SENSITIVITY;
       rotation.x = Math.max(-60, Math.min(60, rotation.x));
+      clampRotation();
       startX = e.touches[0].clientX;
       startY = e.touches[0].clientY;
       render360();
@@ -159,35 +224,29 @@
       ctx.clearRect(0, 0, cw, ch);
 
       // --- Horizontal ---
-      // Berapa lebar gambar yang terlihat berdasarkan FOV
       const srcW = iw * (H_FOV / 360);
       const rotY = ((rotation.y % 360) + 360) % 360;
       const srcX = (rotY / 360) * iw;
 
       // --- Vertical ---
-      // rotation.x: -60 (lihat atas) sampai +60 (lihat bawah)
-      // Bagian gambar yang terlihat secara vertikal
-      const vertVisible = 0.55; // 55% dari tinggi gambar
+      const vFovRatio = ch / cw;
+      const vertVisible = Math.max(0.25, Math.min(0.75, (H_FOV / 180) * vFovRatio));
       const srcH = ih * vertVisible;
-      // Posisi tengah vertikal digeser berdasarkan rotation.x
-      const midY = ih * 0.35; // titik fokus agak ke atas (0.5 = tengah)
-      const srcY = midY - srcH / 2 + (rotation.x / 60) * (ih * 0.12);
-      const clampedSrcY = Math.max(0, Math.min(ih - srcH, srcY));
+      const midY = ih * 0.35;
+      const shiftRange = (ih - srcH) * 0.4;
+      const srcY = Math.max(0, Math.min(ih - srcH, midY - srcH / 2 + (rotation.x / 60) * shiftRange));
 
       // --- Draw (dengan wrapping horizontal) ---
       if (srcX + srcW > iw) {
-        // Bagian kanan gambar
         const part1W = iw - srcX;
-        // Bagian kiri gambar (sisa)
         const part2W = srcW - part1W;
-        // Proporsi canvas
         const cw1 = (part1W / srcW) * cw;
         const cw2 = cw - cw1;
 
-        ctx.drawImage(currentImage, srcX, clampedSrcY, part1W, srcH, 0, 0, cw1, ch);
-        ctx.drawImage(currentImage, 0, clampedSrcY, part2W, srcH, cw1, 0, cw2, ch);
+        ctx.drawImage(currentImage, srcX, srcY, part1W, srcH, 0, 0, cw1 + 1, ch);
+        ctx.drawImage(currentImage, 0, srcY, part2W, srcH, cw1, 0, cw2, ch);
       } else {
-        ctx.drawImage(currentImage, srcX, clampedSrcY, srcW, srcH, 0, 0, cw, ch);
+        ctx.drawImage(currentImage, srcX, srcY, srcW, srcH, 0, 0, cw, ch);
       }
     }
   }
