@@ -29,6 +29,23 @@
 
   <style>
     html { scroll-behavior: smooth; scroll-padding-top: 5.5rem; }
+
+    #lightbox {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+    #lightbox.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    #lightbox-img {
+      transform: scale(0.9);
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    #lightbox.open #lightbox-img {
+      transform: scale(1);
+    }
   </style>
 </head>
 
@@ -199,7 +216,8 @@
 
         <div class="gallery-grid">
           <!-- Photo 1 -->
-          <div class="card-hover rounded-2xl overflow-hidden shadow-lg group bg-white border border-slate-100">
+          <div class="card-hover rounded-2xl overflow-hidden shadow-lg group bg-white border border-slate-100 cursor-pointer"
+               onclick="openLightbox('assets/img/lab-1-tampak-depan.jpg', 'Tampak Depan Lab Komputer 1')">
             <div class="relative overflow-hidden">
               <img src="assets/img/lab-1-tampak-depan.jpg"
                    alt="Interior Lab 1" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
@@ -220,7 +238,8 @@
           </div>
 
           <!-- Photo 2 -->
-          <div class="card-hover rounded-2xl overflow-hidden shadow-lg group bg-white border border-slate-100">
+          <div class="card-hover rounded-2xl overflow-hidden shadow-lg group bg-white border border-slate-100 cursor-pointer"
+               onclick="openLightbox('assets/img/lab-1-tampak-samping.jpg', 'Tampak Samping Lab Komputer 1')">
             <div class="relative overflow-hidden">
               <img src="assets/img/lab-1-tampak-samping.jpg"
                    alt="Interior Lab 1" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
@@ -241,7 +260,8 @@
           </div>
 
           <!-- Photo 3 -->
-          <div class="card-hover rounded-2xl overflow-hidden shadow-lg group bg-white border border-slate-100">
+          <div class="card-hover rounded-2xl overflow-hidden shadow-lg group bg-white border border-slate-100 cursor-pointer"
+               onclick="openLightbox('assets/img/lab-1-tampak-belakang.jpg', 'Tampak Belakang Lab Komputer 1')">
             <div class="relative overflow-hidden">
               <img src="assets/img/lab-1-tampak-belakang.jpg"
                    alt="Interior Lab 1" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
@@ -356,6 +376,18 @@
     </div>
   </footer>
 
+  <!-- LIGHTBOX MODAL -->
+  <div id="lightbox" class="fixed inset-0 z-[110] bg-black/95 backdrop-blur-md flex items-center justify-center p-4"
+       onclick="closeLightbox(event)">
+    <button onclick="closeLightbox()" class="absolute top-5 right-5 z-20 bg-black/50 hover:bg-black/70 text-white p-2.5 rounded-full transition-all hover:scale-110">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+    <div class="relative max-w-5xl max-h-[85vh] w-full">
+      <img id="lightbox-img" src="" alt="" class="w-full h-auto rounded-2xl shadow-2xl">
+      <p id="lightbox-caption" class="text-white/70 text-sm mt-4 text-center font-medium"></p>
+    </div>
+  </div>
+
   <!-- VIRTUAL TOUR 360 MODAL -->
   <div id="tour-360-modal" class="fixed inset-0 z-[100] bg-black hidden items-center justify-center">
     <button id="close-360" class="absolute top-4 right-4 z-20 bg-black/50 hover:bg-black/70 text-white p-2.5 rounded-full transition-all hover:scale-110" aria-label="Tutup">
@@ -380,6 +412,19 @@
     document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale')
       .forEach((el) => observer.observe(el));
 
+    // ─── Lightbox ───
+    function openLightbox(src, caption) {
+      document.getElementById('lightbox').classList.add('open');
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox-img').alt = caption;
+      document.getElementById('lightbox-caption').textContent = caption;
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox(e) {
+      if (e && e.target !== e.currentTarget) return;
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') { closeLightbox(); if (window.close360Tour) window.close360Tour(); }
     });
