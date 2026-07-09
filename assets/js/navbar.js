@@ -1,11 +1,11 @@
 (function () {
     const navbarMarkup = `
-<header class="sticky top-0 z-50 w-full px-3 sm:px-6 lg:px-8 pt-3 md:pt-4 animate-slideDown">
-    <div class="mx-auto flex max-w-7xl items-center justify-between rounded-2xl border border-slate-200/60 bg-white/95 px-4 py-3 shadow-[0_8px_40px_rgba(15,23,42,0.12)] backdrop-blur-xl transition-all duration-500 hover:shadow-[0_12px_50px_rgba(15,23,42,0.15)] hover:border-slate-300/80 sm:px-6">
+<header class="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-xl border-b-2 border-slate-200 animate-slideDown">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
         <a href="index.html" class="flex items-center gap-3 group">
             <div class="relative flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#BE1A1A] via-purple-600 to-[#1B4EF5] p-[2px] shadow-lg shadow-blue-500/20 transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl group-hover:shadow-purple-500/40 group-hover:rotate-3">
                 <div class="flex h-full w-full items-center justify-center rounded-[10px] bg-white overflow-hidden">
-                    <img src="assets/img/itbrp.png" alt="Campus Vista Logo" class="h-10 w-10 object-contain transition-transform duration-300 group-hover:scale-110">
+                    <img src="assets/img/logofix.png" alt="Campus Vista Logo" class="h-10 w-10 object-contain transition-transform duration-300 group-hover:scale-110">
                 </div>
             </div>
             <span class="text-lg font-black tracking-tight transition-all duration-300 group-hover:scale-[1.02] sm:text-xl">
@@ -24,6 +24,9 @@
                     </svg>
                 </button>
                 <div class="absolute left-0 mt-3 w-60 rounded-2xl border border-slate-200/80 bg-white/95 p-2.5 shadow-2xl opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 z-50 backdrop-blur-xl">
+                    <a data-nav-link data-nav-parent="about" href="sambutan.html" class="nav-dropdown-link flex items-center gap-3 block px-4 py-3 text-xs rounded-xl text-slate-600 hover:text-[#BE1A1A] hover:bg-gradient-to-r hover:from-[#BE1A1A]/5 hover:to-transparent transition-all duration-200 hover:scale-[1.02] hover:shadow-sm">
+                        <span>🎙️</span> Sambutan Rektor
+                    </a>
                     <a data-nav-link data-nav-parent="about" href="sejarah.html" class="nav-dropdown-link flex items-center gap-3 block px-4 py-3 text-xs rounded-xl text-slate-600 hover:text-[#BE1A1A] hover:bg-gradient-to-r hover:from-[#BE1A1A]/5 hover:to-transparent transition-all duration-200 hover:scale-[1.02] hover:shadow-sm">
                         <span>📜</span> Sejarah Kampus
                     </a>
@@ -118,7 +121,7 @@
                 <div class="flex items-center gap-3">
                     <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-[#BE1A1A] via-purple-600 to-[#1B4EF5] p-[2px] shadow-lg">
                         <div class="flex h-full w-full items-center justify-center rounded-[9px] bg-white overflow-hidden">
-                            <img src="assets/img/itbrp.png" alt="Campus Vista Logo" class="h-8 w-8 object-contain">
+                            <img src="assets/img/logofix.png" alt="Campus Vista Logo" class="h-8 w-8 object-contain">
                         </div>
                     </div>
                     <span class="text-md font-black tracking-tight">
@@ -137,6 +140,9 @@
                 <div>
                     <p class="text-xs text-slate-400 font-bold uppercase tracking-wider mb-3 pl-1">About</p>
                     <div class="space-y-2 pl-2">
+                        <a data-nav-link data-nav-parent="about" href="sambutan.html" class="nav-link-mobile flex items-center gap-3 rounded-xl px-4 py-3 transition-all duration-200 hover:bg-gradient-to-r hover:from-[#BE1A1A]/5 hover:to-transparent hover:text-[#BE1A1A] hover:shadow-sm hover:scale-[1.02]">
+                            <span>🎙️</span> Sambutan Rektor
+                        </a>
                         <a data-nav-link data-nav-parent="about" href="sejarah.html" class="nav-link-mobile flex items-center gap-3 rounded-xl px-4 py-3 transition-all duration-200 hover:bg-gradient-to-r hover:from-[#BE1A1A]/5 hover:to-transparent hover:text-[#BE1A1A] hover:shadow-sm hover:scale-[1.02]">
                             <span>📜</span> Sejarah Kampus
                         </a>
