@@ -90,6 +90,131 @@
             background: radial-gradient(circle at top left, rgba(59, 130, 246, 0.16), transparent 36%),
                 radial-gradient(circle at bottom right, rgba(190, 26, 26, 0.14), transparent 32%);
         }
+
+        .hotspot-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .hotspot-trigger {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.88);
+            border: 2px solid rgba(15, 23, 42, 0.18);
+            cursor: pointer;
+            transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            z-index: 5;
+            transform: translate(-50%, -50%);
+            padding: 0;
+        }
+
+        .hotspot-trigger::after {
+            content: '';
+            position: absolute;
+            inset: 4px;
+            border-radius: 50%;
+            background: #1e293b;
+            opacity: 0.45;
+            transition: all 0.35s ease;
+        }
+
+        .hotspot-trigger:hover {
+            transform: translate(-50%, -50%) scale(1.35);
+            border-color: #1B4EF5;
+            box-shadow: 0 0 0 6px rgba(27, 78, 245, 0.1);
+        }
+
+        .hotspot-trigger.active {
+            transform: translate(-50%, -50%) scale(1.35);
+            border-color: #ffffff;
+            box-shadow: 0 0 0 6px rgba(27, 78, 245, 0.18);
+        }
+
+        .hotspot-trigger.active::after {
+            background: #1B4EF5;
+            opacity: 1;
+            inset: 3px;
+        }
+
+        .hotspot-trigger .ripple {
+            position: absolute;
+            inset: -3px;
+            border-radius: 50%;
+            border: 2px solid rgba(27, 78, 245, 0.25);
+            animation: hotPulse 2.4s ease-in-out infinite;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .hotspot-trigger.active .ripple {
+            opacity: 1;
+        }
+
+        @keyframes hotPulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.6); opacity: 0; }
+        }
+
+        .card-target {
+            transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+            cursor: pointer;
+            border-left: 4px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-target::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+        }
+
+        .card-target:hover {
+            transform: translateX(4px);
+        }
+
+        .card-target.highlighted {
+            transform: translateX(8px) scale(1.02);
+        }
+
+        .card-target .card-dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 10px;
+            flex-shrink: 0;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .card-target.highlighted .card-dot {
+            transform: scale(1.3);
+            box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.5);
+        }
+
+        .card-target .card-title {
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            font-size: 15px;
+            color: #0f172a;
+        }
+
+        .card-target .card-sub {
+            margin-top: 4px;
+            padding-left: 20px;
+            font-size: 13px;
+            line-height: 1.6;
+            color: #475569;
+        }
     </style>
 </head>
 
@@ -165,10 +290,10 @@
 
                 <div
                     class="rounded-[2.5rem] border border-slate-200/80 bg-white/95 p-6 shadow-xl shadow-slate-200/60 ring-1 ring-slate-100">
-                    <div class="overflow-hidden rounded-[2rem] bg-slate-100">
+                    <div class="flex justify-center ">
                         <img src="https://itbriaupesisir.ac.id/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-13-at-6.20.16-AM.jpeg"
                             alt="Lambang Institut Teknologi dan Bisnis Riau Pesisir"
-                            class="image-zoom h-[420px] w-full object-cover transition duration-500 hover:scale-[1.02]" />
+                            class="image-zoom w-[300px] object-cover transition duration-500 hover:scale-[1.02]" />
                     </div>
                     <div class="mt-6 space-y-4">
                         <div class="flex items-center gap-3 text-sm text-slate-400">
@@ -367,32 +492,76 @@
                             berjenjang.</p>
 
                         <ul class="space-y-4 text-sm leading-7 text-slate-600">
-                            <li class="rounded-3xl border border-slate-200/80 bg-slate-50 p-5">
-                                <p class="font-semibold text-slate-950">Roda Gigi Merah</p>
-                                <p>Melambangkan institusi berbasis teknologi dan inovasi.</p>
+                            <li data-element="roda-gigi" data-color="#BE1A1A" class="card-target rounded-3xl border border-slate-200/80 bg-slate-50 p-5" style="border-left-color:#BE1A1A">
+                                <p class="font-semibold text-slate-950 flex items-center gap-2.5">
+                                    <span class="card-dot" style="background:#BE1A1A"></span>
+                                    Roda Gigi Merah
+                                </p>
+                                <p class="card-sub">Melambangkan institusi berbasis teknologi dan inovasi.</p>
                             </li>
-                            <li class="rounded-3xl border border-slate-200/80 bg-slate-50 p-5">
-                                <p class="font-semibold text-slate-950">Segitiga Biru</p>
-                                <p>Mewakili visi institusi untuk unggul dalam Tridharma Perguruan Tinggi.</p>
+                            <li data-element="segitiga" data-color="#1B4EF5" class="card-target rounded-3xl border border-slate-200/80 bg-slate-50 p-5" style="border-left-color:#1B4EF5">
+                                <p class="font-semibold text-slate-950 flex items-center gap-2.5">
+                                    <span class="card-dot" style="background:#1B4EF5"></span>
+                                    Segitiga Biru
+                                </p>
+                                <p class="card-sub">Mewakili visi institusi untuk unggul dalam Tridharma Perguruan Tinggi.</p>
                             </li>
-                            <li class="rounded-3xl border border-slate-200/80 bg-slate-50 p-5">
-                                <p class="font-semibold text-slate-950">Buku Terbuka</p>
-                                <p>Simbol literasi, ilmu, dan akses pendidikan bagi semua lapisan masyarakat.</p>
+                            <li data-element="buku" data-color="#059669" class="card-target rounded-3xl border border-slate-200/80 bg-slate-50 p-5" style="border-left-color:#059669">
+                                <p class="font-semibold text-slate-950 flex items-center gap-2.5">
+                                    <span class="card-dot" style="background:#059669"></span>
+                                    Buku Terbuka
+                                </p>
+                                <p class="card-sub">Simbol literasi, ilmu, dan akses pendidikan bagi semua lapisan masyarakat.</p>
                             </li>
-                            <li class="rounded-3xl border border-slate-200/80 bg-slate-50 p-5">
-                                <p class="font-semibold text-slate-950">Tiga Anak Tangga Kuning</p>
-                                <p>Menunjukkan proses pendidikan yang bertahap dan berkelanjutan.</p>
+                            <li data-element="tangga" data-color="#D97706" class="card-target rounded-3xl border border-slate-200/80 bg-slate-50 p-5" style="border-left-color:#D97706">
+                                <p class="font-semibold text-slate-950 flex items-center gap-2.5">
+                                    <span class="card-dot" style="background:#D97706"></span>
+                                    Tiga Anak Tangga Kuning
+                                </p>
+                                <p class="card-sub">Menunjukkan proses pendidikan yang bertahap dan berkelanjutan.</p>
                             </li>
-                            <li class="rounded-3xl border border-slate-200/80 bg-slate-50 p-5">
-                                <p class="font-semibold text-slate-950">Menara</p>
-                                <p>Melambangkan pandangan akademika yang jauh ke depan.</p>
+                            <li data-element="menara" data-color="#7C3AED" class="card-target rounded-3xl border border-slate-200/80 bg-slate-50 p-5" style="border-left-color:#7C3AED">
+                                <p class="font-semibold text-slate-950 flex items-center gap-2.5">
+                                    <span class="card-dot" style="background:#7C3AED"></span>
+                                    Menara
+                                </p>
+                                <p class="card-sub">Melambangkan pandangan akademika yang jauh ke depan.</p>
                             </li>
                         </ul>
                     </div>
-                    <div class="overflow-hidden rounded-[2rem] bg-slate-100 shadow-sm">
-                        <img src="https://itbriaupesisir.ac.id/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-13-at-6.20.16-AM.jpeg"
-                            alt="Lambang ITB Riau Pesisir"
-                            class="image-zoom h-full w-full object-cover transition duration-500 hover:scale-[1.03]" />
+                    <div class="rounded-[1.1rem] border border-slate-80/80 bg-white/95 p-2 shadow-xl shadow-slate-200/60 ring-1 ring-slate-100 ">
+                        <div class="flex justify-center">
+                            <div class="hotspot-container">
+                                <img src="https://itbriaupesisir.ac.id/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-13-at-6.20.16-AM.jpeg"
+                                    alt="Lambang ITB Riau Pesisir"
+                                    class="w-[300px] h-auto block" />
+
+                                <button class="hotspot-trigger" data-element="roda-gigi"
+                                    style="top: 17%; right: 20%;" aria-label="Roda Gigi Merah">
+                                    <span class="ripple"></span>
+                                </button>
+
+                                <button class="hotspot-trigger" data-element="segitiga"
+                                    style="top: 46%; right: 30%;" aria-label="Segitiga Biru">
+                                    <span class="ripple"></span>
+                                </button>
+
+                                <button class="hotspot-trigger" data-element="buku"
+                                    style="top: 60%; left: 8%;" aria-label="Buku Terbuka">
+                                    <span class="ripple"></span>
+                                </button>
+
+                                <button class="hotspot-trigger" data-element="tangga"
+                                    style="bottom: 15%; right: 25%;" aria-label="Tiga Anak Tangga Kuning">
+                                    <span class="ripple"></span>
+                                </button>
+
+                                <button class="hotspot-trigger" data-element="menara"
+                                    style="top: 8%; left: 20%;" aria-label="Menara">
+                                    <span class="ripple"></span>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -461,6 +630,77 @@
         if (programButtons.length > 0) {
             setActiveProgram(programButtons[0]);
         }
+
+        const triggers = document.querySelectorAll('.hotspot-trigger');
+        const targets = document.querySelectorAll('.card-target');
+
+        function applyHighlight(card) {
+            const color = card.dataset.color || '#1B4EF5';
+            card.style.setProperty('--hl-color', color);
+            card.style.background = `${color}0D`;
+            card.style.borderColor = color;
+            card.style.boxShadow = `0 6px 24px ${color}18`;
+        }
+
+        function removeHighlight(card) {
+            card.style.background = '';
+            card.style.borderColor = '';
+            card.style.boxShadow = '';
+        }
+
+        function clearAll() {
+            triggers.forEach((t) => t.classList.remove('active'));
+            targets.forEach((c) => {
+                c.classList.remove('highlighted');
+                removeHighlight(c);
+            });
+        }
+
+        triggers.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                const el = btn.dataset.element;
+                if (btn.classList.contains('active')) {
+                    btn.classList.remove('active');
+                    const card = document.querySelector(`.card-target[data-element="${el}"]`);
+                    if (card) {
+                        card.classList.remove('highlighted');
+                        removeHighlight(card);
+                    }
+                    return;
+                }
+                clearAll();
+                btn.classList.add('active');
+                const card = document.querySelector(`.card-target[data-element="${el}"]`);
+                if (card) {
+                    card.classList.add('highlighted');
+                    applyHighlight(card);
+                    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            });
+        });
+
+        targets.forEach((card) => {
+            card.addEventListener('click', () => {
+                const el = card.dataset.element;
+                const btn = document.querySelector(`.hotspot-trigger[data-element="${el}"]`);
+                if (card.classList.contains('highlighted')) {
+                    card.classList.remove('highlighted');
+                    removeHighlight(card);
+                    if (btn) btn.classList.remove('active');
+                    return;
+                }
+                clearAll();
+                card.classList.add('highlighted');
+                applyHighlight(card);
+                if (btn) btn.classList.add('active');
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.hotspot-container') && !e.target.closest('.card-target')) {
+                clearAll();
+            }
+        });
     </script>
 </body>
 
