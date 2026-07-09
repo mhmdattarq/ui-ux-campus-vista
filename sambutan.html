@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-slate-900 text-slate-900 scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sambutan Rektor - Campus Vista</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','sans-serif']}}}}</script>
+    <style>
+        .reveal{opacity:0;transform:translateY(24px);transition:opacity 650ms ease,transform 650ms cubic-bezier(0.22,1,0.36,1)}.reveal.is-visible{opacity:1;transform:translateY(0)}
+        .hero-bg{background:linear-gradient(135deg,#0f172a 0%,#1e293b 50%,#0f172a 100%)}
+        .accent-line{width:60px;height:3px;background:linear-gradient(90deg,#BE1A1A,#1B4EF5);border-radius:2px}
+        .quote-mark{font-size:80px;line-height:0;font-family:serif;opacity:.15;position:absolute;top:-10px;left:-8px}
+        .float-glow{animation:glowFloat 6s ease-in-out infinite}@keyframes glowFloat{0%,100%{transform:translateY(0);opacity:.6}50%{transform:translateY(-16px);opacity:1}}
+        .gradient-text{background:linear-gradient(135deg,#BE1A1A,#1B4EF5);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    </style>
+</head>
+
+<body class="min-h-full font-sans antialiased bg-slate-50">
+    <div id="navbar"></div>
+    <script src="assets/js/navbar.js"></script>
+
+    <main>
+        <section class="relative hero-bg min-h-[70vh] flex items-center overflow-hidden">
+            <div class="absolute inset-0 opacity-[0.03] pointer-events-none">
+                <div class="absolute top-10 left-10 w-72 h-72 bg-white rounded-full blur-3xl"></div>
+                <div class="absolute bottom-10 right-10 w-96 h-96 bg-blue-500 rounded-full blur-3xl"></div>
+            </div>
+
+            <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 w-full">
+                <div class="grid lg:grid-cols-[1fr_1fr] gap-16 items-center">
+                    <div class="reveal space-y-8 order-2 lg:order-1">
+                        <div class="flex items-center gap-4">
+                            <div class="accent-line"></div>
+                            <span class="text-[#BE1A1A] font-bold text-xs uppercase tracking-[0.3em]">Sambutan Rektor</span>
+                        </div>
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-[1.1]">
+                            Institut Teknologi & Bisnis<br>
+                            <span class="gradient-text">Riau Pesisir</span>
+                        </h1>
+                        <p class="text-slate-400 text-base sm:text-lg leading-relaxed max-w-xl">
+                            Membangun ekosistem pendidikan tinggi berbasis teknologi cerdas untuk masa depan Indonesia yang lebih baik.
+                        </p>
+                        <div class="flex items-center gap-6 pt-4">
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-[#BE1A1A] to-[#1B4EF5] flex items-center justify-center">
+                                <span class="text-white text-lg font-black">🎙️</span>
+                            </div>
+                            <div>
+                                <p class="text-white font-bold">Prof. Dr. H. Nama Rektor, S.T., M.T.</p>
+                                <p class="text-slate-500 text-sm">Rektor ITB Riau Pesisir</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reveal order-1 lg:order-2 flex justify-center lg:justify-end">
+                        <div class="relative">
+                            <div class="absolute -inset-4 bg-gradient-to-br from-[#BE1A1A]/20 to-[#1B4EF5]/20 rounded-[2rem] blur-xl float-glow"></div>
+                            <div class="relative rounded-[2rem] border-2 border-slate-700/50 overflow-hidden bg-slate-800/50 backdrop-blur-sm shadow-2xl" style="width:320px;height:380px">
+                                <img src="assets/img/BUK-SERLY-1.png" alt="Rektor ITB Riau Pesisir" class="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="relative -mt-16 pb-24">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="reveal grid lg:grid-cols-[1.2fr_0.8fr] gap-10">
+                    <div class="bg-white rounded-[2rem] border border-slate-200 p-10 shadow-2xl shadow-slate-200/50 relative">
+                        <div class="quote-mark text-[#BE1A1A]">"</div>
+                        <div class="space-y-5 text-sm leading-7 text-slate-600 mt-4">
+                            <p class="text-base font-semibold text-slate-800 italic">
+                                "Assalamu'alaikum Warahmatullahi Wabarakatuh,"
+                            </p>
+                            <p>
+                                Puji syukur kita panjatkan ke hadirat Allah SWT atas limpahan rahmat dan karunia-Nya, sehingga Institut Teknologi dan Bisnis Riau Pesisir dapat terus berkembang dan berkontribusi dalam dunia pendidikan tinggi di Indonesia.
+                            </p>
+                            <p>
+                                Sebagai institusi pendidikan yang berkomitmen pada keunggulan akademik dan profesionalisme, Institut Teknologi dan Bisnis Riau Pesisir senantiasa berupaya menciptakan lingkungan belajar yang kondusif, inovatif, dan responsif terhadap perkembangan teknologi serta kebutuhan masyarakat.
+                            </p>
+                            <p>
+                                Dalam upaya menghadirkan pelayanan akademik yang lebih efisien dan adaptif, Institut Teknologi dan Bisnis Riau Pesisir mulai menerapkan teknologi Kecerdasan Buatan (Artificial Intelligence/AI) di berbagai lini pelayanan akademik. Penerapan teknologi AI ini mencakup sistem bimbingan akademik otomatis, asisten virtual untuk pelayanan administrasi mahasiswa, analisis data pembelajaran untuk peningkatan mutu pengajaran, serta platform evaluasi pembelajaran berbasis AI yang mampu memberikan umpan balik secara real-time.
+                            </p>
+                            <p>
+                                Melalui website resmi ini, kami berharap dapat memberikan informasi yang akurat dan terkini mengenai program studi, kegiatan akademik, penelitian, serta berbagai pencapaian yang telah diraih oleh Institut Teknologi dan Bisnis Riau Pesisir, termasuk dalam inovasi digital berbasis AI.
+                            </p>
+                            <p>
+                                Kami mengundang seluruh lapisan masyarakat, calon mahasiswa, dan mitra kerja untuk menjelajahi situs ini dan mengenal lebih dekat Institut Teknologi dan Bisnis Riau Pesisir serta berbagai inisiatif kami dalam membangun ekosistem pendidikan tinggi berbasis teknologi cerdas.
+                            </p>
+                            <p>
+                                Terima kasih atas perhatian dan dukungannya.
+                            </p>
+                        </div>
+                        <div class="mt-8 pt-6 border-t border-slate-200 flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-[#BE1A1A] to-[#1B4EF5] flex items-center justify-center text-white text-sm font-bold">R</div>
+                            <div>
+                                <p class="text-sm font-bold text-slate-900">Wassalamu'alaikum Warahmatullahi Wabarakatuh,</p>
+                                <p class="text-sm font-black gradient-text mt-1">Prof. Dr. H. Nama Rektor, S.T., M.T.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="reveal bg-gradient-to-br from-slate-900 to-slate-800 rounded-[2rem] p-8 text-white shadow-xl">
+                            <h3 class="text-lg font-black mb-4">Visi Kampus</h3>
+                            <p class="text-sm text-slate-300 leading-relaxed italic">
+                                "Menjadi pusat unggulan teknologi dan bisnis yang humanis, unggul, dan berkontribusi nyata bagi pembangunan bangsa."
+                            </p>
+                        </div>
+                        <div class="reveal bg-white rounded-[2rem] border border-slate-200 p-8 shadow-xl">
+                            <h3 class="text-lg font-black text-slate-900 mb-4">Misi Kami</h3>
+                            <ul class="space-y-3 text-sm text-slate-600">
+                                <li class="flex items-start gap-3">
+                                    <span class="w-6 h-6 rounded-full bg-gradient-to-br from-[#BE1A1A] to-[#1B4EF5] flex items-center justify-center text-white text-xs font-bold mt-0.5 flex-shrink-0">1</span>
+                                    Menyelenggarakan pendidikan tinggi berbasis teknologi dan inovasi.
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="w-6 h-6 rounded-full bg-gradient-to-br from-[#BE1A1A] to-[#1B4EF5] flex items-center justify-center text-white text-xs font-bold mt-0.5 flex-shrink-0">2</span>
+                                    Mengembangkan riset aplikatif yang relevan dengan industri.
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="w-6 h-6 rounded-full bg-gradient-to-br from-[#BE1A1A] to-[#1B4EF5] flex items-center justify-center text-white text-xs font-bold mt-0.5 flex-shrink-0">3</span>
+                                    Mencetak talenta unggul berkarakter dan siap bersaing global.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    </main>
+
+    <footer class="border-t-2 border-slate-200 py-8 text-center text-sm text-slate-500 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <p class="mb-2">&copy; 2026 <span class="font-bold bg-gradient-to-r from-[#BE1A1A] to-[#1B4EF5] bg-clip-text text-transparent">Campus Vista</span>. All Rights Reserved.</p>
+            <p class="text-xs text-slate-400">Sambutan Rektor - Institut Teknologi & Bisnis Riau Pesisir</p>
+        </div>
+    </footer>
+
+    <script>
+        const ro = new IntersectionObserver((e)=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('is-visible');ro.unobserve(el.target)}})},{threshold:.2});
+        document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+    </script>
+</body>
+</html>
