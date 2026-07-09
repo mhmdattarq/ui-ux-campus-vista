@@ -51,7 +51,7 @@
       position: absolute;
       inset: -10px;
       background:
-        url('https://images.unsplash.com/photo-1575361204480-aadea25e6e68?q=80&w=1920&h=1080&fit=crop')
+        url('assets/img/lapangan-tampak-samping-kanan.jpg')
         center center / cover no-repeat fixed;
       transform: scale(1.1);
       animation: heroZoom 20s ease-in-out infinite alternate;
@@ -434,7 +434,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div class="relative rounded-3xl overflow-hidden shadow-2xl shadow-brand-red/20 group">
             <div class="absolute inset-0 bg-gradient-to-t from-brand-red/50 to-transparent z-10"></div>
-            <img src="https://images.unsplash.com/photo-1529900748604-5b4c0e6b6b5b?q=80&w=800&h=600&fit=crop"
+            <img src="assets/img/lapangan-tampak-samping-kiri.jpg"
                  alt="Lapangan Futsal ITBRP"
                  class="w-full h-[380px] object-cover group-hover:scale-105 transition-transform duration-700">
             <div class="absolute top-4 left-4 z-20">
@@ -470,7 +470,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div class="relative rounded-3xl overflow-hidden shadow-2xl shadow-brand-blue/20 group">
             <div class="absolute inset-0 bg-gradient-to-t from-brand-blue/50 to-transparent z-10"></div>
-            <img src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?q=80&w=800&h=600&fit=crop"
+            <img src="assets/img/lapangan-tampak-samping-kanan.jpg"
                  alt="Lapangan Voli ITBRP"
                  class="w-full h-[380px] object-cover group-hover:scale-105 transition-transform duration-700">
             <div class="absolute top-4 left-4 z-20">
@@ -526,8 +526,8 @@
         <!-- Featured (large) -->
         <div class="lg:col-span-2 lg:row-span-2">
           <div class="g-lightbox relative rounded-2xl overflow-hidden shadow-lg group h-full"
-               onclick="openLightbox('https://images.unsplash.com/photo-1575361204480-aadea25e6e68?q=80&w=1200&h=800&fit=crop', 'Tampak Depan Lapangan')">
-            <img src="https://images.unsplash.com/photo-1575361204480-aadea25e6e68?q=80&w=800&h=600&fit=crop"
+               onclick="openLightbox('assets/img/lapangan-tampak-samping-kanan.jpg', 'Tampak Depan Lapangan')">
+            <img src="assets/img/lapangan-tampak-samping-kanan.jpg"
                  alt="Tampak Depan Lapangan"
                  class="w-full h-80 lg:h-full object-cover">
             <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -544,8 +544,8 @@
 
         <!-- Thumb 1 -->
         <div class="g-lightbox relative rounded-2xl overflow-hidden shadow-lg group"
-             onclick="openLightbox('https://images.unsplash.com/photo-1558618666-fcd25c85f82e?q=80&w=800&h=600&fit=crop', 'Tampak Samping Lapangan')">
-          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?q=80&w=400&h=300&fit=crop"
+             onclick="openLightbox('assets/img/lapangan-tampak-samping-kiri.jpg', 'Tampak Samping Lapangan')">
+          <img src="assets/img/lapangan-tampak-samping-kiri.jpg"
                alt="Tampak Samping Lapangan"
                class="w-full h-48 object-cover">
           <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -561,8 +561,8 @@
 
         <!-- Thumb 2 -->
         <div class="g-lightbox relative rounded-2xl overflow-hidden shadow-lg group"
-             onclick="openLightbox('https://images.unsplash.com/photo-1461896836934-bd45ba8fcf9b?q=80&w=800&h=600&fit=crop', 'Tampak Belakang Lapangan')">
-          <img src="https://images.unsplash.com/photo-1461896836934-bd45ba8fcf9b?q=80&w=400&h=300&fit=crop"
+             onclick="openLightbox('assets/img/lapangan-tampak-samping-kanan.jpg', 'Tampak Belakang Lapangan')">
+          <img src="assets/img/lapangan-tampak-samping-kanan.jpg"
                alt="Tampak Belakang Lapangan"
                class="w-full h-48 object-cover">
           <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -600,17 +600,17 @@
 
         <div class="card-hover rounded-3xl overflow-hidden shadow-2xl shadow-brand-blue/20 group relative bg-black">
           <div class="relative w-full h-[500px] md:h-[600px] bg-slate-900 flex items-center justify-center">
-            <div class="absolute inset-0 opacity-40 bg-[url('https://images.unsplash.com/photo-1575361204480-aadea25e6e68?q=80&w=1600&h=900&fit=crop')] bg-cover bg-center"></div>
+            <div class="absolute inset-0 opacity-40 bg-[url('assets/img/lapangan-360.jpg')] bg-cover bg-center"></div>
             <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
             <div class="absolute inset-0 flex items-center justify-center">
               <div class="text-center space-y-6 p-8 relative z-10">
                 <div class="w-24 h-24 mx-auto brand-gradient rounded-full flex items-center justify-center text-white shadow-2xl brand-glow animate-pulse cursor-pointer hover:scale-110 transition-transform"
-                     onclick="startVirtualTour()">
+                     onclick="open360Tour('assets/img/lapangan-360.jpg')">
                   <svg class="w-12 h-12 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                 </div>
                 <h3 class="text-2xl md:text-3xl font-black text-white">Jelajahi Sekarang</h3>
                 <p class="text-slate-400 max-w-md mx-auto">Klik tombol play untuk memulai tur interaktif Lapangan ITBRP</p>
-                <button onclick="startVirtualTour()" class="inline-flex items-center gap-2 px-8 py-4 brand-gradient text-white font-bold rounded-xl shadow-xl shadow-purple-500/30 hover:shadow-2xl hover:shadow-purple-500/40 hover:scale-105 active:scale-95 transition-all duration-300">
+                <button onclick="open360Tour('assets/img/lapangan-360.jpg')" class="inline-flex items-center gap-2 px-8 py-4 brand-gradient text-white font-bold rounded-xl shadow-xl shadow-purple-500/30 hover:shadow-2xl hover:shadow-purple-500/40 hover:scale-105 active:scale-95 transition-all duration-300">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                   Mulai Virtual Tour
                 </button>
@@ -622,7 +622,7 @@
               </div>
             </div>
             <div class="absolute bottom-4 right-4 z-20">
-              <button onclick="openVirtualTourModal()" class="bg-white/20 backdrop-blur-md hover:bg-white/30 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all">
+              <button onclick="open360Tour('assets/img/lapangan-360.jpg')" class="bg-white/20 backdrop-blur-md hover:bg-white/30 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all">
                 Buka Layar Penuh
               </button>
             </div>
@@ -687,26 +687,15 @@
     </div>
   </div>
 
-  <!-- VIRTUAL TOUR MODAL -->
-  <div id="virtualTourModal" class="fixed inset-0 z-[100] bg-black/90 backdrop-blur-lg hidden flex items-center justify-center p-4">
-    <div class="relative w-full max-w-6xl h-[80vh] rounded-2xl overflow-hidden shadow-2xl">
-      <button onclick="closeVirtualTourModal()" class="absolute top-4 right-4 z-20 bg-black/50 hover:bg-black/70 text-white p-2 rounded-lg transition-all">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-      </button>
-      <div class="absolute inset-0 flex items-center justify-center">
-        <div class="text-center space-y-6 p-8">
-          <div class="w-20 h-20 mx-auto brand-gradient rounded-full flex items-center justify-center text-white shadow-2xl">
-            <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-          </div>
-          <h3 class="text-2xl md:text-3xl font-black text-white">Virtual Tour Lapangan ITBRP</h3>
-          <p class="text-slate-400">Mempersiapkan virtual tour 360° interaktif...</p>
-          <div class="w-64 h-2 bg-slate-700 rounded-full overflow-hidden mx-auto">
-            <div class="h-full brand-gradient animate-pulse"></div>
-          </div>
-          <p class="text-xs text-slate-500">*Virtual tour 360° menggunakan teknologi panorama interaktif</p>
-        </div>
-      </div>
+  <!-- VIRTUAL TOUR 360 MODAL -->
+  <div id="tour-360-modal" class="fixed inset-0 z-[100] bg-black hidden items-center justify-center">
+    <button id="close-360" class="absolute top-4 right-4 z-20 bg-black/50 hover:bg-black/70 text-white p-2.5 rounded-full transition-all hover:scale-110" aria-label="Tutup">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+    <div class="absolute top-4 left-4 z-20 bg-black/50 text-white/70 px-3 py-1.5 rounded-lg text-xs font-medium">
+      🖱️ Seret untuk melihat 360°
     </div>
+    <canvas id="canvas-360" class="w-full h-full cursor-grab"></canvas>
   </div>
 
   <!-- ════════════════════════════════════════════════
@@ -777,24 +766,11 @@
       document.body.style.overflow = '';
     }
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') { closeLightbox(); closeVirtualTourModal(); }
-    });
-
-    // ─── Virtual Tour Modal ───
-    function openVirtualTourModal() {
-      document.getElementById('virtualTourModal').classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeVirtualTourModal() {
-      document.getElementById('virtualTourModal').classList.add('hidden');
-      document.body.style.overflow = '';
-    }
-    function startVirtualTour() { openVirtualTourModal(); }
-
-    document.getElementById('virtualTourModal').addEventListener('click', (e) => {
-      if (e.target.id === 'virtualTourModal') closeVirtualTourModal();
+      if (e.key === 'Escape') { closeLightbox(); if (window.close360Tour) window.close360Tour(); }
     });
   </script>
+
+  <script src="assets/js/virtual-tour.js"></script>
 
 </body>
 </html>
