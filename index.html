@@ -209,6 +209,7 @@
             }
         }
     </style>
+<script src="assets/js/preloader.js"></script>
 </head>
 
 <body
@@ -539,70 +540,66 @@
                 </p>
             </div>
 
-            <!-- Bento Grid Layout (True Multi-Ratio Support) -->
+            <!-- Bento Grid Layout -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- CARD 1: LAB KOMPUTER -->
-                <a href="/explore/lab"
-                    class="reveal card-hover-effect group relative sm:col-span-2 overflow-hidden rounded-3xl border-2 border-blue-100 bg-white p-6 flex flex-col justify-between h-72 hover:border-[#1B4EF5] transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-2">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-white via-white/10 to-transparent opacity-90 z-0">
-                    </div>
-                    <img src="https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=1000"
+                <a href="explore-laboratorium.html"
+                    class="reveal card-hover-effect group relative overflow-hidden rounded-3xl border-2 border-blue-100 bg-white p-6 flex flex-col justify-between h-64 hover:border-[#1B4EF5] transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-2">
+                    <div class="absolute inset-0 bg-gradient-to-t from-white via-white/10 to-transparent opacity-90 z-0"></div>
+                    <img src="assets/img/lab-1-tampak-depan.jpg"
                         class="absolute inset-0 w-full h-full object-cover z-[-1] opacity-30 group-hover:scale-[1.03] transition-transform duration-500"
-                        alt="">
+                        alt="Laboratorium Komputer">
                     <div class="z-10 flex justify-between items-start">
-                        <span
-                            class="px-3 py-1 text-[10px] font-bold bg-gradient-to-r from-[#1B4EF5] to-blue-600 text-white border-2 border-blue-200 rounded shadow-lg uppercase tracking-wider">Terpopuler</span>
-                        <span
-                            class="text-slate-400 group-hover:text-[#1B4EF5] transition-transform group-hover:translate-x-2 group-hover:scale-110">
+                        <span class="px-3 py-1 text-[10px] font-bold bg-gradient-to-r from-[#1B4EF5] to-blue-600 text-white border-2 border-blue-200 rounded shadow-lg uppercase tracking-wider">Terpopuler</span>
+                        <span class="text-slate-400 group-hover:text-[#1B4EF5] transition-transform group-hover:translate-x-2 group-hover:scale-110">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                             </svg>
                         </span>
                     </div>
                     <div class="z-10 space-y-2">
-                        <h3
-                            class="font-black text-xl md:text-2xl text-slate-900 group-hover:text-[#1B4EF5] transition">
-                            Laboratorium Komputer 01
-                        </h3>
-                        <p class="text-xs text-slate-600 font-medium">Cek spesifikasi Lenovo ThinkCentre, RTX 3060, dan software terinstall secara real-time.</p>
+                        <h3 class="font-black text-xl md:text-2xl text-slate-900 group-hover:text-[#1B4EF5] transition">Laboratorium Komputer</h3>
+                        <p class="text-xs text-slate-600 font-medium">Jelajahi tiga lab komputer modern dengan spesifikasi terkini untuk praktikum dan riset.</p>
                     </div>
                 </a>
 
                 <!-- CARD 2: PERPUSTAKAAN -->
                 <a href="explore-perpustakaan.html"
-                    class="reveal card-hover-effect group overflow-hidden rounded-3xl border-2 border-indigo-100 bg-white p-6 flex flex-col justify-between h-72 hover:border-indigo-600 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-2">
-                    <div class="flex justify-between items-start">
-                        <span
-                            class="px-3 py-1 text-[10px] font-bold bg-gradient-to-r from-indigo-600 to-purple-600 text-white border-2 border-indigo-200 rounded shadow-lg uppercase tracking-wider">Koleksi Buku</span>
-                        <span
-                            class="text-slate-400 group-hover:text-indigo-600 transition-transform group-hover:translate-x-2 group-hover:scale-110">
+                    class="reveal card-hover-effect group relative overflow-hidden rounded-3xl border-2 border-indigo-100 bg-white p-6 flex flex-col justify-between h-64 hover:border-indigo-600 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-2">
+                    <div class="absolute inset-0 bg-gradient-to-t from-white via-white/10 to-transparent opacity-90 z-0"></div>
+                    <img src="assets/img/perpus-tampak-depan.jpg"
+                        class="absolute inset-0 w-full h-full object-cover z-[-1] opacity-30 group-hover:scale-[1.03] transition-transform duration-500"
+                        alt="Perpustakaan Pusat">
+                    <div class="z-10 flex justify-between items-start">
+                        <span class="px-3 py-1 text-[10px] font-bold bg-gradient-to-r from-indigo-600 to-purple-600 text-white border-2 border-indigo-200 rounded shadow-lg uppercase tracking-wider">Koleksi Buku</span>
+                        <span class="text-slate-400 group-hover:text-indigo-600 transition-transform group-hover:translate-x-2 group-hover:scale-110">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                             </svg>
                         </span>
                     </div>
-                    <div class="space-y-2">
-                        <h3 class="font-black text-xl text-slate-900 group-hover:text-indigo-600 transition">
-                            Perpustakaan Pusat</h3>
+                    <div class="z-10 space-y-2">
+                        <h3 class="font-black text-xl text-slate-900 group-hover:text-indigo-600 transition">Perpustakaan Pusat</h3>
                         <p class="text-xs text-slate-600 font-medium">Eksplorasi koleksi digital, ruang diskusi, dan jam operasional layanan umum.</p>
                     </div>
                 </a>
 
                 <!-- CARD 3: KANTIN -->
-                <a href="explore.html"
-                    class="reveal card-hover-effect group overflow-hidden rounded-3xl border-2 border-amber-100 bg-white p-6 flex flex-col justify-between h-64 hover:border-amber-600 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-2">
-                    <div class="flex justify-between items-start">
-                        <span
-                            class="px-3 py-1 text-[10px] font-bold bg-gradient-to-r from-amber-600 to-orange-600 text-white border-2 border-amber-200 rounded shadow-lg uppercase tracking-wider">Culinary</span>
-                        <span
-                            class="text-slate-400 group-hover:text-amber-600 transition-transform group-hover:translate-x-2 group-hover:scale-110">
+                <a href="explore-kantin.html"
+                    class="reveal card-hover-effect group relative overflow-hidden rounded-3xl border-2 border-amber-100 bg-white p-6 flex flex-col justify-between h-64 hover:border-amber-600 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-2">
+                    <div class="absolute inset-0 bg-gradient-to-t from-white via-white/10 to-transparent opacity-90 z-0"></div>
+                    <img src="assets/img/hero-kantin.jpg"
+                        class="absolute inset-0 w-full h-full object-cover z-[-1] opacity-30 group-hover:scale-[1.03] transition-transform duration-500"
+                        alt="Kantin Kampus">
+                    <div class="z-10 flex justify-between items-start">
+                        <span class="px-3 py-1 text-[10px] font-bold bg-gradient-to-r from-amber-600 to-orange-600 text-white border-2 border-amber-200 rounded shadow-lg uppercase tracking-wider">Culinary</span>
+                        <span class="text-slate-400 group-hover:text-amber-600 transition-transform group-hover:translate-x-2 group-hover:scale-110">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                             </svg>
                         </span>
                     </div>
-                    <div class="space-y-2">
+                    <div class="z-10 space-y-2">
                         <h3 class="font-black text-xl text-slate-900 group-hover:text-amber-600 transition">Kantin Kampus</h3>
                         <p class="text-xs text-slate-600 font-medium">Lihat ketersediaan tenant, kapasitas tempat duduk, dan metode pembayaran digital.</p>
                     </div>
@@ -610,35 +607,66 @@
 
                 <!-- CARD 4: MUSHOLA -->
                 <a href="explore_musholla.html"
-                    class="reveal card-hover-effect group overflow-hidden rounded-3xl border-2 border-emerald-100 bg-white p-6 flex flex-col justify-between h-64 hover:border-emerald-600 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-2">
-                    <div class="flex justify-between items-start">
-                        <span
-                            class="px-3 py-1 text-[10px] font-bold bg-gradient-to-r from-emerald-600 to-green-600 text-white border-2 border-emerald-200 rounded shadow-lg uppercase tracking-wider">Fasilitas</span>
-                        <span
-                            class="text-slate-400 group-hover:text-emerald-600 transition-transform group-hover:translate-x-2 group-hover:scale-110">
+                    class="reveal card-hover-effect group relative overflow-hidden rounded-3xl border-2 border-emerald-100 bg-white p-6 flex flex-col justify-between h-64 hover:border-emerald-600 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-2">
+                    <div class="absolute inset-0 bg-gradient-to-t from-white via-white/10 to-transparent opacity-90 z-0"></div>
+                    <img src="assets/img/musholla-tampak-depan.jpg"
+                        class="absolute inset-0 w-full h-full object-cover z-[-1] opacity-30 group-hover:scale-[1.03] transition-transform duration-500"
+                        alt="Musholla ITBRP">
+                    <div class="z-10 flex justify-between items-start">
+                        <span class="px-3 py-1 text-[10px] font-bold bg-gradient-to-r from-emerald-600 to-green-600 text-white border-2 border-emerald-200 rounded shadow-lg uppercase tracking-wider">Fasilitas</span>
+                        <span class="text-slate-400 group-hover:text-emerald-600 transition-transform group-hover:translate-x-2 group-hover:scale-110">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                             </svg>
                         </span>
                     </div>
-                    <div class="space-y-2">
-                        <h3 class="font-black text-xl text-slate-900 group-hover:text-emerald-600 transition">
-                            Musholla ITBRP</h3>
+                    <div class="z-10 space-y-2">
+                        <h3 class="font-black text-xl text-slate-900 group-hover:text-emerald-600 transition">Musholla ITBRP</h3>
                         <p class="text-xs text-slate-600 font-medium">Informasi kapasitas jamaah, jam operasional, serta virtual tour 360°.</p>
                     </div>
                 </a>
 
-                <!-- CARD 5: COMING SOON -->
-                <div
-                    class="reveal group overflow-hidden rounded-3xl border-2 border-dashed border-slate-300 bg-gradient-to-br from-slate-100 to-slate-50 p-6 flex flex-col justify-center items-center text-center h-64 hover:border-slate-400 transition-all duration-300">
-                    <div class="space-y-3">
-                        <div class="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-slate-300 to-slate-400 flex items-center justify-center text-3xl">
-                            ✨
-                        </div>
-                        <p class="text-base font-black text-slate-700">Gedung Kuliah & Lapangan</p>
-                        <p class="text-xs text-slate-500 max-w-[200px] font-medium">Sedang dikembangkan untuk fase pembaruan berikutnya.</p>
+                <!-- CARD 5: LAPANGAN -->
+                <a href="explore-lapangan.html"
+                    class="reveal card-hover-effect group relative overflow-hidden rounded-3xl border-2 border-teal-100 bg-white p-6 flex flex-col justify-between h-64 hover:border-teal-600 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-2">
+                    <div class="absolute inset-0 bg-gradient-to-t from-white via-white/10 to-transparent opacity-90 z-0"></div>
+                    <img src="assets/img/lapangan-tampak-samping-kanan.jpg"
+                        class="absolute inset-0 w-full h-full object-cover z-[-1] opacity-30 group-hover:scale-[1.03] transition-transform duration-500"
+                        alt="Lapangan ITBRP">
+                    <div class="z-10 flex justify-between items-start">
+                        <span class="px-3 py-1 text-[10px] font-bold bg-gradient-to-r from-teal-600 to-emerald-600 text-white border-2 border-teal-200 rounded shadow-lg uppercase tracking-wider">Olahraga</span>
+                        <span class="text-slate-400 group-hover:text-teal-600 transition-transform group-hover:translate-x-2 group-hover:scale-110">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                            </svg>
+                        </span>
                     </div>
-                </div>
+                    <div class="z-10 space-y-2">
+                        <h3 class="font-black text-xl text-slate-900 group-hover:text-teal-600 transition">Lapangan ITBRP</h3>
+                        <p class="text-xs text-slate-600 font-medium">Lihat lapangan olahraga kampus melalui virtual tour 360° interaktif.</p>
+                    </div>
+                </a>
+
+                <!-- CARD 6: RUANG KELAS -->
+                <a href="explore-ruang-kelas.html"
+                    class="reveal card-hover-effect group relative overflow-hidden rounded-3xl border-2 border-violet-100 bg-white p-6 flex flex-col justify-between h-64 hover:border-violet-600 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-2">
+                    <div class="absolute inset-0 bg-gradient-to-t from-white via-white/10 to-transparent opacity-90 z-0"></div>
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c7f1?q=80&w=1000"
+                        class="absolute inset-0 w-full h-full object-cover z-[-1] opacity-30 group-hover:scale-[1.03] transition-transform duration-500"
+                        alt="Ruang Kelas">
+                    <div class="z-10 flex justify-between items-start">
+                        <span class="px-3 py-1 text-[10px] font-bold bg-gradient-to-r from-violet-600 to-purple-600 text-white border-2 border-violet-200 rounded shadow-lg uppercase tracking-wider">Belajar</span>
+                        <span class="text-slate-400 group-hover:text-violet-600 transition-transform group-hover:translate-x-2 group-hover:scale-110">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="z-10 space-y-2">
+                        <h3 class="font-black text-xl text-slate-900 group-hover:text-violet-600 transition">Ruang Kelas</h3>
+                        <p class="text-xs text-slate-600 font-medium">Eksplorasi ruang kelas modern dengan fasilitas belajar yang nyaman.</p>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
