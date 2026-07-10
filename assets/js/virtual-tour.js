@@ -34,7 +34,7 @@ const PANORAMA_CONFIG = {
   "lab-3": { initialYaw: 0, minYaw: -128, maxYaw: 80 },
   "lapangan": { initialYaw: 0, minYaw: -128, maxYaw: 80 },
   "musholla": { initialYaw: 0, minYaw: -128, maxYaw: 128 },
-  "perpustakaan": { initialYaw: 0, minYaw: -128, maxYaw: 128 },
+  "perpustakaan": { initialYaw: 0, minYaw: -128, maxYaw: 80 },
   "kantin": { initialYaw: 0, minYaw: -128, maxYaw: 128 },
   "gedung-a-tampak-samping": { initialYaw: 0, minYaw: -128, maxYaw: 128 }
 };

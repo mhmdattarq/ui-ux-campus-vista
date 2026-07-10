@@ -79,7 +79,7 @@
                         <a data-nav-link data-nav-parent="explore" href="explore-laboratorium.html" class="nav-dropdown-link flex items-center gap-3 block px-4 py-3 text-xs rounded-xl text-slate-600 hover:text-[#1B4EF5] hover:bg-gradient-to-r hover:from-[#1B4EF5]/5 hover:to-transparent transition-all duration-200 hover:scale-[1.02] hover:shadow-sm">
                             <span>💻</span> Laboratorium
                         </a>
-                    <a data-nav-link data-nav-parent="explore" href="explore.html" class="nav-dropdown-link flex items-center gap-3 block px-4 py-3 text-xs rounded-xl text-slate-600 hover:text-[#1B4EF5] hover:bg-gradient-to-r hover:from-[#1B4EF5]/5 hover:to-transparent transition-all duration-200 hover:scale-[1.02] hover:shadow-sm">
+                    <a data-nav-link data-nav-parent="explore" href="explore-perpustakaan.html" class="nav-dropdown-link flex items-center gap-3 block px-4 py-3 text-xs rounded-xl text-slate-600 hover:text-[#1B4EF5] hover:bg-gradient-to-r hover:from-[#1B4EF5]/5 hover:to-transparent transition-all duration-200 hover:scale-[1.02] hover:shadow-sm">
                         <span>📚</span> Perpustakaan
                     </a>
                     <a data-nav-link data-nav-parent="explore" href="explore_musholla.html" class="nav-dropdown-link flex items-center gap-3 block px-4 py-3 text-xs rounded-xl text-slate-600 hover:text-[#1B4EF5] hover:bg-gradient-to-r hover:from-[#1B4EF5]/5 hover:to-transparent transition-all duration-200 hover:scale-[1.02] hover:shadow-sm">
@@ -183,7 +183,7 @@
                         <a data-nav-link data-nav-parent="explore" href="explore-laboratorium.html" class="nav-link-mobile flex items-center gap-2 rounded-xl px-3 py-2.5 transition-all duration-200 hover:bg-gradient-to-r hover:from-[#1B4EF5]/5 hover:to-transparent hover:text-[#1B4EF5] hover:shadow-sm hover:scale-[1.02]">
                             <span>💻</span> Lab
                         </a>
-                        <a data-nav-link data-nav-parent="explore" href="explore.html" class="nav-link-mobile flex items-center gap-2 rounded-xl px-3 py-2.5 transition-all duration-200 hover:bg-gradient-to-r hover:from-[#1B4EF5]/5 hover:to-transparent hover:text-[#1B4EF5] hover:shadow-sm hover:scale-[1.02]">
+                        <a data-nav-link data-nav-parent="explore" href="explore-perpustakaan.html" class="nav-link-mobile flex items-center gap-2 rounded-xl px-3 py-2.5 transition-all duration-200 hover:bg-gradient-to-r hover:from-[#1B4EF5]/5 hover:to-transparent hover:text-[#1B4EF5] hover:shadow-sm hover:scale-[1.02]">
                             <span>📚</span> Perpus
                         </a>
                         <a data-nav-link data-nav-parent="explore" href="explore_musholla.html" class="nav-link-mobile flex items-center gap-2 rounded-xl px-3 py-2.5 transition-all duration-200 hover:bg-gradient-to-r hover:from-[#1B4EF5]/5 hover:to-transparent hover:text-[#1B4EF5] hover:shadow-sm hover:scale-[1.02]">
