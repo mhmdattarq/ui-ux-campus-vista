@@ -98,7 +98,7 @@
         </nav>
 
         <div class="flex items-center gap-2 sm:gap-3">
-            <a href="explore.html" class="hidden rounded-full bg-gradient-to-r from-[#BE1A1A] via-purple-600 to-[#1B4EF5] px-5 py-2.5 text-[11px] font-semibold text-white shadow-lg shadow-blue-500/20 transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/40 hover:scale-105 active:scale-[0.98] sm:inline-block relative overflow-hidden group">
+            <a href="explore_gedung.html" class="hidden rounded-full bg-gradient-to-r from-[#BE1A1A] via-purple-600 to-[#1B4EF5] px-5 py-2.5 text-[11px] font-semibold text-white shadow-lg shadow-blue-500/20 transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/40 hover:scale-105 active:scale-[0.98] sm:inline-block relative overflow-hidden group">
                 <span class="relative z-10">Mulai Eksplorasi 🚀</span>
                 <span class="absolute inset-0 bg-gradient-to-r from-red-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
             </a>
