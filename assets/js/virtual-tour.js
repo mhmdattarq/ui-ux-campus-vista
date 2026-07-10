@@ -36,7 +36,8 @@ const PANORAMA_CONFIG = {
   "musholla": { initialYaw: 0, minYaw: -128, maxYaw: 128 },
   "perpustakaan": { initialYaw: 0, minYaw: -128, maxYaw: 80 },
   "kantin": { initialYaw: 0, minYaw: -128, maxYaw: 128 },
-  "gedung-a-tampak-samping": { initialYaw: 0, minYaw: -128, maxYaw: 128 }
+  "gedung-a-tampak-samping": { initialYaw: 0, minYaw: -128, maxYaw: 128 },
+  "ruang-kelas": { initialYaw: 0, minYaw: -128, maxYaw: 128 }
 };
 
 // ─── Mapping filename → panorama ID ───
@@ -50,7 +51,8 @@ const FILENAME_TO_ID = {
   'musholla-360': 'musholla',
   'perpus-360': 'perpustakaan',
   'kantin': 'kantin',
-  'gedung-a-tampak-samping': 'gedung-a-tampak-samping'
+  'gedung-a-tampak-samping': 'gedung-a-tampak-samping',
+  'kelas-360': 'ruang-kelas'
 };
 
 // ─── Engine ───
