@@ -5,7 +5,7 @@
         <a href="index.html" class="flex items-center gap-3 group">
             <div class="relative flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#BE1A1A] via-purple-600 to-[#1B4EF5] p-[2px] shadow-lg shadow-blue-500/20 transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl group-hover:shadow-purple-500/40 group-hover:rotate-3">
                 <div class="flex h-full w-full items-center justify-center rounded-[10px] bg-white overflow-hidden">
-                    <img src="assets/img/logofix.png" alt="Campus Vista Logo" class="h-10 w-10 object-contain transition-transform duration-300 group-hover:scale-110">
+                    <img src="../assets/img/logofix.png" alt="Campus Vista Logo" class="h-10 w-10 object-contain transition-transform duration-300 group-hover:scale-110">
                 </div>
             </div>
             <span class="text-lg font-black tracking-tight transition-all duration-300 group-hover:scale-[1.02] sm:text-xl">
@@ -118,7 +118,7 @@
                 <div class="flex items-center gap-3">
                     <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-[#BE1A1A] via-purple-600 to-[#1B4EF5] p-[2px] shadow-lg">
                         <div class="flex h-full w-full items-center justify-center rounded-[9px] bg-white overflow-hidden">
-                            <img src="assets/img/logofix.png" alt="Campus Vista Logo" class="h-8 w-8 object-contain">
+                            <img src="../assets/img/logofix.png" alt="Campus Vista Logo" class="h-8 w-8 object-contain">
                         </div>
                     </div>
                     <span class="text-md font-black tracking-tight">
@@ -133,7 +133,7 @@
                 </button>
             </div>
             <nav class="mt-6 space-y-4 flex flex-col text-sm font-semibold text-slate-600" aria-label="Mobile navigation">
-                <a data-nav-link href="index.html" class="nav-link-mobile relative rounded-xl px-4 py-3 transition-all duration-200 hover:bg-gradient-to-r hover:from-slate-100 hover:to-slate-50 hover:text-slate-900 hover:shadow-sm hover:scale-[1.02]">Home</a>
+                <a data-nav-link href="index.html" class="nav-link-mobile relative rounded-xl pl-1 pr-4 py-3 transition-all duration-200 hover:bg-gradient-to-r hover:from-slate-100 hover:to-slate-50 hover:text-slate-900 hover:shadow-sm hover:scale-[1.02]">Home</a>
                 <div>
                     <p class="text-xs text-slate-400 font-bold uppercase tracking-wider mb-3 pl-1">About</p>
                     <div class="space-y-2 pl-2">
@@ -194,11 +194,11 @@
                         </a>
                     </div>
                 </div>
-                <a data-nav-link href="contact.html" class="nav-link-mobile rounded-xl px-4 py-3 transition-all duration-200 hover:bg-gradient-to-r hover:from-slate-100 hover:to-slate-50 hover:text-slate-900 hover:shadow-sm hover:scale-[1.02]">Contact</a>
+                <a data-nav-link href="contact.html" class="nav-link-mobile rounded-xl pl-1 pr-4 py-3 transition-all duration-200 hover:bg-gradient-to-r hover:from-slate-100 hover:to-slate-50 hover:text-slate-900 hover:shadow-sm hover:scale-[1.02]">Contact</a>
             </nav>
         </div>
         <div class="pt-6 border-t border-slate-200/80">
-            <a href="explore_gedung.html" class="block w-full rounded-xl bg-gradient-to-r from-[#BE1A1A] via-purple-600 to-[#1B4EF5] px-5 py-3 text-center text-xs font-semibold text-white shadow-lg shadow-blue-500/20 transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/40 hover:scale-105 active:scale-[0.98]">Mulai Eksplorasi 🚀</a>
+            <a href="explore_gedung.html" class="block w-full rounded-xl bg-gradient-to-r from-[#BE1A1A] via-purple-600 to-[#1B4EF5] px-5 py-4 text-center text-sm font-bold text-white shadow-lg shadow-blue-500/20 transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/40 hover:scale-105 active:scale-[0.98]">Mulai Eksplorasi 🚀</a>
         </div>
     </div>
 </div>

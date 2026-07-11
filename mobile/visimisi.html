@@ -114,12 +114,13 @@
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
     </style>
-<script src="assets/js/preloader.js"></script>
+<script src="../assets/js/mobile/preloader.js"></script>
+  <link rel="stylesheet" href="../assets/css/mobile/mobile.css">
 </head>
 
 <body class="min-h-full font-sans bg-slate-50 antialiased">
     <div id="navbar"></div>
-    <script src="assets/js/navbar.js"></script>
+    <script src="../assets/js/mobile/navbar.js"></script>
 
    <main class="relative overflow-hidden">
         <section class="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
@@ -171,7 +172,7 @@
                 <div
                     class="reveal rounded-[2.25rem] border border-slate-200/80 bg-white/85 p-4 shadow-[0_24px_100px_rgba(15,23,42,0.10)]">
                     <div class="overflow-hidden rounded-[1.75rem] bg-slate-100">
-                        <img src="assets/img/mhs.jpg"
+                        <img src="../assets/img/mhs.jpg"
                             alt="Mahasiswa ITB Riau Pesisir"
                             class="image-zoom h-[420px] w-full object-cover transition duration-500 hover:scale-[1.03]" />
                     </div>
@@ -638,6 +639,7 @@
 
         document.querySelectorAll('.counter').forEach((counter) => counterObserver.observe(counter));
     </script>
+  <script src="../assets/js/mobile/mobile.js"></script>
 </body>
 
 </html>
