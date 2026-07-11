@@ -26,7 +26,7 @@
         }
     </script>
 
-    <link rel="stylesheet" href="assets/css/landing.css">
+    <link rel="stylesheet" href="../assets/css/landing.css">
 
     <style>
         html {
@@ -194,23 +194,24 @@
             }
         }
     </style>
-<script src="assets/js/preloader.js"></script>
+<script src="../assets/js/mobile/preloader.js"></script>
+  <link rel="stylesheet" href="../assets/css/mobile/mobile.css">
 </head>
 
 <body
     class="min-h-full flex flex-col relative overflow-x-hidden font-sans bg-white antialiased selection:bg-blue-600 selection:text-white">
 
     <div id="navbar" class="animate-slideDown"></div>
-    <script src="assets/js/navbar.js"></script>
+    <script src="../assets/js/mobile/navbar.js"></script>
 
     <!-- HERO SECTION -->
     <section class="hero-slideshow" id="hero">
         <!-- Background Slideshow -->
         <div class="hero-bg-container">
-            <div class="hero-slide" data-index="0" style="background-image: url('assets/img/hero-index-1.jpg')" role="img" aria-label="Gedung Kampus ITBRP"></div>
-            <div class="hero-slide" data-index="1" style="background-image: url('assets/img/hero-index-2.JPG')" role="img" aria-label="Suasana Kampus ITBRP"></div>
-            <div class="hero-slide" data-index="2" style="background-image: url('assets/img/hero-index-3.jpg')" role="img" aria-label="Aktivitas Mahasiswa ITBRP"></div>
-            <div class="hero-slide" data-index="3" style="background-image: url('assets/img/hero-index-4.JPG')" role="img" aria-label="Lingkungan Kampus ITBRP"></div>
+            <div class="hero-slide" data-index="0" style="background-image: url('../assets/img/hero-index-1.jpg')" role="img" aria-label="Gedung Kampus ITBRP"></div>
+            <div class="hero-slide" data-index="1" style="background-image: url('../assets/img/hero-index-2.JPG')" role="img" aria-label="Suasana Kampus ITBRP"></div>
+            <div class="hero-slide" data-index="2" style="background-image: url('../assets/img/hero-index-3.jpg')" role="img" aria-label="Aktivitas Mahasiswa ITBRP"></div>
+            <div class="hero-slide" data-index="3" style="background-image: url('../assets/img/hero-index-4.JPG')" role="img" aria-label="Lingkungan Kampus ITBRP"></div>
         </div>
 
         <!-- Overlay Layers -->
@@ -229,7 +230,7 @@
                     </div>
 
                     <h1 class="reveal text-4xl sm:text-5xl md:text-7xl font-black tracking-tight text-white leading-[1.1]">
-                        <span class="bg-gradient-to-r from-[#BE1A1A] to-[#1B4EF5] bg-clip-text text-transparent">Institut Teknologi & Bisnis Riau Pesisir</span>
+                        Institut Teknologi &amp; Bisnis Riau Pesisir
                     </h1>
 
                     <p class="reveal-left text-base md:text-lg text-white/80 max-w-3xl mx-auto font-medium leading-relaxed px-2">
@@ -291,21 +292,7 @@
             </div>
         </div>
 
-        <!-- Slide Navigation -->
-        <div class="hero-slide-nav">
-            <button class="hero-slide-dot active" data-slide="0" aria-label="Slide 1"></button>
-            <button class="hero-slide-dot" data-slide="1" aria-label="Slide 2"></button>
-            <button class="hero-slide-dot" data-slide="2" aria-label="Slide 3"></button>
-            <button class="hero-slide-dot" data-slide="3" aria-label="Slide 4"></button>
-        </div>
 
-        <!-- Scroll Indicator -->
-        <div class="hero-scroll-indicator">
-            <span class="scroll-text">Scroll</span>
-            <svg class="scroll-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 5v14M5 12l7 7 7-7"/>
-            </svg>
-        </div>
     </section>
 
     <!-- HERO BANNER SECTION -->
@@ -317,7 +304,7 @@
             </div>
 
             <!-- Banner Image -->
-            <img src="assets/img/gedung-a-tampak-depan.jpg"
+            <img src="../assets/img/gedung-a-tampak-depan.jpg"
                 class="absolute inset-0 w-full h-full object-cover z-0 transform transition-transform duration-800 ease-out group-hover:scale-110"
                 alt="Gedung Rektorat Tampak Samping">
 
@@ -562,7 +549,7 @@
                 <a href="explore-laboratorium.html"
                     class="reveal card-hover-effect group relative overflow-hidden rounded-3xl border-2 border-blue-100 bg-white p-6 flex flex-col justify-between h-64 hover:border-[#1B4EF5] transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-2">
                     <div class="absolute inset-0 bg-gradient-to-t from-white via-white/10 to-transparent opacity-90 z-0"></div>
-                    <img src="assets/img/lab-1-tampak-depan.jpg"
+                    <img src="../assets/img/lab-1-tampak-depan.jpg"
                         class="absolute inset-0 w-full h-full object-cover z-[-1] opacity-30 group-hover:scale-[1.03] transition-transform duration-500"
                         alt="Laboratorium Komputer">
                     <div class="z-10 flex justify-between items-start">
@@ -583,7 +570,7 @@
                 <a href="explore-perpustakaan.html"
                     class="reveal card-hover-effect group relative overflow-hidden rounded-3xl border-2 border-indigo-100 bg-white p-6 flex flex-col justify-between h-64 hover:border-indigo-600 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-2">
                     <div class="absolute inset-0 bg-gradient-to-t from-white via-white/10 to-transparent opacity-90 z-0"></div>
-                    <img src="assets/img/perpus-tampak-depan.jpg"
+                    <img src="../assets/img/perpus-tampak-depan.jpg"
                         class="absolute inset-0 w-full h-full object-cover z-[-1] opacity-30 group-hover:scale-[1.03] transition-transform duration-500"
                         alt="Perpustakaan Pusat">
                     <div class="z-10 flex justify-between items-start">
@@ -604,7 +591,7 @@
                 <a href="explore-kantin.html"
                     class="reveal card-hover-effect group relative overflow-hidden rounded-3xl border-2 border-amber-100 bg-white p-6 flex flex-col justify-between h-64 hover:border-amber-600 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-2">
                     <div class="absolute inset-0 bg-gradient-to-t from-white via-white/10 to-transparent opacity-90 z-0"></div>
-                    <img src="assets/img/hero-kantin.jpg"
+                    <img src="../assets/img/hero-kantin.jpg"
                         class="absolute inset-0 w-full h-full object-cover z-[-1] opacity-30 group-hover:scale-[1.03] transition-transform duration-500"
                         alt="Kantin Kampus">
                     <div class="z-10 flex justify-between items-start">
@@ -625,7 +612,7 @@
                 <a href="explore_musholla.html"
                     class="reveal card-hover-effect group relative overflow-hidden rounded-3xl border-2 border-emerald-100 bg-white p-6 flex flex-col justify-between h-64 hover:border-emerald-600 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-2">
                     <div class="absolute inset-0 bg-gradient-to-t from-white via-white/10 to-transparent opacity-90 z-0"></div>
-                    <img src="assets/img/musholla-tampak-depan.jpg"
+                    <img src="../assets/img/musholla-tampak-depan.jpg"
                         class="absolute inset-0 w-full h-full object-cover z-[-1] opacity-30 group-hover:scale-[1.03] transition-transform duration-500"
                         alt="Musholla ITBRP">
                     <div class="z-10 flex justify-between items-start">
@@ -646,7 +633,7 @@
                 <a href="explore-lapangan.html"
                     class="reveal card-hover-effect group relative overflow-hidden rounded-3xl border-2 border-teal-100 bg-white p-6 flex flex-col justify-between h-64 hover:border-teal-600 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-2">
                     <div class="absolute inset-0 bg-gradient-to-t from-white via-white/10 to-transparent opacity-90 z-0"></div>
-                    <img src="assets/img/lapangan-tampak-samping-kanan.jpg"
+                    <img src="../assets/img/lapangan-tampak-samping-kanan.jpg"
                         class="absolute inset-0 w-full h-full object-cover z-[-1] opacity-30 group-hover:scale-[1.03] transition-transform duration-500"
                         alt="Lapangan ITBRP">
                     <div class="z-10 flex justify-between items-start">
@@ -667,7 +654,7 @@
                 <a href="explore-ruang-kelas.html"
                     class="reveal card-hover-effect group relative overflow-hidden rounded-3xl border-2 border-violet-100 bg-white p-6 flex flex-col justify-between h-64 hover:border-violet-600 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-2">
                     <div class="absolute inset-0 bg-gradient-to-t from-white via-white/10 to-transparent opacity-90 z-0"></div>
-                    <img src="assets/img/hero-kelas.jpg"
+                    <img src="../assets/img/hero-kelas.jpg"
                         class="absolute inset-0 w-full h-full object-cover z-[-1] opacity-30 group-hover:scale-[1.03] transition-transform duration-500"
                         alt="Ruang Kelas">
                     <div class="z-10 flex justify-between items-start">
@@ -840,7 +827,7 @@
             if (btn360) {
                 btn360.addEventListener('click', function() {
                     if (typeof window.open360Tour === 'function') {
-                        window.open360Tour('assets/img/gedung-a-tampak-samping.jpg');
+                        window.open360Tour('../assets/img/gedung-a-tampak-samping.jpg');
                     } else {
                         console.error('open360Tour function not found');
                     }
@@ -848,8 +835,9 @@
             }
         });
     </script>
-    <script src="assets/js/landing.js"></script>
-    <script src="assets/js/virtual-tour.js"></script>
+    <script src="../assets/js/landing.js"></script>
+    <script src="../assets/js/virtual-tour.js"></script>
+  <script src="../assets/js/mobile/mobile.js"></script>
 </body>
 
 </html>

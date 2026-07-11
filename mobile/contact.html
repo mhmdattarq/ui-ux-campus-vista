@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-white text-slate-900 scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Vista</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 650ms ease, transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .card-hover-effect {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .card-hover-effect:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .floating-bubble {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) translateX(0);
+            }
+            33% {
+                transform: translateY(-20px) translateX(10px);
+            }
+            66% {
+                transform: translateY(-10px) translateX(-10px);
+            }
+        }
+
+        .input-field {
+            transition: all 0.3s ease;
+        }
+
+        .input-field:focus {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.15);
+        }
+
+        .input-field.error {
+            border-color: #BE1A1A;
+            background: rgba(190, 26, 26, 0.05);
+        }
+
+        .input-field.success {
+            border-color: #10b981;
+            background: rgba(16, 185, 129, 0.05);
+        }
+
+        .pulse-ring {
+            animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        }
+
+        @keyframes pulse-ring {
+            0% {
+                transform: scale(0.95);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.05);
+                opacity: 0.7;
+            }
+            100% {
+                transform: scale(0.95);
+                opacity: 1;
+            }
+        }
+
+        .chat-bubble {
+            animation: chat-appear 0.5s ease-out;
+        }
+
+        @keyframes chat-appear {
+            from {
+                opacity: 0;
+                transform: translateY(20px) scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .typing-indicator span {
+            animation: typing 1.4s infinite;
+            opacity: 0.4;
+        }
+
+        .typing-indicator span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .typing-indicator span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes typing {
+            0%, 60%, 100% {
+                transform: translateY(0);
+                opacity: 0.4;
+            }
+            30% {
+                transform: translateY(-10px);
+                opacity: 1;
+            }
+        }
+
+        .gradient-border {
+            position: relative;
+            background: linear-gradient(white, white) padding-box,
+                        linear-gradient(135deg, #BE1A1A, #1B4EF5) border-box;
+            border: 2px solid transparent;
+        }
+
+        .map-marker {
+            animation: marker-bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes marker-bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .shimmer {
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(255, 255, 255, 0.8) 50%, 
+                transparent 100%);
+            background-size: 200% 100%;
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -200% 0;
+            }
+            100% {
+                background-position: 200% 0;
+            }
+        }
+
+        .contact-icon {
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .contact-icon:hover {
+            transform: rotate(360deg) scale(1.2);
+        }
+
+        .success-checkmark {
+            animation: success-scale 0.5s ease-out;
+        }
+
+        @keyframes success-scale {
+            0% {
+                transform: scale(0);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .form-step {
+            display: none;
+        }
+
+        .form-step.active {
+            display: block;
+            animation: slide-in 0.4s ease-out;
+        }
+
+        @keyframes slide-in {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .progress-bar {
+            transition: width 0.5s ease-in-out;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+        }
+
+        .faq-answer.open {
+            max-height: 500px;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-icon.rotate {
+            transform: rotate(180deg);
+        }
+    </style>
+<script src="../assets/js/mobile/preloader.js"></script>
+  <link rel="stylesheet" href="../assets/css/mobile/mobile.css">
+</head>
+
+<body class="min-h-full font-sans bg-slate-50 antialiased">
+    <div id="navbar"></div>
+    <script src="../assets/js/mobile/navbar.js"></script>
+
+    <main class="relative overflow-hidden">
+        <div class="floating-bubble" style="width: 300px; height: 300px; background: linear-gradient(135deg, #BE1A1A, #1B4EF5); top: 10%; left: 5%;"></div>
+        <div class="floating-bubble" style="width: 200px; height: 200px; background: linear-gradient(135deg, #1B4EF5, #BE1A1A); bottom: 20%; right: 10%; animation-delay: 2s;"></div>
+
+        <section class="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+            <div class="text-center space-y-6 mb-12 reveal">
+                <span class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-red-50 to-blue-50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-slate-700 shadow-md border-2 border-red-100/50">
+                    <span class="flex h-2 w-2 relative">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-gradient-to-r from-[#BE1A1A] to-[#1B4EF5]"></span>
+                    </span>
+                    Hubungi Kami
+                </span>
+                <h1 class="text-4xl sm:text-5xl font-black tracking-tight text-slate-950">
+                    Mari <span class="bg-gradient-to-r from-[#BE1A1A] to-red-600 bg-clip-text text-transparent">Terhubung</span> Dengan <span class="bg-gradient-to-r from-[#1B4EF5] to-blue-600 bg-clip-text text-transparent">Kami</span>
+                </h1>
+                <p class="text-base text-slate-600 max-w-2xl mx-auto leading-relaxed">
+                    Kami siap membantu menjawab pertanyaan Anda tentang kampus, program studi, fasilitas, dan informasi pendaftaran. Tim kami responsif dan siap melayani.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-6 mb-12">
+                <a href="mailto:akademik@itbriaupesisir.ac.id" class="reveal card-hover-effect group relative rounded-3xl bg-white p-6 shadow-lg transition-all duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-br from-red-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-3xl"></div>
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 mx-auto rounded-2xl bg-gradient-to-br from-[#BE1A1A] to-red-600 flex items-center justify-center text-white text-2xl mb-4 group-hover:scale-110 transition-transform shadow-lg contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-7 h-7">
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-black text-slate-950 mb-2">Email Resmi</h3>
+                        <p class="text-sm text-slate-600 mb-3">Kirim email untuk pertanyaan detail</p>
+                        <p class="text-xs font-semibold text-[#BE1A1A] break-all">akademik@itbriaupesisir.ac.id</p>
+                    </div>
+                </a>
+
+                <a href="tel:+6282174342828" class="reveal card-hover-effect group relative rounded-3xl bg-white p-6 shadow-lg transition-all duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-3xl"></div>
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 mx-auto rounded-2xl bg-gradient-to-br from-[#1B4EF5] to-blue-600 flex items-center justify-center text-white text-2xl mb-4 group-hover:scale-110 transition-transform shadow-lg contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-7 h-7">
+                                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-black text-slate-950 mb-2">Telepon</h3>
+                        <p class="text-sm text-slate-600 mb-3">Hubungi kami langsung</p>
+                        <p class="text-xs font-semibold text-[#1B4EF5]">0821-7434-2828</p>
+                    </div>
+                </a>
+
+                <a href="https://wa.me/6282174342828" target="_blank" class="reveal card-hover-effect group relative rounded-3xl bg-white p-6 shadow-lg transition-all duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-br from-emerald-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-3xl"></div>
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 mx-auto rounded-2xl bg-gradient-to-br from-[#25D366] to-green-600 flex items-center justify-center text-white text-2xl mb-4 group-hover:scale-110 transition-transform shadow-lg contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-8 h-8">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-black text-slate-950 mb-2">WhatsApp</h3>
+                        <p class="text-sm text-slate-600 mb-3">Chat cepat dengan admin</p>
+                        <p class="text-xs font-semibold text-emerald-600">0821-7434-2828</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8">
+                <div class="reveal rounded-3xl border-2 border-slate-200 bg-white p-8 shadow-xl">
+                    <div class="mb-6">
+                        <h2 class="text-2xl font-black text-slate-950 mb-2">Kirim Pesan</h2>
+                        <p class="text-sm text-slate-600">Isi formulir di bawah dan kami akan merespons dalam 1x24 jam</p>
+                    </div>
+
+                    <div id="progress-container" class="mb-6">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-xs font-semibold text-slate-600">Progress</span>
+                            <span id="progress-text" class="text-xs font-semibold text-[#1B4EF5]">0%</span>
+                        </div>
+                        <div class="w-full h-2 bg-slate-200 rounded-full overflow-hidden">
+                            <div id="progress-bar" class="progress-bar h-full bg-gradient-to-r from-[#BE1A1A] to-[#1B4EF5]" style="width: 0%"></div>
+                        </div>
+                    </div>
+
+                    <form id="contact-form" class="space-y-5">
+                        <div class="form-step active" data-step="1">
+                            <div class="space-y-5">
+                                <div>
+                                    <label for="name" class="block text-sm font-bold text-slate-700 mb-2">Nama Lengkap *</label>
+                                    <input type="text" id="name" name="name" required
+                                        class="input-field w-full px-4 py-3 rounded-xl border-2 border-slate-200 focus:border-[#1B4EF5] focus:outline-none text-sm"
+                                        placeholder="Masukkan nama lengkap Anda">
+                                    <p class="error-message text-xs text-[#BE1A1A] mt-1 hidden">Nama harus diisi minimal 3 karakter</p>
+                                </div>
+
+                                <div>
+                                    <label for="email" class="block text-sm font-bold text-slate-700 mb-2">Email *</label>
+                                    <input type="email" id="email" name="email" required
+                                        class="input-field w-full px-4 py-3 rounded-xl border-2 border-slate-200 focus:border-[#1B4EF5] focus:outline-none text-sm"
+                                        placeholder="nama@email.com">
+                                    <p class="error-message text-xs text-[#BE1A1A] mt-1 hidden">Email tidak valid</p>
+                                </div>
+
+                                <div>
+                                    <label for="phone" class="block text-sm font-bold text-slate-700 mb-2">Nomor Telepon/WhatsApp *</label>
+                                    <input type="tel" id="phone" name="phone" required
+                                        class="input-field w-full px-4 py-3 rounded-xl border-2 border-slate-200 focus:border-[#1B4EF5] focus:outline-none text-sm"
+                                        placeholder="08xx xxxx xxxx">
+                                    <p class="error-message text-xs text-[#BE1A1A] mt-1 hidden">Nomor telepon tidak valid</p>
+                                </div>
+                            </div>
+                            <button type="button" onclick="nextStep(2)" 
+                                class="w-full mt-6 px-6 py-3 bg-gradient-to-r from-[#BE1A1A] to-[#1B4EF5] text-white font-bold text-sm rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                                Lanjut ke Langkah 2 →
+                            </button>
+                        </div>
+
+                        <div class="form-step" data-step="2">
+                            <div class="space-y-5">
+                                <div>
+                                    <label for="subject" class="block text-sm font-bold text-slate-700 mb-2">Topik Pertanyaan *</label>
+                                    <select id="subject" name="subject" required
+                                        class="input-field w-full px-4 py-3 rounded-xl border-2 border-slate-200 focus:border-[#1B4EF5] focus:outline-none text-sm">
+                                        <option value="">Pilih topik pertanyaan</option>
+                                        <option value="pendaftaran">Pendaftaran Mahasiswa Baru</option>
+                                        <option value="program-studi">Informasi Program Studi</option>
+                                        <option value="fasilitas">Fasilitas Kampus</option>
+                                        <option value="beasiswa">Beasiswa & Bantuan Keuangan</option>
+                                        <option value="kerjasama">Kerjasama & Partnership</option>
+                                        <option value="lainnya">Lainnya</option>
+                                    </select>
+                                    <p class="error-message text-xs text-[#BE1A1A] mt-1 hidden">Pilih topik pertanyaan</p>
+                                </div>
+
+                                <div>
+                                    <label for="message" class="block text-sm font-bold text-slate-700 mb-2">Pesan Anda *</label>
+                                    <textarea id="message" name="message" rows="5" required
+                                        class="input-field w-full px-4 py-3 rounded-xl border-2 border-slate-200 focus:border-[#1B4EF5] focus:outline-none text-sm resize-none"
+                                        placeholder="Tuliskan pertanyaan atau pesan Anda di sini..."></textarea>
+                                    <p class="error-message text-xs text-[#BE1A1A] mt-1 hidden">Pesan minimal 10 karakter</p>
+                                    <p class="text-xs text-slate-500 mt-1"><span id="char-count">0</span>/500 karakter</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-3 mt-6">
+                                <button type="button" onclick="prevStep(1)" 
+                                    class="flex-1 px-6 py-3 bg-slate-200 text-slate-700 font-bold text-sm rounded-xl hover:bg-slate-300 transition-all duration-300">
+                                    ← Kembali
+                                </button>
+                                <button type="submit" 
+                                    class="flex-1 px-6 py-3 bg-gradient-to-r from-emerald-500 to-green-600 text-white font-bold text-sm rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                                    Kirim Pesan ✓
+                                </button>
+                            </div>
+                        </div>
+
+                        <div id="success-message" class="hidden p-6 rounded-xl bg-gradient-to-r from-emerald-50 to-green-50 border-2 border-emerald-200">
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4 success-checkmark">
+                                    <span class="text-3xl">✓</span>
+                                </div>
+                                <h3 class="text-xl font-black text-slate-950 mb-2">Pesan Terkirim!</h3>
+                                <p class="text-sm text-slate-600 mb-4">Terima kasih telah menghubungi kami. Tim kami akan segera merespons melalui email atau WhatsApp Anda.</p>
+                                <button type="button" onclick="resetForm()" 
+                                    class="px-6 py-2 bg-white border-2 border-emerald-500 text-emerald-600 font-bold text-sm rounded-lg hover:bg-emerald-50 transition-all">
+                                    Kirim Pesan Lagi
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="reveal rounded-3xl border-2 border-slate-200 bg-white p-8 shadow-xl">
+                        <h3 class="text-xl font-black text-slate-950 mb-4">Jam Operasional</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center p-3 rounded-lg bg-slate-50">
+                                <span class="text-sm font-semibold text-slate-700">Senin - Jumat</span>
+                                <span class="text-sm font-bold text-[#1B4EF5]">08.00 - 22.00 WIB</span>
+                            </div>
+                            <div class="flex justify-between items-center p-3 rounded-lg bg-slate-50">
+                                <span class="text-sm font-semibold text-slate-700">Sabtu</span>
+                                <span class="text-sm font-bold text-[#1B4EF5]">08.00 - 12.00 WIB</span>
+                            </div>
+                            <div class="flex justify-between items-center p-3 rounded-lg bg-red-50">
+                                <span class="text-sm font-semibold text-slate-700">Minggu & Tanggal Merah</span>
+                                <span class="text-sm font-bold text-[#BE1A1A]">Tutup</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 p-4 rounded-lg bg-blue-50 border border-blue-200">
+                            <p class="text-xs text-slate-600">
+                                <span class="font-bold text-[#1B4EF5]">💡 Info:</span> Email dan WhatsApp tetap kami layani 24/7. Respons diluar jam operasional akan dijawab pada hari kerja berikutnya.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="reveal rounded-3xl border-2 border-slate-200 bg-white p-8 shadow-xl">
+                        <h3 class="text-xl font-black text-slate-950 mb-4">Lokasi Kampus</h3>
+                        <div class="space-y-4">
+                            <div class="relative h-48 rounded-xl overflow-hidden bg-slate-200">
+                                <iframe 
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15956.767246636096!2d101.41788383715822!3d1.6730557!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d5ac49e8c5b8ad%3A0x3b6d8e8e8e8e8e8e!2sInstitut%20Teknologi%20Dan%20Bisnis%20Riau%20Pesisir!5e0!3m2!1sid!2sid!4v1720409600000!5m2!1sid!2sid"
+                                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                                    class="grayscale hover:grayscale-0 transition-all duration-500">
+                                </iframe>
+                                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 map-marker">
+                                    <span class="text-4xl">📍</span>
+                                </div>
+                            </div>
+                            <div class="p-4 rounded-lg bg-slate-50">
+                                <p class="text-xs font-bold text-slate-700 mb-1">Alamat Lengkap</p>
+                                <p class="text-sm text-slate-600">Jl. Utama Karya, Bukit Batrem, Kec. Dumai Tim., Kota Dumai, Riau 28826</p>
+                            </div>
+                            <a href="https://maps.app.goo.gl/FmPfUcJrvTEVS29R9" target="_blank" 
+                                class="block w-full px-4 py-3 bg-gradient-to-r from-[#BE1A1A] to-[#1B4EF5] text-white text-center font-bold text-sm rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                                Buka di Google Maps 🗺️
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reveal mt-12 rounded-3xl border-2 border-slate-200 bg-white p-8 shadow-xl">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-black text-slate-950 mb-2">
+                        <span class="bg-gradient-to-r from-[#BE1A1A] to-[#1B4EF5] bg-clip-text text-transparent">FAQ</span> - Pertanyaan Umum
+                    </h2>
+                    <p class="text-sm text-slate-600">Temukan jawaban cepat untuk pertanyaan yang sering diajukan</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-6xl mx-auto">
+                    <div class="faq-item border-2 border-slate-200 rounded-xl overflow-hidden hover:border-[#1B4EF5] transition-all">
+                        <button type="button" class="faq-toggle w-full px-4 py-3 flex justify-between items-center bg-white hover:bg-slate-50 transition-all" onclick="toggleFAQ(this)">
+                            <span class="text-sm font-bold text-slate-900 text-left">Bagaimana cara mendaftar sebagai mahasiswa baru?</span>
+                            <svg class="faq-icon w-5 h-5 text-[#1B4EF5] flex-shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="faq-answer open bg-slate-50 px-4 py-3">
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Pendaftaran dapat dilakukan secara online melalui website resmi kampus atau datang langsung ke kampus. Anda perlu menyiapkan dokumen ijazah, KTP, dan pas foto. Biaya pendaftaran sudah termasuk tes masuk dan orientasi kampus.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item border-2 border-slate-200 rounded-xl overflow-hidden hover:border-[#1B4EF5] transition-all">
+                        <button type="button" class="faq-toggle w-full px-4 py-3 flex justify-between items-center bg-white hover:bg-slate-50 transition-all" onclick="toggleFAQ(this)">
+                            <span class="text-sm font-bold text-slate-900 text-left">Apa saja program studi yang tersedia?</span>
+                            <svg class="faq-icon w-5 h-5 text-[#1B4EF5] flex-shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="faq-answer open bg-slate-50 px-4 py-3">
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Kami memiliki 4 Program Studi S1 terakreditasi: Teknik Industri, Teknik Informatika, Teknik Sipil, dan Bisnis Digital. Semua program dirancang untuk memenuhi kebutuhan industri modern dengan kurikulum yang up-to-date.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item border-2 border-slate-200 rounded-xl overflow-hidden hover:border-[#1B4EF5] transition-all">
+                        <button type="button" class="faq-toggle w-full px-4 py-3 flex justify-between items-center bg-white hover:bg-slate-50 transition-all" onclick="toggleFAQ(this)">
+                            <span class="text-sm font-bold text-slate-900 text-left">Apakah tersedia program beasiswa?</span>
+                            <svg class="faq-icon w-5 h-5 text-[#1B4EF5] flex-shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="faq-answer open bg-slate-50 px-4 py-3">
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Ya, kami menyediakan berbagai program beasiswa seperti beasiswa prestasi akademik, beasiswa olahraga, beasiswa kurang mampu, dan beasiswa kerjasama dengan berbagai instansi. Informasi lengkap dapat ditanyakan saat pendaftaran.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item border-2 border-slate-200 rounded-xl overflow-hidden hover:border-[#1B4EF5] transition-all">
+                        <button type="button" class="faq-toggle w-full px-4 py-3 flex justify-between items-center bg-white hover:bg-slate-50 transition-all" onclick="toggleFAQ(this)">
+                            <span class="text-sm font-bold text-slate-900 text-left">Fasilitas apa saja yang tersedia di kampus?</span>
+                            <svg class="faq-icon w-5 h-5 text-[#1B4EF5] flex-shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="faq-answer open bg-slate-50 px-4 py-3">
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Kampus dilengkapi dengan laboratorium komputer modern, perpustakaan digital, ruang kelas ber-AC, kantin, mushola, lapangan olahraga, dan area WiFi. Semua fasilitas dapat Anda jelajahi melalui fitur Virtual Tour 360° di website kami.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item border-2 border-slate-200 rounded-xl overflow-hidden hover:border-[#1B4EF5] transition-all">
+                        <button type="button" class="faq-toggle w-full px-4 py-3 flex justify-between items-center bg-white hover:bg-slate-50 transition-all" onclick="toggleFAQ(this)">
+                            <span class="text-sm font-bold text-slate-900 text-left">Berapa lama masa studi untuk program S1?</span>
+                            <svg class="faq-icon w-5 h-5 text-[#1B4EF5] flex-shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="faq-answer open bg-slate-50 px-4 py-3">
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Program S1 dirancang untuk diselesaikan dalam 4 tahun (8 semester). Namun, mahasiswa berprestasi dapat menyelesaikan lebih cepat dengan mengambil SKS maksimal. Masa studi maksimal adalah 7 tahun sesuai regulasi perguruan tinggi.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item border-2 border-slate-200 rounded-xl overflow-hidden hover:border-[#1B4EF5] transition-all">
+                        <button type="button" class="faq-toggle w-full px-4 py-3 flex justify-between items-center bg-white hover:bg-slate-50 transition-all" onclick="toggleFAQ(this)">
+                            <span class="text-sm font-bold text-slate-900 text-left">Bagaimana sistem pembayaran kuliah?</span>
+                            <svg class="faq-icon w-5 h-5 text-[#1B4EF5] flex-shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="faq-answer open bg-slate-50 px-4 py-3">
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Pembayaran dapat dilakukan per semester atau dicicil per bulan. Kami menerima pembayaran melalui transfer bank, virtual account, dan pembayaran langsung di kampus. Tersedia juga program cicilan 0% untuk mahasiswa tertentu.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reveal mt-12 text-center p-8 rounded-3xl bg-gradient-to-br from-slate-50 to-white border-2 border-slate-200">
+                <div class="max-w-2xl mx-auto">
+                    <div class="w-20 h-20 bg-gradient-to-br from-[#BE1A1A] to-[#1B4EF5] rounded-full flex items-center justify-center mx-auto mb-6 pulse-ring">
+                        <span class="text-4xl">🚀</span>
+                    </div>
+                    <h3 class="text-2xl font-black text-slate-950 mb-3">Masih Ada Pertanyaan?</h3>
+                    <p class="text-sm text-slate-600 mb-6">
+                        Tim kami siap membantu Anda. Jangan ragu untuk menghubungi kami melalui berbagai channel yang tersedia.
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-3">
+                        <a href="https://wa.me/6282174342828" target="_blank" 
+                            class="px-6 py-3 bg-emerald-500 text-white font-bold text-sm rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                            Chat WhatsApp 💬
+                        </a>
+                        <a href="mailto:akademik@itbriaupesisir.ac.id" 
+                            class="px-6 py-3 bg-gradient-to-r from-[#BE1A1A] to-[#1B4EF5] text-white font-bold text-sm rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                            Kirim Email 📧
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gradient-to-br from-slate-900 to-slate-800 text-white pt-12 pb-6 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            <div class="space-y-3">
+                <h3 class="text-lg font-bold tracking-tight">
+                    <span class="bg-gradient-to-r from-[#BE1A1A] via-rose-600 to-red-600 bg-clip-text text-transparent">Campus</span> <span class="bg-gradient-to-r from-[#1B4EF5] via-blue-600 to-indigo-600 bg-clip-text text-transparent">Vista</span>
+                </h3>
+                <p class="text-sm text-slate-400 leading-relaxed">Institut Teknologi &amp; Bisnis Riau Pesisir</p>
+                <p class="text-sm text-slate-400 leading-relaxed">Jl. Utama Karya, Bukit Batrem, Kec. Dumai Tim., Kota Dumai, Riau 28826</p>
+            </div>
+            <div class="space-y-3">
+                <h4 class="text-xs font-semibold uppercase tracking-[0.15em] text-slate-500">Kontak</h4>
+                <div class="space-y-2.5">
+                    <a href="tel:+6282174342828" class="flex items-center gap-2.5 text-sm text-slate-300 hover:text-white transition-colors group">
+                        <svg class="w-4 h-4 text-slate-500 group-hover:text-blue-400 transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        <span>0821-7434-2828</span>
+                    </a>
+                    <a href="mailto:info@itbriaupesisir.ac.id" class="flex items-center gap-2.5 text-sm text-slate-300 hover:text-white transition-colors group">
+                        <svg class="w-4 h-4 text-slate-500 group-hover:text-blue-400 transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        <span>info@itbriaupesisir.ac.id</span>
+                    </a>
+                    <a href="https://wa.me/6282174342828" target="_blank" class="flex items-center gap-2.5 text-sm text-slate-300 hover:text-white transition-colors group">
+                        <svg class="w-4 h-4 text-slate-500 group-hover:text-green-400 transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                        <span>+62 821-7434-2828</span>
+                    </a>
+                </div>
+            </div>
+            <div class="space-y-3">
+                <h4 class="text-xs font-semibold uppercase tracking-[0.15em] text-slate-500">Jam Operasional</h4>
+                <div class="space-y-2.5 text-sm text-slate-300">
+                    <div class="flex justify-between"><span>Senin - Jumat</span><span class="text-white font-medium">08.00 - 22.00</span></div>
+                    <div class="flex justify-between"><span>Sabtu</span><span class="text-white font-medium">08.00 - 12.00</span></div>
+                    <div class="flex justify-between"><span>Minggu &amp; Tanggal Merah</span><span class="text-red-400 font-medium">Tutup</span></div>
+                </div>
+            </div>
+            <div class="space-y-3">
+                <h4 class="text-xs font-semibold uppercase tracking-[0.15em] text-slate-500">Ikuti Kami</h4>
+                <div class="flex gap-3">
+                    <a href="https://www.instagram.com/itbriaupesisir/" target="_blank" class="w-10 h-10 rounded-xl bg-slate-700 hover:bg-gradient-to-br hover:from-purple-600 hover:to-pink-600 flex items-center justify-center text-white transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20" aria-label="Instagram">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    </a>
+                    <a href="https://www.tiktok.com/@itbrp" target="_blank" class="w-10 h-10 rounded-xl bg-slate-700 hover:bg-gradient-to-br hover:from-slate-900 hover:to-slate-600 flex items-center justify-center text-white transition-all duration-300 hover:scale-110 hover:shadow-lg" aria-label="TikTok">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UC2WA5CUuEZhgPlJ3TO0ramA" target="_blank" class="w-10 h-10 rounded-xl bg-slate-700 hover:bg-gradient-to-br hover:from-red-600 hover:to-red-800 flex items-center justify-center text-white transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-red-500/20" aria-label="YouTube">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="mt-10 pt-6 border-t border-slate-700 text-center">
+            <p class="text-sm text-slate-400">&copy; 2026 <span class="font-semibold text-white">Campus Vista</span>. Institut Teknologi &amp; Bisnis Riau Pesisir.</p>
+        </div>
+    </div>
+</footer>
+
+
+    <script>
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.15,
+        });
+
+        document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
+
+        let currentStep = 1;
+        const totalSteps = 2;
+
+        function updateProgress() {
+            const progress = (currentStep / totalSteps) * 100;
+            document.getElementById('progress-bar').style.width = progress + '%';
+            document.getElementById('progress-text').textContent = Math.round(progress) + '%';
+        }
+
+        function nextStep(step) {
+            if (validateCurrentStep()) {
+                document.querySelectorAll('.form-step').forEach(el => el.classList.remove('active'));
+                document.querySelector(`[data-step="${step}"]`).classList.add('active');
+                currentStep = step;
+                updateProgress();
+                window.scrollTo({ top: 300, behavior: 'smooth' });
+            }
+        }
+
+        function prevStep(step) {
+            document.querySelectorAll('.form-step').forEach(el => el.classList.remove('active'));
+            document.querySelector(`[data-step="${step}"]`).classList.add('active');
+            currentStep = step;
+            updateProgress();
+            window.scrollTo({ top: 300, behavior: 'smooth' });
+        }
+
+        function validateCurrentStep() {
+            let isValid = true;
+            const currentStepEl = document.querySelector(`[data-step="${currentStep}"]`);
+            const inputs = currentStepEl.querySelectorAll('input[required], select[required], textarea[required]');
+            
+            inputs.forEach(input => {
+                const errorMsg = input.parentElement.querySelector('.error-message');
+                
+                if (!input.value.trim()) {
+                    input.classList.add('error');
+                    input.classList.remove('success');
+                    if (errorMsg) errorMsg.classList.remove('hidden');
+                    isValid = false;
+                } else {
+                    if (input.type === 'email' && !validateEmail(input.value)) {
+                        input.classList.add('error');
+                        input.classList.remove('success');
+                        if (errorMsg) errorMsg.classList.remove('hidden');
+                        isValid = false;
+                    } else if (input.type === 'tel' && !validatePhone(input.value)) {
+                        input.classList.add('error');
+                        input.classList.remove('success');
+                        if (errorMsg) errorMsg.classList.remove('hidden');
+                        isValid = false;
+                    } else if (input.name === 'name' && input.value.trim().length < 3) {
+                        input.classList.add('error');
+                        input.classList.remove('success');
+                        if (errorMsg) errorMsg.classList.remove('hidden');
+                        isValid = false;
+                    } else {
+                        input.classList.remove('error');
+                        input.classList.add('success');
+                        if (errorMsg) errorMsg.classList.add('hidden');
+                    }
+                }
+            });
+            
+            return isValid;
+        }
+
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+
+        function validatePhone(phone) {
+            const re = /^[\d\s\-\+\(\)]{8,}$/;
+            return re.test(phone);
+        }
+
+        document.querySelectorAll('.input-field').forEach(input => {
+            input.addEventListener('input', function() {
+                const errorMsg = this.parentElement.querySelector('.error-message');
+                
+                if (this.value.trim()) {
+                    if (this.type === 'email') {
+                        if (validateEmail(this.value)) {
+                            this.classList.remove('error');
+                            this.classList.add('success');
+                            if (errorMsg) errorMsg.classList.add('hidden');
+                        } else {
+                            this.classList.add('error');
+                            this.classList.remove('success');
+                            if (errorMsg) errorMsg.classList.remove('hidden');
+                        }
+                    } else if (this.type === 'tel') {
+                        if (validatePhone(this.value)) {
+                            this.classList.remove('error');
+                            this.classList.add('success');
+                            if (errorMsg) errorMsg.classList.add('hidden');
+                        } else {
+                            this.classList.add('error');
+                            this.classList.remove('success');
+                            if (errorMsg) errorMsg.classList.remove('hidden');
+                        }
+                    } else if (this.name === 'name' && this.value.trim().length >= 3) {
+                        this.classList.remove('error');
+                        this.classList.add('success');
+                        if (errorMsg) errorMsg.classList.add('hidden');
+                    } else if (this.name === 'message' && this.value.trim().length >= 10) {
+                        this.classList.remove('error');
+                        this.classList.add('success');
+                        if (errorMsg) errorMsg.classList.add('hidden');
+                    } else {
+                        this.classList.remove('error', 'success');
+                    }
+                } else {
+                    this.classList.remove('error', 'success');
+                }
+            });
+        });
+
+        const messageTextarea = document.getElementById('message');
+        const charCount = document.getElementById('char-count');
+        
+        if (messageTextarea && charCount) {
+            messageTextarea.addEventListener('input', function() {
+                const count = this.value.length;
+                charCount.textContent = count;
+                
+                if (count > 500) {
+                    this.value = this.value.substring(0, 500);
+                    charCount.textContent = 500;
+                }
+            });
+        }
+
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (validateCurrentStep()) {
+                document.querySelectorAll('.form-step').forEach(el => el.style.display = 'none');
+                document.getElementById('progress-container').style.display = 'none';
+                document.getElementById('success-message').classList.remove('hidden');
+                
+                window.scrollTo({ top: 300, behavior: 'smooth' });
+            }
+        });
+
+        function resetForm() {
+            document.getElementById('contact-form').reset();
+            document.querySelectorAll('.input-field').forEach(input => {
+                input.classList.remove('error', 'success');
+            });
+            document.querySelectorAll('.error-message').forEach(msg => {
+                msg.classList.add('hidden');
+            });
+            
+            document.getElementById('success-message').classList.add('hidden');
+            document.querySelectorAll('.form-step').forEach(el => {
+                el.style.display = '';
+                el.classList.remove('active');
+            });
+            document.querySelector('[data-step="1"]').classList.add('active');
+            document.getElementById('progress-container').style.display = '';
+            
+            currentStep = 1;
+            updateProgress();
+            
+            window.scrollTo({ top: 300, behavior: 'smooth' });
+        }
+
+        function toggleFAQ(button) {
+            const faqItem = button.closest('.faq-item');
+            const answer = faqItem.querySelector('.faq-answer');
+            const icon = button.querySelector('.faq-icon');
+            
+            const isOpen = answer.classList.contains('open');
+            
+            document.querySelectorAll('.faq-answer').forEach(el => el.classList.remove('open'));
+            document.querySelectorAll('.faq-icon').forEach(el => el.classList.remove('rotate'));
+            
+            if (!isOpen) {
+                answer.classList.add('open');
+                icon.classList.add('rotate');
+            }
+        }
+
+        updateProgress();
+    </script>
+  <script src="../assets/js/mobile/mobile.js"></script>
+</body>
+</html>
