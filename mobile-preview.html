@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Preview - Campus Vista</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body {
+            width: 100%; height: 100%;
+            background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #0f0f1a 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Inter', system-ui, sans-serif;
+            padding: 1rem;
+        }
+
+        .phone-wrapper {
+            position: relative;
+            width: min(320px, 88vw);
+            animation: phoneEntrance 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+        }
+
+        .phone-frame {
+            width: 100%;
+            padding-bottom: 200%;
+            background: linear-gradient(145deg, #2d2d44, #1a1a2e);
+            border-radius: 40px;
+            position: relative;
+            box-shadow:
+                0 0 0 2px rgba(190, 26, 26, 0.3),
+                0 0 0 4px rgba(27, 78, 245, 0.2),
+                0 0 0 6px rgba(15, 15, 26, 0.8),
+                0 30px 80px rgba(0, 0, 0, 0.6);
+        }
+
+        .phone-screen {
+            position: absolute;
+            top: 4%;
+            left: 4%;
+            width: 92%;
+            height: 92%;
+            background: #fff;
+            border-radius: 28px;
+            overflow: hidden;
+        }
+
+        .phone-screen iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .phone-notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 20px;
+            background: #1a1a2e;
+            border-radius: 0 0 14px 14px;
+            z-index: 10;
+        }
+
+        .phone-notch::after {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 7px;
+            height: 7px;
+            background: #2d2d44;
+            border-radius: 50%;
+        }
+
+        .phone-btn {
+            position: absolute;
+            right: -4px;
+            top: 30%;
+            width: 3px;
+            height: 40px;
+            background: #2d2d44;
+            border-radius: 0 2px 2px 0;
+        }
+
+        .phone-btn-2 {
+            position: absolute;
+            left: -4px;
+            top: 25%;
+            width: 3px;
+            height: 30px;
+            background: #2d2d44;
+            border-radius: 2px 0 0 2px;
+        }
+
+        .brand-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #BE1A1A, #1B4EF5);
+        }
+
+        .header-bar {
+            position: fixed;
+            top: 3px;
+            left: 0;
+            right: 0;
+            padding: 0.75rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 20;
+        }
+
+        .header-bar h1 {
+            font-size: 0.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #BE1A1A, #1B4EF5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+        }
+
+        .close-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: rgba(255, 255, 255, 0.6);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+            backdrop-filter: blur(8px);
+        }
+
+        .close-btn:hover {
+            background: rgba(255, 255, 255, 0.15);
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        @keyframes phoneEntrance {
+            from { opacity: 0; transform: scale(0.85) translateY(30px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        @media (max-width: 400px) {
+            .phone-frame { border-radius: 28px; }
+            .phone-screen { border-radius: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="brand-bar"></div>
+    <div class="header-bar">
+        <h1>Campus Vista</h1>
+        <button class="close-btn" onclick="window.close()" title="Tutup">✕</button>
+    </div>
+
+    <div class="phone-wrapper">
+        <div class="phone-frame">
+            <div class="phone-notch"></div>
+            <div class="phone-btn"></div>
+            <div class="phone-btn-2"></div>
+            <div class="phone-screen">
+                <iframe id="mobile-iframe" src="mobile/index.html" loading="lazy"></iframe>
+            </div>
+    </div>
+    <div class="label">Campus Vista &mdash; Mobile Version</div>
+    <script>
+        (function () {
+            var iframe = document.getElementById('mobile-iframe');
+            var key = 'campus-mobile-url';
+            var saved = sessionStorage.getItem(key);
+            var firstLoad = true;
+            if (saved) iframe.src = saved;
+            iframe.addEventListener('load', function () {
+                if (firstLoad) { firstLoad = false; return; }
+                try { sessionStorage.setItem(key, iframe.src); } catch (e) {}
+            });
+        })();
+    </script>
+</body>
+</html>

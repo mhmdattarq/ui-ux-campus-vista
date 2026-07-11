@@ -67,8 +67,24 @@
         header.appendChild(indicator);
         header.addEventListener('click', function (e) {
           e.stopPropagation();
-          content.classList.toggle('open');
-          indicator.textContent = content.classList.contains('open') ? '−' : '+';
+          var isOpen = content.classList.contains('open');
+          // Tutup semua section lain
+          sections.forEach(function (other) {
+            var otherContent = other.querySelector(':scope > div');
+            if (otherContent && other !== section) {
+              otherContent.classList.remove('open');
+              var otherIndicator = other.querySelector(':scope > p > span');
+              if (otherIndicator) otherIndicator.textContent = '+';
+            }
+          });
+          // Buka/tutup yang diklik
+          if (isOpen) {
+            content.classList.remove('open');
+            indicator.textContent = '+';
+          } else {
+            content.classList.add('open');
+            indicator.textContent = '−';
+          }
         });
       }
     });
