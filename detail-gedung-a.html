@@ -103,66 +103,7 @@
             box-shadow: 0 8px 20px rgba(0,0,0,0.08);
         }
 
-        .hotspot-360 {
-            position: absolute;
-            pointer-events: auto;
-            background: none;
-            border: none;
-            padding: 0;
-            cursor: pointer;
-            z-index: 25;
-            transform: translate(-50%,-50%);
-        }
-        .h-dot {
-            display: block;
-            width: 18px; height: 18px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.9);
-            border: 2.5px solid rgba(255,255,255,0.7);
-            box-shadow: 0 2px 16px rgba(0,0,0,0.4);
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        .h-dot::after {
-            content: '';
-            position: absolute;
-            inset: 3px;
-            border-radius: 50%;
-            background: #BE1A1A;
-            transition: all 0.3s ease;
-        }
-        .hotspot-360:hover .h-dot {
-            transform: scale(1.35);
-            box-shadow: 0 0 0 6px rgba(255,255,255,0.2);
-        }
-        .hotspot-360.active .h-dot {
-            transform: scale(1.35);
-            box-shadow: 0 0 0 8px rgba(27,78,245,0.25);
-        }
-        .hotspot-360.active .h-dot::after { background: #1B4EF5; }
-        .h-card {
-            position: absolute;
-            bottom: calc(100% + 10px);
-            left: 50%;
-            transform: translateX(-50%) scale(0.92);
-            background: #fff;
-            border-radius: 10px;
-            width: 200px;
-            box-shadow: 0 12px 40px rgba(0,0,0,0.3);
-            opacity: 0;
-            pointer-events: none;
-            transition: all 0.25s ease;
-            overflow: hidden;
-        }
-        .hotspot-360.active .h-card {
-            opacity: 1;
-            pointer-events: auto;
-            transform: translateX(-50%) scale(1);
-        }
-        .h-card-accent { height: 3px; width: 100%; }
-        .h-card-body { padding: 10px 14px 12px; }
-        .h-card-title { font-size: 13px; font-weight: 700; color: #0f172a; }
-        .h-card-desc { font-size: 11px; color: #475569; line-height: 1.5; margin-top: 3px; }
+
     </style>
 <script src="assets/js/preloader.js"></script>
 </head>
@@ -561,36 +502,7 @@
       🖱️ Seret untuk melihat 360°
     </div>
 
-    <button class="hotspot-360" style="top:35vh;left:25vw;" aria-label="Gedung A">
-      <span class="h-dot"></span>
-      <div class="h-card">
-        <div class="h-card-accent" style="background:#BE1A1A"></div>
-        <div class="h-card-body">
-          <p class="h-card-title">Gedung A</p>
-          <p class="h-card-desc">Gedung perkuliahan utama dengan 12 ruangan, aula, lab komputer, dan fasilitas akademik modern.</p>
-        </div>
-      </div>
-    </button>
-    <button class="hotspot-360" style="top:52vh;left:50vw;" aria-label="Musholla">
-      <span class="h-dot"></span>
-      <div class="h-card">
-        <div class="h-card-accent" style="background:#059669"></div>
-        <div class="h-card-body">
-          <p class="h-card-title">Musholla</p>
-          <p class="h-card-desc">Musholla kampus yang nyaman dengan kapasitas luas, bersih, dan dilengkapi fasilitas wudhu.</p>
-        </div>
-      </div>
-    </button>
-    <button class="hotspot-360" style="bottom:20vh;right:22vw;" aria-label="Parkiran Dosen">
-      <span class="h-dot"></span>
-      <div class="h-card">
-        <div class="h-card-accent" style="background:#1B4EF5"></div>
-        <div class="h-card-body">
-          <p class="h-card-title">Parkiran Dosen</p>
-          <p class="h-card-desc">Area parkir khusus dosen dan staf dengan sistem keamanan 24 jam dan akses gate otomatis.</p>
-        </div>
-      </div>
-    </button>
+
 
     <canvas id="canvas-360" class="w-full h-full cursor-grab"></canvas>
   </div>
@@ -621,20 +533,7 @@
       if (e.key === 'Escape') { closeLightbox(); if (window.close360Tour) window.close360Tour(); }
     });
 
-    // ─── Hotspot 360 ───
-    document.querySelectorAll('.hotspot-360').forEach(hs => {
-      hs.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const isActive = hs.classList.contains('active');
-        document.querySelectorAll('.hotspot-360').forEach(h => h.classList.remove('active'));
-        if (!isActive) hs.classList.add('active');
-      });
-    });
-    document.addEventListener('click', (e) => {
-      if (!e.target.closest('.hotspot-360')) {
-        document.querySelectorAll('.hotspot-360').forEach(h => h.classList.remove('active'));
-      }
-    });
+
     </script>
 
     <script src="assets/js/virtual-tour.js"></script>
