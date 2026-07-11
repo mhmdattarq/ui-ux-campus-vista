@@ -38,21 +38,6 @@
             scroll-margin-top: 6.5rem;
         }
 
-        .hero-glow {
-            background: radial-gradient(circle at top left, rgba(27, 78, 245, 0.14), transparent 34%),
-                radial-gradient(circle at bottom right, rgba(190, 26, 26, 0.12), transparent 36%);
-            animation: glowPulse 8s ease-in-out infinite;
-        }
-
-        @keyframes glowPulse {
-            0%, 100% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0.7;
-            }
-        }
-
         .reveal {
             opacity: 0;
             transform: translateY(24px);
@@ -219,78 +204,107 @@
     <script src="assets/js/navbar.js"></script>
 
     <!-- HERO SECTION -->
-    <section class="relative pt-16 pb-12 md:pt-24 md:pb-16 flex flex-col items-center justify-center text-center px-4 md:px-6 overflow-hidden">
-        <div class="absolute inset-0 hero-glow pointer-events-none"></div>
-        
-        <div class="max-w-6xl space-y-8 z-10">
-            <div class="reveal inline-flex items-center gap-2 px-4 py-2 text-xs font-bold bg-gradient-to-r from-red-50 to-blue-50 text-slate-700 border border-red-100/50 rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <span class="flex h-2 w-2 relative">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-2 w-2 bg-gradient-to-r from-[#BE1A1A] to-[#1B4EF5]"></span>
-                </span>
-                Institut Teknologi & Bisnis Riau Pesisir
-            </div>
-            
-            <h1 class="reveal text-4xl sm:text-5xl md:text-7xl font-black tracking-tight text-slate-900 leading-[1.1]">
-                Kenali <span class="bg-gradient-to-r from-[#BE1A1A] via-rose-600 to-red-600 bg-clip-text text-transparent animate-gradient">Kampus</span> Melalui<br class="hidden sm:inline">
-                <span class="bg-gradient-to-r from-[#1B4EF5] via-blue-600 to-indigo-600 bg-clip-text text-transparent animate-gradient">Pengalaman</span> Virtual 360°
-            </h1>
-            
-            <p class="reveal-left text-base md:text-lg text-slate-600 max-w-3xl mx-auto font-medium leading-relaxed px-2">
-                Jelajahi kampus secara <strong class="text-[#BE1A1A]">imersif</strong> dengan teknologi virtual tour 360°. 
-                Lihat fasilitas, ruangan, dan lingkungan kampus secara <strong class="text-[#1B4EF5]">interaktif</strong> dari mana saja.
-            </p>
-            
-            <div class="reveal-right pt-4 flex flex-col sm:flex-row items-center justify-center gap-4 px-4 sm:px-0">
-                <a href="#explore" class="group relative w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-[#BE1A1A] via-purple-600 to-[#1B4EF5] text-white font-bold text-sm rounded-xl shadow-xl shadow-purple-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/40 hover:scale-105 active:scale-95 overflow-hidden">
-                    <span class="relative z-10 flex items-center justify-center gap-2">
-                        Mulai Jelajahi Sekarang
-                        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-                        </svg>
-                    </span>
-                    <span class="absolute inset-0 bg-gradient-to-r from-red-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-                </a>
-                <a href="#about" class="w-full sm:w-auto px-8 py-4 bg-white hover:bg-slate-50 border-2 border-slate-200 hover:border-[#1B4EF5] text-slate-700 hover:text-[#1B4EF5] font-bold text-sm rounded-xl transition-all shadow-md hover:shadow-xl hover:-translate-y-1">
-                    Tentang Kampus
-                </a>
-            </div>
+    <section class="hero-slideshow" id="hero">
+        <!-- Background Slideshow -->
+        <div class="hero-bg-container">
+            <div class="hero-slide" data-index="0" style="background-image: url('assets/img/hero-index-1.jpg')" role="img" aria-label="Gedung Kampus ITBRP"></div>
+            <div class="hero-slide" data-index="1" style="background-image: url('assets/img/hero-index-2.JPG')" role="img" aria-label="Suasana Kampus ITBRP"></div>
+            <div class="hero-slide" data-index="2" style="background-image: url('assets/img/hero-index-3.jpg')" role="img" aria-label="Aktivitas Mahasiswa ITBRP"></div>
+            <div class="hero-slide" data-index="3" style="background-image: url('assets/img/hero-index-4.JPG')" role="img" aria-label="Lingkungan Kampus ITBRP"></div>
+        </div>
 
-            <div class="reveal-scale mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto">
-                <div class="card-hover-effect group rounded-2xl border-2 border-red-100 bg-gradient-to-br from-red-50 to-white px-5 py-4 text-left shadow-lg hover:shadow-xl hover:border-[#BE1A1A] transition-all duration-300">
-                    <div class="flex items-center gap-3">
-                        <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br from-[#BE1A1A] to-red-600 flex items-center justify-center text-white font-bold text-lg shadow-md">
-                            🎯
-                        </div>
-                        <div>
-                            <p class="text-xs font-bold uppercase tracking-wider text-red-600">Didirikan</p>
-                            <p class="mt-0.5 text-xl font-black text-slate-900">1985</p>
-                        </div>
+        <!-- Overlay Layers -->
+        <div class="hero-gradient-overlay"></div>
+        <div class="hero-pattern-overlay"></div>
+        <div class="hero-ambient-glow"></div>
+
+        <!-- Content -->
+        <div class="hero-content">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6">
+                <div class="text-center space-y-8">
+
+                    <div class="hero-badge reveal">
+                        <span class="badge-dot"></span>
+                        Selamat Datang Di Kampus Biru
                     </div>
-                </div>
-                <div class="card-hover-effect group rounded-2xl border-2 border-blue-100 bg-gradient-to-br from-blue-50 to-white px-5 py-4 text-left shadow-lg hover:shadow-xl hover:border-[#1B4EF5] transition-all duration-300">
-                    <div class="flex items-center gap-3">
-                        <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br from-[#1B4EF5] to-blue-600 flex items-center justify-center text-white font-bold text-lg shadow-md">
-                            📚
-                        </div>
-                        <div>
-                            <p class="text-xs font-bold uppercase tracking-wider text-blue-600">Program Studi</p>
-                            <p class="mt-0.5 text-xl font-black text-slate-900">4 Prodi S1</p>
-                        </div>
+
+                    <h1 class="reveal text-4xl sm:text-5xl md:text-7xl font-black tracking-tight text-white leading-[1.1]">
+                        <span class="bg-gradient-to-r from-[#1B4EF5] to-blue-300 bg-clip-text text-transparent">Institut Teknologi & Bisnis Riau Pesisir</span>
+                    </h1>
+
+                    <p class="reveal-left text-base md:text-lg text-white/80 max-w-3xl mx-auto font-medium leading-relaxed px-2">
+                        ITB Riau Pesisir Merupakan Pusat Pendidikan Tinggi di Kota Dumai Yang Berfokus Pada Pengembangan Ilmu Teknologi dan Bisnis.
+                        Kami Berdedikasi Untuk Melahirkan Lulusan Yang Kompeten, Kreatif, Dan Siap Kerja Guna Menjawab Tantangan Industri Modern Di Era Digital.
+                    </p>
+
+                    <div class="reveal-right pt-4 flex flex-col sm:flex-row items-center justify-center gap-4 px-4 sm:px-0">
+                        <a href="#explore" class="group relative w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-[#BE1A1A] via-purple-600 to-[#1B4EF5] text-white font-bold text-sm rounded-xl shadow-xl shadow-purple-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/40 hover:scale-105 active:scale-95 overflow-hidden">
+                            <span class="relative z-10 flex items-center justify-center gap-2">
+                                Mulai Jelajahi Sekarang
+                                <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                                </svg>
+                            </span>
+                            <span class="absolute inset-0 bg-gradient-to-r from-red-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                        </a>
+                        <a href="#about" class="w-full sm:w-auto px-8 py-4 bg-white/10 backdrop-blur-xl border-2 border-white/20 hover:border-white/40 text-white font-bold text-sm rounded-xl transition-all duration-300 hover:bg-white/20 hover:shadow-xl hover:-translate-y-1">
+                            Tentang Kampus
+                        </a>
                     </div>
-                </div>
-                <div class="card-hover-effect group rounded-2xl border-2 border-purple-100 bg-gradient-to-br from-purple-50 to-white px-5 py-4 text-left shadow-lg hover:shadow-xl hover:border-purple-500 transition-all duration-300">
-                    <div class="flex items-center gap-3">
-                        <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br from-purple-600 to-indigo-600 flex items-center justify-center text-white font-bold text-lg shadow-md">
-                            🏆
+
+                    <div class="reveal-scale mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto">
+                        <div class="hero-stat-card">
+                            <div class="flex items-center gap-3">
+                                <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br from-[#BE1A1A] to-red-600 flex items-center justify-center text-white font-bold text-lg shadow-md">
+                                    🎯
+                                </div>
+                                <div>
+                                    <p class="text-xs font-bold uppercase tracking-wider text-red-300">Didirikan</p>
+                                    <p class="mt-0.5 text-xl font-black text-white">1985</p>
+                                </div>
+                            </div>
                         </div>
-                        <div>
-                            <p class="text-xs font-bold uppercase tracking-wider text-purple-600">Akreditasi</p>
-                            <p class="mt-0.5 text-xl font-black text-slate-900">BAIK</p>
+                        <div class="hero-stat-card">
+                            <div class="flex items-center gap-3">
+                                <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br from-[#1B4EF5] to-blue-600 flex items-center justify-center text-white font-bold text-lg shadow-md">
+                                    📚
+                                </div>
+                                <div>
+                                    <p class="text-xs font-bold uppercase tracking-wider text-blue-300">Program Studi</p>
+                                    <p class="mt-0.5 text-xl font-black text-white">4 Prodi S1</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hero-stat-card">
+                            <div class="flex items-center gap-3">
+                                <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br from-purple-600 to-indigo-600 flex items-center justify-center text-white font-bold text-lg shadow-md">
+                                    🏆
+                                </div>
+                                <div>
+                                    <p class="text-xs font-bold uppercase tracking-wider text-purple-300">Akreditasi</p>
+                                    <p class="mt-0.5 text-xl font-black text-white">BAIK</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <!-- Slide Navigation -->
+        <div class="hero-slide-nav">
+            <button class="hero-slide-dot active" data-slide="0" aria-label="Slide 1"></button>
+            <button class="hero-slide-dot" data-slide="1" aria-label="Slide 2"></button>
+            <button class="hero-slide-dot" data-slide="2" aria-label="Slide 3"></button>
+            <button class="hero-slide-dot" data-slide="3" aria-label="Slide 4"></button>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="hero-scroll-indicator">
+            <span class="scroll-text">Scroll</span>
+            <svg class="scroll-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 5v14M5 12l7 7 7-7"/>
+            </svg>
         </div>
     </section>
 
@@ -303,7 +317,7 @@
             </div>
 
             <!-- Banner Image -->
-            <img src="assets/img/gedung-a-tampak-samping.jpg"
+            <img src="assets/img/gedung-a-tampak-depan.jpg"
                 class="absolute inset-0 w-full h-full object-cover z-0 transform transition-transform duration-800 ease-out group-hover:scale-110"
                 alt="Gedung Rektorat Tampak Samping">
 
@@ -311,7 +325,7 @@
             <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-10 z-20 flex flex-col sm:flex-row sm:items-end justify-between gap-6">
                 <div class="space-y-3">
                     <span class="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold bg-gradient-to-r from-[#BE1A1A] to-[#1B4EF5] text-white backdrop-blur-sm rounded-lg shadow-lg">
-                        🏛️ Gedung Rektorat & Pusat Pembelajaran Utama
+                        🏛️ Gedung Pusat Pembelajaran Utama
                     </span>
                     <h2 class="text-2xl sm:text-4xl md:text-5xl font-black text-white tracking-tight">
                         Pusat Kepemimpinan & Akademik ITB Riau Pesisir
@@ -323,17 +337,19 @@
                 </div>
                 
                 <div class="shrink-0 space-y-3">
-                    <button id="btn-open-360" type="button"
-                        class="inline-flex items-center gap-2 px-6 py-4 text-sm font-bold bg-white text-slate-900 rounded-xl shadow-2xl hover:bg-slate-50 hover:scale-105 transition-all duration-300">
+                    <a href="explore_gedung.html" id="btn-open-360"
+                        class="inline-flex items-center justify-center gap-2 px-6 py-4 text-sm font-bold bg-white text-slate-900 rounded-xl shadow-2xl hover:bg-slate-50 hover:scale-105 transition-all duration-300">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5m-5-5l-5 5"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5m-5-5l-5 5">
+                            </path>
                         </svg>
-                        Buka Mode Tur 360°
-                    </button>
+                        Jelajahi Sekarang!
+                    </a>
                     
                     <div class="glass-card float-slow absolute top-4 right-4 sm:top-6 sm:right-6 rounded-2xl border-2 border-white/30 bg-white/20 backdrop-blur-xl px-4 py-3 text-left text-white shadow-2xl">
                         <p class="text-[10px] uppercase tracking-[0.3em] text-slate-200">Lokasi Saat Ini</p>
-                        <p class="mt-1 text-sm font-bold">Gedung Rektorat</p>
+                        <p class="mt-1 text-sm font-bold">Gedung A ITBRP</p>
                         <div class="mt-2 w-full bg-white/30 rounded-full h-1 overflow-hidden">
                             <div class="bg-gradient-to-r from-[#BE1A1A] to-[#1B4EF5] h-full" style="width: 75%"></div>
                         </div>
@@ -533,7 +549,7 @@
                     Fitur Virtual Tour 360°
                 </div>
                 <h2 class="text-3xl md:text-5xl font-black text-slate-900 tracking-tight">
-                    Eksplorasi <span class="bg-gradient-to-r from-[#1B4EF5] to-blue-600 bg-clip-text text-transparent">Destinasi</span> Kampus Mu
+                    Eksplorasi <span class="bg-gradient-to-r from-[#1B4EF5] to-blue-600 bg-clip-text text-transparent">Destinasi</span> <span class="bg-gradient-to-r from-[#BE1A1A] via-rose-600 to-red-600 bg-clip-text text-transparent animate-gradient">ITBRP</span>
                 </h2>
                 <p class="text-slate-600 text-sm sm:text-base font-medium">
                     Gunakan fitur Virtual Tour 360° dengan ikon interaktif kontekstual untuk mengamati detail fasilitas kampus secara langsung.
@@ -550,7 +566,7 @@
                         class="absolute inset-0 w-full h-full object-cover z-[-1] opacity-30 group-hover:scale-[1.03] transition-transform duration-500"
                         alt="Laboratorium Komputer">
                     <div class="z-10 flex justify-between items-start">
-                        <span class="px-3 py-1 text-[10px] font-bold bg-gradient-to-r from-[#1B4EF5] to-blue-600 text-white border-2 border-blue-200 rounded shadow-lg uppercase tracking-wider">Terpopuler</span>
+                        <span class="px-3 py-1 text-[10px] font-bold bg-gradient-to-r from-[#1B4EF5] to-blue-600 text-white border-2 border-blue-200 rounded shadow-lg uppercase tracking-wider">Teknologi</span>
                         <span class="text-slate-400 group-hover:text-[#1B4EF5] transition-transform group-hover:translate-x-2 group-hover:scale-110">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
@@ -592,7 +608,7 @@
                         class="absolute inset-0 w-full h-full object-cover z-[-1] opacity-30 group-hover:scale-[1.03] transition-transform duration-500"
                         alt="Kantin Kampus">
                     <div class="z-10 flex justify-between items-start">
-                        <span class="px-3 py-1 text-[10px] font-bold bg-gradient-to-r from-amber-600 to-orange-600 text-white border-2 border-amber-200 rounded shadow-lg uppercase tracking-wider">Culinary</span>
+                        <span class="px-3 py-1 text-[10px] font-bold bg-gradient-to-r from-amber-600 to-orange-600 text-white border-2 border-amber-200 rounded shadow-lg uppercase tracking-wider">Kuliner</span>
                         <span class="text-slate-400 group-hover:text-amber-600 transition-transform group-hover:translate-x-2 group-hover:scale-110">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
@@ -613,7 +629,7 @@
                         class="absolute inset-0 w-full h-full object-cover z-[-1] opacity-30 group-hover:scale-[1.03] transition-transform duration-500"
                         alt="Musholla ITBRP">
                     <div class="z-10 flex justify-between items-start">
-                        <span class="px-3 py-1 text-[10px] font-bold bg-gradient-to-r from-emerald-600 to-green-600 text-white border-2 border-emerald-200 rounded shadow-lg uppercase tracking-wider">Fasilitas</span>
+                        <span class="px-3 py-1 text-[10px] font-bold bg-gradient-to-r from-emerald-600 to-green-600 text-white border-2 border-emerald-200 rounded shadow-lg uppercase tracking-wider">Tempat Ibadah</span>
                         <span class="text-slate-400 group-hover:text-emerald-600 transition-transform group-hover:translate-x-2 group-hover:scale-110">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
