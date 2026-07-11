@@ -95,6 +95,10 @@
             </div>
 
             <a data-nav-link href="contact.html" class="nav-link rounded-full px-4 py-2.5 transition-all duration-300 hover:bg-gradient-to-r hover:from-slate-100 hover:to-slate-50 hover:text-slate-900 hover:shadow-md hover:scale-105">Contact</a>
+            <a href="mobile-preview.html" target="campus-mobile" class="nav-link rounded-full px-4 py-2.5 transition-all duration-300 hover:bg-gradient-to-r hover:from-slate-100 hover:to-slate-50 hover:text-slate-900 hover:shadow-md hover:scale-105 flex items-center gap-1.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                Mobile
+            </a>
         </nav>
 
         <div class="flex items-center gap-2 sm:gap-3">
@@ -202,8 +206,8 @@
         </div>
     </div>
 </div>
-`;
 
+`;
     const body = document.body;
     const placeholder = document.getElementById('navbar');
     if (!placeholder) {
@@ -307,3 +311,7 @@
         });
     }
 })();
+
+
+
+
