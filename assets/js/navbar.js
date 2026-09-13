@@ -5,7 +5,7 @@
         <a href="index.html" class="flex items-center gap-3 group">
             <div class="relative flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#BE1A1A] via-purple-600 to-[#1B4EF5] p-[2px] shadow-lg shadow-blue-500/20 transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl group-hover:shadow-purple-500/40 group-hover:rotate-3">
                 <div class="flex h-full w-full items-center justify-center rounded-[10px] bg-white overflow-hidden">
-                    <img src="assets/img/logofix.png" alt="Campus Vista Logo" class="h-10 w-10 object-contain transition-transform duration-300 group-hover:scale-110">
+                    <img src="assets/img/logofix.webp" alt="Campus Vista Logo" class="h-10 w-10 object-contain transition-transform duration-300 group-hover:scale-110">
                 </div>
             </div>
             <span class="text-lg font-black tracking-tight transition-all duration-300 group-hover:scale-[1.02] sm:text-xl">
@@ -122,7 +122,7 @@
                 <div class="flex items-center gap-3">
                     <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-[#BE1A1A] via-purple-600 to-[#1B4EF5] p-[2px] shadow-lg">
                         <div class="flex h-full w-full items-center justify-center rounded-[9px] bg-white overflow-hidden">
-                            <img src="assets/img/logofix.png" alt="Campus Vista Logo" class="h-8 w-8 object-contain">
+                            <img src="assets/img/logofix.webp" alt="Campus Vista Logo" class="h-8 w-8 object-contain">
                         </div>
                     </div>
                     <span class="text-md font-black tracking-tight">

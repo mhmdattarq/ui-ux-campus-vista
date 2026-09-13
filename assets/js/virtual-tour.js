@@ -4,7 +4,7 @@
  *
  * Cara pakai:
  *   <script src="assets/js/virtual-tour.js"></script>
- *   <button onclick="open360Tour('assets/img/kantin.jpg')">Mulai</button>
+ *   <button onclick="open360Tour('assets/img/kantin.webp')">Mulai</button>
  *
  * Membutuhkan elemen dengan id:
  *   #tour-360-modal  — fullscreen modal wrapper

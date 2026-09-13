@@ -19,7 +19,7 @@
         '<div style="position:relative;width:140px;height:140px;">' +
           '<div style="position:absolute;inset:-6px;border-radius:50%;background:linear-gradient(135deg,#BE1A1A,#1B4EF5,#BE1A1A);mask:radial-gradient(farthest-side,transparent calc(100% - 3px),#000 calc(100% - 2px));-webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 3px),#000 calc(100% - 2px));animation:pl-spin 1.2s linear infinite;"></div>' +
           '<div style="position:absolute;inset:0;border-radius:50%;background:rgba(0,0,0,0.02);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;border:1px solid rgba(0,0,0,0.04);">' +
-            '<img src="../assets/img/logofix.png" alt="" style="width:70px;height:70px;object-fit:contain;animation:pl-pulse 2s ease-in-out infinite;">' +
+            '<img src="../assets/img/logofix.webp" alt="" style="width:70px;height:70px;object-fit:contain;animation:pl-pulse 2s ease-in-out infinite;">' +
           '</div>' +
         '</div>' +
         '<p style="margin-top:28px;font-family:sans-serif;font-size:15px;font-weight:700;color:#BE1A1A;letter-spacing:4px;text-transform:uppercase;">' +
